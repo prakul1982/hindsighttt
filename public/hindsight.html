@@ -424,7 +424,7 @@ const S={fhKey:localStorage.getItem('fhKey')||DEFAULT_FH,gemKey:localStorage.get
 const $=(id)=>document.getElementById(id);
 const esc=(s)=>String(s==null?'':s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 const fmtB=(n)=>{n=Number(n);if(!n||isNaN(n))return '—';if(n>=1e6)return '$'+(n/1e6).toFixed(2)+'T';if(n>=1e3)return '$'+(n/1e3).toFixed(1)+'B';return '$'+n.toFixed(0)+'M';};
-const PAL=['#e0a458','#5cc98a','#6ba8c9','#b98ad0','#e0735f','#d9c46b','#7fb0a0'];
+const PAL=['#e85d3a','#ff9b78','#8caed0','#c5aed0','#ef7b68','#e0b06b','#8ec9a2'];
 
 // ===== Finnhub — US hard data =====
 async function fh(path){
