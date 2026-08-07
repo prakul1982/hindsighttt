@@ -928,7 +928,7 @@ function renderCompanyIN(sym,meta,scr,news){
   const d=(c!=null&&pc!=null)?(c-pc):null,dp=(d!=null&&pc)?(d/pc*100):null,up=(d==null)||d>=0;
   const px=c!=null?('₹'+Number(c).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})):'—';
   let h='<div class="panel hero-co"><div class="head"><div><div class="name">'+esc(name)+' '+starBtn(sym,name)+'</div><div class="ticker">NSE · '+esc(sym)+'<button class="toggle compare-btn" data-compare="'+esc(sym)+'">⚖ compare</button></div></div>';
-  if(c!=null)h+='<div class="pxblock"><div class="px">'+px+'</div>'+(dp!=null?'<div class="chgpill" style="background:'+(up?'rgba(95,211,154,.14)':'rgba(232,122,100,.14)')+';color:'+(up?'var(--green)':'var(--red)')+'">'+(up?'▲ ':'▼ ')+(up?'+':'')+Number(d).toFixed(2)+' ('+(up?'+':'')+Number(dp).toFixed(2)+'%)</div>':'')+'</div>';
+  if(c!=null)h+='<div class="pxblock"><div class="px">'+px+'</div>'+(dp!=null?'<div class="chgpill" style="background:'+(up?'rgba(142,201,162,.14)':'rgba(239,123,104,.14)')+';color:'+(up?'var(--green)':'var(--red)')+'">'+(up?'▲ ':'▼ ')+(up?'+':'')+Number(d).toFixed(2)+' ('+(up?'+':'')+Number(dp).toFixed(2)+'%)</div>':'')+'</div>';
   h+='</div>';
   h+='<div class="chartwrap"><div class="chart-head"><span class="chart-label">Price chart</span></div><div id="hero-chart" style="min-height:440px;"><div class="chart-skel" style="height:440px;"></div></div></div>';
   h+='<div class="meta">';
