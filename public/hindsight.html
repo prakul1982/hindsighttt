@@ -1146,11 +1146,15 @@ const Tour=(function(){
     hole.style.display='block';
     hole.style.top=(r.top-6)+'px';hole.style.left=(r.left-6)+'px';
     hole.style.width=(r.width+12)+'px';hole.style.height=(r.height+12)+'px';
-    const cw=Math.min(340,innerWidth-32),ch=card.offsetHeight||220;
-    let left=r.right+18,top=r.top;
-    if(left+cw>innerWidth-16)left=Math.max(16,r.left-cw-18);
-    if(left<16)left=Math.max(16,(innerWidth-cw)/2);
-    if(top+ch>innerHeight-16)top=Math.max(16,innerHeight-ch-16);
+    const cw=Math.min(340,innerWidth-32),ch=card.offsetHeight||220,gap=18;
+    let left,top;
+    if(r.right+gap+cw<=innerWidth-16){left=r.right+gap;top=r.top;}
+    else if(r.left-gap-cw>=16){left=r.left-gap-cw;top=r.top;}
+    else{ /* no side room: stack below, or above if it would overflow */
+      left=Math.min(Math.max(16,r.left),innerWidth-cw-16);
+      top=(r.bottom+gap+ch<=innerHeight-16)?r.bottom+gap:Math.max(16,r.top-gap-ch);
+    }
+    top=Math.min(Math.max(16,top),Math.max(16,innerHeight-ch-16));
     card.style.left=left+'px';card.style.top=top+'px';
   }
   function go(n){
