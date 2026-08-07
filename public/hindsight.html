@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Hindsight · Equity Research Terminal</title>
+<meta name="theme-color" content="#070b0a" />
+<meta name="application-name" content="Hindsight" />
+<meta name="apple-mobile-web-app-title" content="Hindsight" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%23070b0a%27/%3E%3Cpath%20d%3D%27M32%2013%20L48%2032%20L32%2051%20L16%2032%20Z%27%20fill%3D%27%23e3a857%27/%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAXOklEQVR4nO3dPY4k15WG4dt0aZCeDDpDrmCAWcAA4xCYLcnmlgTIEaAFENAKSDky5IkY0OYYrWBnV+VP/NyIe865z+ORgrqyopLxvXUzu+pDI6Qvv/7qt9GPAaCHX//1y4fRj4H3fFEGMfAAHwmEMVz0Cxh7gG1Ewflc4BMYfIC+BEF/LmgHBh/gWoLgOBdwJ6MPEIMY2MdF28DoA8QmBtZzoV4w+gA5iYHnXJwHDD9ADULgPhflhtEHqE0MfOJCNMMPMBshMHkAGH6Auc0cAlN+4oYfgFszhsBUn7DhB+CZmUJgik/U8AOwxQwh8MXoB3A24w/AVjNsR9nCmeGLB8D5qp4GlPukDD8AZ6gWAqVeAjD+AJyl2saUqJlqXxQAYqtwGpD+BMD4A3C1CtuTOgAqfAEAyCn7BqU8wsh+0QGoJeNLAulOAIw/ANFk3KZUAZDxAgMwh2wbleLIIttFBWBuGV4SCH8CYPwByCbDdoUOgAwXEADuib5hYQMg+oUDgFcib1nIAIh8wQBgi6ibFu5NClEvVBR/+O7b0Q8B4K5//vTz6IcQWrQ3BoZ6MMb/IyMPVCMOPooUAWEeyMzjb/CB2cwcBFEiIMSDmG38DT7A52YLgggRMPwBzDL+Rh9gnVliYHQEDP3g1cff6AMcUz0GRkbAsA9cefzPHP7q/zEAebn37TMqAoZ80Irj3/uJX/nJDszF/fG1ERFw+QesNv49ntgVn8wAz7h3vnd1BFz6wSqN/9Enb7UnLsBe7qefXBkBl32gKuN/5Ila6UkKcAb32Osi4JIPUmH89z4pqzwhAa428333iggQACvseRJWeAICRDDjPbhEAGQe/61PuuxPOIDoZrovnx0Bp/7hWcd/picYQEaz3KfPjIDT/uAZxj/rEwqgihnu2WdFgAC4sfaJlPVJBFBV5ft3qgDINv4zFCRAdZXv5WdEQPc/sOr4Z3uyAMyq6n29dwR0/cMqjn+2JwgAH1W8x/eMgCkDoGodAvC5avf7ngHwRa8/yPgDEM3ae/mZv8q4p55b26UkKo2/4QeoqdIG9DgJ6HYCEF2lLzwA2625x2c5CejhcABk+O7f+APQWp0I6LG9h48QogfAqy+k4QeYU/Z9OPoywKETAOMPQFavNiD6ScDRDd4dAMYfgOxmjoCSbwI0/gCslT0C9toVAJG/+zf+AGyVOQL2bnKpEwDjD8BemSNgj80BEPW7f+MPwFFZI2DPNpc6AXjE+AOw1iybsSkAMn73P8sXEoB+nm1HlVOA9CcAxh+AM2SMgC1WB0DE7/4rfAEAyCniBm3Z6vQnAI/47h+AoypvyaoAyPbdf+UvGADXyvZSwNrNTnkCYPwBuFK2CFgjXQBkvdAA1JVxm14GQMTj/0d89w/AWTJtzJrtTnUC4OgfgJEqvRTwNACyfPdv/AG4SpbNebXhaU4AspUVAPPJtFUpAsDRPwCRVHgp4GEAZDn+BwDue7bl4U8AfPcPQETZTwHCB8Ajxh+A0TJv0d0AiHL8n6GgAOCeKBv2aNNTngBkLi4Aasm6SWEDIEo5AcBekbfsXQBEOf5/JGtpAVBX9G26t+0hTwAiFxMAbBF100IGwCPRCwuAeWXbqFQBAAD08VkARHj9P+pRCQDsFWHb3m58mhOAbEcrAMwn01aFCoAIhQQAZ4i2caEC4JFMRQXA3LJs1u8BEOH1fwDgPLdbH+YEINrRCAD0FmnrwgTAI1mOUgBgkWG7wgcAANBfiACIdCQCAGeKsnlftBb3DYAZjlAA4J6oG7ZsfogTAADgWgIAACY0PAAevRYS9egEANZ6tGUR3gcwPAAAgOsJAACYkAAAgAkNDYAIr4HAjP7x5z8+/WfgfKM38MPInwHgDYBwvdux//uPf2n/8V//8/s/f/P9DyMeEpQXce+8BAATefud/u343/vfgboEAExi7biLAJiDAIAJbB11EQD1CQAo7tmY//3Hv+z6/wH5CQAo7NmI/9/PP7bWRADMalgARHxHJFSyZvwXIgDOFfFHAjsBgIK2jP9CBMBcBAAUs2f8FyIA5iEAoJAj478QATAHAQBF9Bj/hQiA+gQAFNBz/BciAGoTAJDcGeO/EAFQlwCAxM4c/4UIgJoEACR1xfgvRADUIwAgoSvHfyECoBYBAMmMGP+FCIA6BAAkMnL8FyIAahAAkESE8V+IAMhPAEACkcZ/IQIgNwEAwUUc/4UIgLwEAAQWefwXIgByEgAQVIbxX4gAyEcAQECZxn8hAiAXAQDBZBz/hQiAPAQABJJ5/BciAHIQABBEhfFfiACITwBAAJXGfyECIDYBAINVHP+FCIC4BAAMVHn8FyIAYhIAMMgM478QARCPAIABZhr/hQiAWAQAXGzG8V+IAIhDAMCFZh7/hQiAGAQAXMT4fyICYDwBABcw/u+JABhLAMDJjP9jIgDGEQBwIuP/mgiAMQQAnMT4rycC4HoCAE5g/LcTAXAtAQCdGf/9RABcRwBAR8b/OBEA1xAA0Inx70cEwPkEAHRg/PsTAXAuAQAHGf/ziAA4jwCAA4z/+UQAnEMAwE7G/zoiAPoTALCD8b+eCIC+BABsZPzHEQHQjwCADYz/eCIA+hAAsJLxj0MEwHECAFYw/vGIADhGAMALxj8uEQD7CQB4wvjHJwJgHwEADxj/PEQAbCcA4A7jn48IgG0EALxh/PMSAbCeAIAbxj8/EQDrCAD4N+NfhwiA1wQANONfkQiA5wQA0zP+dYkAeEwAMDXjX58IgPsEANMy/vMQAfCeAGBKxn8+IgA+JwCYjvGflwiATwQAUzH+iAD4SAAwDePPQgSAAGASxp+3RACzEwCUZ/x5RAQwMwFAacafV0QAsxIAlGX8WUsEMCMBQEnGn61EALMRAJRj/NlLBDATAUApxp+jRACzEACUYfzpRQQwAwFACcaf3kQA1QkA0jP+nOVZBEB2AoDUjD9nexQBTgHITgCQlvHnKiKAigQAKRl/riYCqEYAkI7xJxoRQEYCgFSMPyP5mwFUIgBIw/gTgQigCgFACsafSEQAFQgAwjP+RCQCyE4AEJrxJzIRQGYCgLCMPxmIALISAIRk/MlEBJCRACAc409GIoBsBAChGH8yEwFkIgAIw/hTgQggCwFACMafSkQAGQgAhjP+VCQCiE4AMJTxpzIRQGQCgGGMPzMQAUQlABjC+DMTEUBEAoDLGX9mJAKIRgBwKePPzEQAkQgALmP8QQQQhwDgEsYfPhEBRCAAOJ3xh/dEAKMJAE5l/OExEcBIAoDTGH94TQQwigDgFMYf1hMBjCAA6M74w3YigKsJALoy/rCfCOBKAoBujD8cJwK4igCgC+MP/YgAriAAOMz4Q38igLMJAA4x/nAeEcCZBAC7GX84nwjgLAKAXYw/XEcEcAYBwGbGH64nAuhNALCJ8YdxRAA9CQBWM/4wngigFwHAKsYf4hAB9CAAeMn4QzwigKMEAE8Zf4hLBHCEAOAh4w/xiQD2EgDcZfwhDxHAHgKAd4w/5CMC2EoA8BnjD3mJALYQAPzO+EN+IoC1BACtNeMPlYgA1hAAGH8oSATwigCYnPGHukQAzwiAiRl/qE8E8IgAmJTxh3mIAO4RABMy/jAfEcBbAmAyxh/mJQK4JQAmYvwBEcBCAEzC+AMLEUBrAmAKxh94SwQgAIoz/sAjImBuAqAw4w+8IgLmJQCKMv7AWiJgTgKgIOMPbCUC5iMAijH+wF4iYC4CoBDjDxwlAuYhAIow/kAvImAOAqAA4w/0JgLqEwDJGX/gLCKgNgGQmPEHziYC6hIASRl/4CoioCYBkJDxB64mAuoRAMkYf2AUEVCLAEjE+AOjiYA6BEASxh+IQgTUIAASMP5ANCIgPwEQnPEHohIBuQmAwIw/EJ0IyEsABGX8gSxEQE4CICDjD2QjAvIRAMEYfyArEZDLhy+//uq3ER/4D999e/ff//Onny9+JPHc+w/lb3/904BHArDdf/73/777d998/8OARxJLtN1zAhDMo0q+9x8UQDSP7lVOAOIRAME8q2QRAET27B7lBCAeARCQCACyMf75CICgRACQhfHPSQAEJgKA6Ix/XgIgOBEARGX8cxMACYgAIBrjn58ASEIEAFEY/xoEQCIiABjN+NchAJIRAcAoxr8WAZCQCACuZvzrEQBJiQDgKsa/JgGQmAgAzmb86xIAyYkA4CzGvzYBUIAIAHoz/vUJgCJEANCL8Z+DAChEBABHGf95CIBiRACwl/GfiwAoSAQAWxn/+QiAokQAsJbxn5MAKEwEAK8Y/3kJgOJEAPCI8Z+bAJiACADeMv4IgEmIAGBh/GlNAExFBADGn4UAmIwIgHkZf24JgAmJAJiP8ectATApEQDzMP7cIwAmJgKgPuPPIwJgciIA6jL+PCMAEAFQkPHnFQFAa00EQCXGnzUEAL8TAZCf8WctAcBnRADkZfzZQgDwjgiAfIw/WwkA7hIBkIfxZw8BwEMiAOIz/uwlAHhKBEBcxp8jBAAviQCIx/hzlABgFREAcRh/ehAArCYCYDzjTy8CgE1EAIxj/OlJALCZCIDrGX96EwDsIgLgOsafMwgAdhMBcD7jz1kEAIeIADiP8edMAoDDRAD0Z/w5mwCgCxEA/Rh/riAA6EYEwHHGn6sIALoSAbCf8edKAoDuRABsZ/y5mgDgFCIA1jP+jCAAOI0IgNeMP6MIAE4lAuAx489IAoDTiQB4z/gzmgDgEiIAPjH+RCAAuIwIAONPHAKAS4kAZmb8iUQAcDkRwIyMP9EIAIYQAczE+BORAGAYEcAMjD9RCQCGEgFUZvyJTAAwnAigIuNPdAKAEEQAlRh/MhAAhCECqMD4k4UAIBQRQGbGn0wEAOGIADIy/mQjAAhJBJCJ8ScjAUBYIoAMjD9ZCQBCEwFEZvzJTAAQngggIuNPdgKAFEQAkRh/KhAApCECiMD4U4UAIBURwEjGn0oEAOm8igAhwBmMP9UIAFJ6dcMVAfRk/KlIAJCWCOAKxp+qBACpffP9D94XwGmMP5UJAEoQAfRm/KlOAFCGCKAX488MBACliACOMv7MQgBQjghgL+PPTAQAJYkAtjL+zEYAUJYIYC3jz4wEAKWJAF4x/sxKAFCeCOAR48/MBABTEAG8ZfyZnQBgGiKAhfEHAcBkRADGHz4SAExHBMzL+MMnAoApiYD5GH/4nABgWiJgHsYf3hMATE0E1Gf84T4BwPREQF3GHx4TANBEQEXGH54TAPBvIqAO4w+vCQC4IQLyM/6wjgCAN0RAXsYf1hMAcIcIyMf4wzYCAB4QAXkYf9hOAMATIiA+4w/7CAB4QQTEZfxhPwEAK4iAeIw/HCMAYCUREIfxh+MEAGwgAsYz/tCHAICNRMA4xh/6EQCwgwi4nvGHvgQA7CQCrmP8oT8BAAeIgPMZfziHAICDRMB5jD+cRwBAByKgP+MP5xIA0IkI6Mf4w/kEAHQkAo4z/nANAQCdiYD9jD9cRwDACUTAdsYfriUA4CQiYD3jD9cTAHAiEfCa8YcxBACcTAQ8ZvxhHAEAFxAB7xl/GEsAwEVEwCfGH8YTAHAhEWD8IQoBABebOQKMP8QhAGCAGSPA+EMsAgAGmSkCjD/EIwBgoBkiwPhDTAIABqscAcYf4hIAEEDFCDD+EJsAgCAqRYDxh/gEAARSIQKMP+QgACCYzBFg/CEPAQABZYwA4w+5CAAIKlMEGH/IRwBAYBkiwPhDTgIAgoscAcYf8hIAkEDECDD+kJsAgCQiRYDxh/wEACQSIQKMP9QgACCZkRFg/KEOAQAJjYgA4w+1CABI6soIMP5QjwCAxK6IAOMPNQkASO7MCDD+UJcAgALOiADjD7UJACiiZwQYf6hPAEAhPSLA+MMcBAAUcyQCjD/MQwBAQXsiwPjDXIYFwD9/+vnuv//Dd99e/Eigpi0RYPzhXI+27dEWXsEJABS2JgKMP8xJAEBxe98TYPyhNgEAE9g65sYf6hMAMIm1o278YQ4CACbydtz/9tc/Pf3fgbo+tNbal19/9duID/7sHf8j3xkJ1f3jz3/8bOzf/jPQT8St+/Vfv3wYGgCtxfyrEQDQS8Sd+/Vfv3zwEgAATEgAAMCEBAAATGh4APiRwABUFfH1/8XwAAAAricAAGBCX7T28a8DjH4g93gZAICsom7YsvkhTgAivBYCAFeIsnkhAgAAuFb4AIh6hAIAj2TYrjABEOVIBADOEmnrfg+AqG8EBAD6uN36MCcAz2Q4SgGA1vJsVqgAiHQ0AgA9Rdu4UAHwTJaiAmBembbqswCI8D6AaIUEAEdF2La3G5/mBAAA6CdVAGQ6WgFgLtk2KmQARDgqAYAeom7auwCI8D6AZ7IVFgD1Rd+me9se8gSgtbjFBABrRd6ysAHwTPTSAmAeWTfpbgBEeRkgcjkBwDNRNuzRpqc8AWgtb3EBUEfmLQofAM8KKvOFByC3ZxsU5bv/Zx4GQJSXAQCAfZ5tefgTgNacAgAQS/bv/ltLEgCt5bmgAMwr01Y9DYAsLwM4BQDgKlk259WGpzkBaM1LAQCMVeHof/EyALKcArQmAgA4T6aNWbPdqU4AWstXWADUl3Gb0gVAa14KAOBalY7+F6sCIOLLACIAgCtkG/+1m53yBGANEQDAUZW3ZHUAZDsFAIAzRdygLVud/gTASwEAnCHb0f9WmwIg4ilAayIAgL4yjv/WjU5/ArCGCABgrVk2Y3MAZDwFaG2eLygA+73aiirf/bdW7ARABACwV9bx32tXAEQ9BWhNBACwXebx37vJpU4AFiIAgLUyj/8RuwMg8ilAayIAgNeyj/+RLT50AiACAMhq5vFvrbXDA/7l11/9dvTPONuaoY/+hQagjyqbcDQADr8HIPopQGvrvpBOAwDqM/6flHwT4D0iAGBuVca/l27fvWd4KaC19SM/05MAoLJq9/1eJ+/dTgAyvBTQ2vovsNMAgPyM/2NdRzvLKcDCcRBAXRXv8WEDoLWaEdBavicJwKyq3td7n7SfcmxfNQJay/eEAZhF5Xv5GS+zn/a6fbYIaK1uNQJUV/n+fdZ77ATAG5ULEqCaGe7Z6QKgtTkioLW8TyqArGa5T5/5N+xO/6t7WSOgtXmeYABZzHRfPvuv11/yd/czR0Br+34mQOYnHUAkM96Dr/jZOgJgpb0/GCj7kxBglJnvu2UCoLUaEdDasZ8QWOFJCXAm99jrfrLupT++t0oEtHb8RwVXeaICHOV++smVP1b/8p/fXykCWuvzOwMqPXkB1nDvfO/q36kz5Bf4VIuA1vr/8qBqT2xgXu6Pr434hXrDfoNfxQhYnPmbBCs+8YEa3Pv2GfXbdIf+Ct/KEdCaXykMcFTl4W9t3Pi3NjgAWqsfAQsxALBO9dFfjBz/1gIEQGvzRMBCDAB8bpbRX4we/9aCBEBr80XALUEAzGa2wb8VYfxbCxQArc0dAbcEAVDNzIN/K8r4txYsAFoTAa+IAyAqI/9cpPFvLWAAtCYCAKgl2vi31toXox/APREvFADsEXXTQgZAa3EvGACsFXnLwgZAa7EvHAA8E33DQgdAa/EvIAC8lWG7wj/AW94cCEBkGYZ/Ef4E4FamCwvAXLJtVKoAaC3fBQagvozblO4B3/KSAAAjZRz+RboTgFuZLzwAuWXfoNQB0Fr+LwAA+VTYnvSfwC0vCQBwpgrDv0h/AnCr0hcGgFiqbUypT+aW0wAAeqg2/IuSn9QtIQDAHlWHf1HqJYB7qn8BAehvhu0o/wnechoAwDMzDP9imk/0lhAA4NZMw7+Y7hO+JQQA5jbj8C+m/cRvCQGAucw8/IvpL8AtIQBQm+H/xIV4QAwA1GD073NRXhACADkZ/udcnA3EAEBsRn89F2onMQAQg9Hfx0XrQAwAXMvoH+cCnkAQAPRl8PtzQS8gCAC2Mfjnc4EHEQUAHxn7MVz0oAQCUIWBj+n/AW5vEUD4fF+kAAAAAElFTkSuQmCC" />
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22Hindsight%20%5Cu2014%20Equity%20Research%20Terminal%22%2C%20%22short_name%22%3A%20%22Hindsight%22%2C%20%22description%22%3A%20%22Self-hosted%20equity%20research%20terminal%20%5Cu2014%20live%20data%2C%20charts%2C%20AI%20analysis.%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22scope%22%3A%20%22.%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22orientation%22%3A%20%22any%22%2C%20%22background_color%22%3A%20%22%23070b0a%22%2C%20%22theme_color%22%3A%20%22%23070b0a%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAHo0lEQVR4nO3bO24cRxSF4UOmDMhMgRNTKzDgyJEBJQa8JcX2kgQoMaDAoQCtQHSiQJkEQzEdjIvqGfb0dFXdW8//iyyBjzF1/q6eIXmlxtzc3T7Wfgzw8%2B3L16vaj2Gp6oNh7JDqRlH8EzN6bCkdQ7FPxvARo1QI7p%2BE4SOHdwhuH5zhw5JXCOYflOHDk3UI15YfjPHDm/XGTGpi%2BKjB4jTIPgEYP2qx2F5WAIwfteVuMPkI8R7/i5f3nh8ehX3%2B%2BOD68VNvh5LeyWP8DH4uHkGkRBD9Dpbj3xq99xUDZZX6t46NIOqNrca/9sVg8HPx3EBMBLvf0GL8p//TjB6Szy72RrDrjazHz/CxxnojeyK4%2BAa542f4iGW5mUsRmP4oxCnGjxTLrXi/OrgZQM7Vn/Ejh1UElzZ89niwGD/DhwWLPZ27FTK/BWL8sBa25HE7tBpA6tWf8cNLbgTnNm12AjB%2BePM4CZ4FkHL15%2Bd4UFrK5ta2bfocgKs/vFlv7CiAnKs/40cpObdCpxvPOgEYP2qxej7wFAC/3YVZLLeefAJw9UdtFqeA688CAa27luJvf7j6oxWpp0DYPCcApkYAmFp0ANz%2BoDU5T4Y5ATC1a17/x6xu7m4fOQEwtagAuP%2B39enta/395y/69PZ17YfSvdTnAZwAlYTR//jzq6M/oywCqGA59n/e/7X69yiDAApbjvzfh/eSiKAmAihobfwBEdRBAIVsjT8ggvIIoIA94w%2BIoCwCcBYz/oAIyiEARynjD4igDAJwkjP%2BgAj8EYADi/EHROCLAIxZjj8gAj8EYMhj/AER%2BCAAI57jD4jAHgEYKDH%2BgAhsEUCmkuMPiMAOAWSoMf6ACGwQQKKa4w%2BIIB8BJGhh/AER5CGASC2NPyCCdAQQocXxB0SQhgB2ann8ARHEI4Adehh/QARxCOCCnsYfEMF%2BBLChx/EHRLAPAZzR8/gDIriMAFaMMP6ACLYRwImRxh8QwXkEsDDi%2BAMiWEcA/xt5/MEyAhwQgOYYfxAi4BQ4mD6AmcZ/iggmD2DW8fN84LtpA5h1/AERHEwZwOzjD4hgwgAY/7HZI5gqAMa/buYIpgmA8W%2BbNYIpAmD8%2B8wYwfABMP44s0UwdACMP81MEQwbAOPPM0sEQwbA%2BG3MEMFwATB%2BW6NHMFQAjN/HyBEMEwDj9zVqBEMEwPjLGDGC7gNg/GWNFkHXATD%2BOkaKoNsAGH9do0TQZQCMvw0jRNBdAIy/Lb1H0FUAjL9NPUfQTQCMv229RtBFAIy/Dz1G0HwAjL8vvUXQdACMv089RdBsAIy/b71EcHVzd/u4941fvLyXJH3%2B%2BOD2gKTjL9iHd29cPxd8/fTr70///cNvf7h%2BrpR9NnkCLL9Qyy8g%2BlJy/KmaDEAigt71MH6p4QAkIuhVL%2BOXGg9AIoLe9DR%2BqYMAJCLoRW/jlzoJQCKC1vU4fqmjACQiaFWv45c6C0Aigtb0PH6pwwAkImhF7%2BOXOg1AIoLaRhi/1HEAEhHUMsr4pc4DkIigtJHGLw0QgEQEpYw2fmmQACQi8Dbi%2BKWBApCIwMuo45cGC0AiAmsjj18aMACJCKyMPn5p0AAkIsg1w/ilgQOQiCDVLOOXBg9AIoJYM41fmiAAiQj2mm380iQBSERwyYzjlyYKQCKCc2YdvzRZABIRnJp5/NKEAUhEEMw%2BfmnSACQiYPwH0wYgzRsB4/9u6gCk5xGMHgLjPzZ9ANJhCDOcBoz/OQJYGDkCxr%2BOAE6MGAHjP48AVowUAePfRgBnjBAB47%2BMADb0HAHj34cALugxAsa/HwHs0FMEjD8OAezUQwSMPx4BRGg5AsafhgAitRgB409HAAlaioDx5yGARC1EwPjzEUCGmhEwfhsEkKlGBIzfDgEYKBkB47dFAEZKRMD47RGAIc8IGL8PAjDmEQHj90MADiwjYPy%2BCMCJRQSM3x8BOMqJgPGXQQDOUiJg/OUQQAExETD%2BsgigkD0RMP7yCKCgrQgYfx0EUNhaBIy/HgKo4NxJwPjLI4BKwtg/vHtz9GeUdXVzd/sY8w4vXt5Lkj5/fHB5QECK1F1yAmBq19%2B%2BfL2q/SCAGr59%2BXrFCYCpRQcQ7rHCPRdQW87zUk4ATI0AMLVr6fBkIOaduA1CK1Jvf8LmOQEwteQAOAVQm8U3ZZ8C4PsBmMVy61m3QJwCqMXqR3KOAkg5BYgApeWM/3Tjpk%2BCiQDerDf2LICcUwAoxeLqLxmeANwKwZvHj%2BKvBpD6ihARwEvu%2BM9t2vwbYUQAa56/hLV5pY/9bbGlZQA8R0AKqw1t3dFsngA53xxbPmBOA8QqMX7J%2BWeBiAApSt497LrC59wKBdwS4RLrjey5g9l9i2MdgUQIOPDYxd7b96h7fIsIpPXbIWKYi%2BcGYp67Rj/JtYpA2n5eQBBjKfVvHfvCTdKrPJYRBDxJnovHBS7lVcvklzk9IlgiiLF4n%2BipL9ln/RKMdwTAHjnfr8r6PgC/RYbacjeY/Y0wIkAtFtszHS%2B3RCjB8qJr%2BqMQnAbwZr0xt8FyGsCS18XV/YpNCMjhfVdR7JaFEBCj1O108Xt2QsCW0s8jqz5pJQZIdV88ae5VG6IYW2uvFP4HRI59ZP68j00AAAAASUVORK5CYII%3D%22%2C%20%22sizes%22%3A%20%22192x192%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%20maskable%22%7D%2C%20%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAXOklEQVR4nO3dPY4k15WG4dt0aZCeDDpDrmCAWcAA4xCYLcnmlgTIEaAFENAKSDky5IkY0OYYrWBnV%2BVP/NyIe865z%2BORgrqyopLxvXUzu%2BpDI6Qvv/7qt9GPAaCHX//1y4fRj4H3fFEGMfAAHwmEMVz0Cxh7gG1Ewflc4BMYfIC%2BBEF/LmgHBh/gWoLgOBdwJ6MPEIMY2MdF28DoA8QmBtZzoV4w%2BgA5iYHnXJwHDD9ADULgPhflhtEHqE0MfOJCNMMPMBshMHkAGH6Auc0cAlN%2B4oYfgFszhsBUn7DhB%2BCZmUJgik/U8AOwxQwh8MXoB3A24w/AVjNsR9nCmeGLB8D5qp4GlPukDD8AZ6gWAqVeAjD%2BAJyl2saUqJlqXxQAYqtwGpD%2BBMD4A3C1CtuTOgAqfAEAyCn7BqU8wsh%2B0QGoJeNLAulOAIw/ANFk3KZUAZDxAgMwh2wbleLIIttFBWBuGV4SCH8CYPwByCbDdoUOgAwXEADuib5hYQMg%2BoUDgFcib1nIAIh8wQBgi6ibFu5NClEvVBR/%2BO7b0Q8B4K5//vTz6IcQWrQ3BoZ6MMb/IyMPVCMOPooUAWEeyMzjb/CB2cwcBFEiIMSDmG38DT7A52YLgggRMPwBzDL%2BRh9gnVliYHQEDP3g1cff6AMcUz0GRkbAsA9cefzPHP7q/zEAebn37TMqAoZ80Irj3/uJX/nJDszF/fG1ERFw%2BQesNv49ntgVn8wAz7h3vnd1BFz6wSqN/9Enb7UnLsBe7qefXBkBl32gKuN/5Ila6UkKcAb32Osi4JIPUmH89z4pqzwhAa428333iggQACvseRJWeAICRDDjPbhEAGQe/61PuuxPOIDoZrovnx0Bp/7hWcd/picYQEaz3KfPjIDT/uAZxj/rEwqgihnu2WdFgAC4sfaJlPVJBFBV5ft3qgDINv4zFCRAdZXv5WdEQPc/sOr4Z3uyAMyq6n29dwR0/cMqjn%2B2JwgAH1W8x/eMgCkDoGodAvC5avf7ngHwRa8/yPgDEM3ae/mZv8q4p55b26UkKo2/4QeoqdIG9DgJ6HYCEF2lLzwA2625x2c5CejhcABk%2BO7f%2BAPQWp0I6LG9h48QogfAqy%2Bk4QeYU/Z9OPoywKETAOMPQFavNiD6ScDRDd4dAMYfgOxmjoCSbwI0/gCslT0C9toVAJG/%2Bzf%2BAGyVOQL2bnKpEwDjD8BemSNgj80BEPW7f%2BMPwFFZI2DPNpc6AXjE%2BAOw1iybsSkAMn73P8sXEoB%2Bnm1HlVOA9CcAxh%2BAM2SMgC1WB0DE7/4rfAEAyCniBm3Z6vQnAI/47h%2BAoypvyaoAyPbdf%2BUvGADXyvZSwNrNTnkCYPwBuFK2CFgjXQBkvdAA1JVxm14GQMTj/0d89w/AWTJtzJrtTnUC4OgfgJEqvRTwNACyfPdv/AG4SpbNebXhaU4AspUVAPPJtFUpAsDRPwCRVHgp4GEAZDn%2BBwDue7bl4U8AfPcPQETZTwHCB8Ajxh%2BA0TJv0d0AiHL8n6GgAOCeKBv2aNNTngBkLi4Aasm6SWEDIEo5AcBekbfsXQBEOf5/JGtpAVBX9G26t%2B0hTwAiFxMAbBF100IGwCPRCwuAeWXbqFQBAAD08VkARHj9P%2BpRCQDsFWHb3m58mhOAbEcrAMwn01aFCoAIhQQAZ4i2caEC4JFMRQXA3LJs1u8BEOH1fwDgPLdbH%2BYEINrRCAD0FmnrwgTAI1mOUgBgkWG7wgcAANBfiACIdCQCAGeKsnlftBb3DYAZjlAA4J6oG7ZsfogTAADgWgIAACY0PAAevRYS9egEANZ6tGUR3gcwPAAAgOsJAACYkAAAgAkNDYAIr4HAjP7x5z8%2B/WfgfKM38MPInwHgDYBwvdux//uPf2n/8V//8/s/f/P9DyMeEpQXce%2B8BAATefud/u343/vfgboEAExi7biLAJiDAIAJbB11EQD1CQAo7tmY//3Hv%2Bz6/wH5CQAo7NmI/9/PP7bWRADMalgARHxHJFSyZvwXIgDOFfFHAjsBgIK2jP9CBMBcBAAUs2f8FyIA5iEAoJAj478QATAHAQBF9Bj/hQiA%2BgQAFNBz/BciAGoTAJDcGeO/EAFQlwCAxM4c/4UIgJoEACR1xfgvRADUIwAgoSvHfyECoBYBAMmMGP%2BFCIA6BAAkMnL8FyIAahAAkESE8V%2BIAMhPAEACkcZ/IQIgNwEAwUUc/4UIgLwEAAQWefwXIgByEgAQVIbxX4gAyEcAQECZxn8hAiAXAQDBZBz/hQiAPAQABJJ5/BciAHIQABBEhfFfiACITwBAAJXGfyECIDYBAINVHP%2BFCIC4BAAMVHn8FyIAYhIAMMgM478QARCPAIABZhr/hQiAWAQAXGzG8V%2BIAIhDAMCFZh7/hQiAGAQAXMT4fyICYDwBABcw/u%2BJABhLAMDJjP9jIgDGEQBwIuP/mgiAMQQAnMT4rycC4HoCAE5g/LcTAXAtAQCdGf/9RABcRwBAR8b/OBEA1xAA0Inx70cEwPkEAHRg/PsTAXAuAQAHGf/ziAA4jwCAA4z/%2BUQAnEMAwE7G/zoiAPoTALCD8b%2BeCIC%2BBABsZPzHEQHQjwCADYz/eCIA%2BhAAsJLxj0MEwHECAFYw/vGIADhGAMALxj8uEQD7CQB4wvjHJwJgHwEADxj/PEQAbCcA4A7jn48IgG0EALxh/PMSAbCeAIAbxj8/EQDrCAD4N%2BNfhwiA1wQANONfkQiA5wQA0zP%2BdYkAeEwAMDXjX58IgPsEANMy/vMQAfCeAGBKxn8%2BIgA%2BJwCYjvGflwiATwQAUzH%2BiAD4SAAwDePPQgSAAGASxp%2B3RACzEwCUZ/x5RAQwMwFAacafV0QAsxIAlGX8WUsEMCMBQEnGn61EALMRAJRj/NlLBDATAUApxp%2BjRACzEACUYfzpRQQwAwFACcaf3kQA1QkA0jP%2BnOVZBEB2AoDUjD9nexQBTgHITgCQlvHnKiKAigQAKRl/riYCqEYAkI7xJxoRQEYCgFSMPyP5mwFUIgBIw/gTgQigCgFACsafSEQAFQgAwjP%2BRCQCyE4AEJrxJzIRQGYCgLCMPxmIALISAIRk/MlEBJCRACAc409GIoBsBAChGH8yEwFkIgAIw/hTgQggCwFACMafSkQAGQgAhjP%2BVCQCiE4AMJTxpzIRQGQCgGGMPzMQAUQlABjC%2BDMTEUBEAoDLGX9mJAKIRgBwKePPzEQAkQgALmP8QQQQhwDgEsYfPhEBRCAAOJ3xh/dEAKMJAE5l/OExEcBIAoDTGH94TQQwigDgFMYf1hMBjCAA6M74w3YigKsJALoy/rCfCOBKAoBujD8cJwK4igCgC%2BMP/YgAriAAOMz4Q38igLMJAA4x/nAeEcCZBAC7GX84nwjgLAKAXYw/XEcEcAYBwGbGH64nAuhNALCJ8YdxRAA9CQBWM/4wngigFwHAKsYf4hAB9CAAeMn4QzwigKMEAE8Zf4hLBHCEAOAh4w/xiQD2EgDcZfwhDxHAHgKAd4w/5CMC2EoA8BnjD3mJALYQAPzO%2BEN%2BIoC1BACtNeMPlYgA1hAAGH8oSATwigCYnPGHukQAzwiAiRl/qE8E8IgAmJTxh3mIAO4RABMy/jAfEcBbAmAyxh/mJQK4JQAmYvwBEcBCAEzC%2BAMLEUBrAmAKxh94SwQgAIoz/sAjImBuAqAw4w%2B8IgLmJQCKMv7AWiJgTgKgIOMPbCUC5iMAijH%2BwF4iYC4CoBDjDxwlAuYhAIow/kAvImAOAqAA4w/0JgLqEwDJGX/gLCKgNgGQmPEHziYC6hIASRl/4CoioCYBkJDxB64mAuoRAMkYf2AUEVCLAEjE%2BAOjiYA6BEASxh%2BIQgTUIAASMP5ANCIgPwEQnPEHohIBuQmAwIw/EJ0IyEsABGX8gSxEQE4CICDjD2QjAvIRAMEYfyArEZDLhy%2B//uq3ER/4D999e/ff//Onny9%2BJPHc%2Bw/lb3/904BHArDdf/73/777d998/8OARxJLtN1zAhDMo0q%2B9x8UQDSP7lVOAOIRAME8q2QRAET27B7lBCAeARCQCACyMf75CICgRACQhfHPSQAEJgKA6Ix/XgIgOBEARGX8cxMACYgAIBrjn58ASEIEAFEY/xoEQCIiABjN%2BNchAJIRAcAoxr8WAZCQCACuZvzrEQBJiQDgKsa/JgGQmAgAzmb86xIAyYkA4CzGvzYBUIAIAHoz/vUJgCJEANCL8Z%2BDAChEBABHGf95CIBiRACwl/GfiwAoSAQAWxn/%2BQiAokQAsJbxn5MAKEwEAK8Y/3kJgOJEAPCI8Z%2BbAJiACADeMv4IgEmIAGBh/GlNAExFBADGn4UAmIwIgHkZf24JgAmJAJiP8ectATApEQDzMP7cIwAmJgKgPuPPIwJgciIA6jL%2BPCMAEAFQkPHnFQFAa00EQCXGnzUEAL8TAZCf8WctAcBnRADkZfzZQgDwjgiAfIw/WwkA7hIBkIfxZw8BwEMiAOIz/uwlAHhKBEBcxp8jBAAviQCIx/hzlABgFREAcRh/ehAArCYCYDzjTy8CgE1EAIxj/OlJALCZCIDrGX96EwDsIgLgOsafMwgAdhMBcD7jz1kEAIeIADiP8edMAoDDRAD0Z/w5mwCgCxEA/Rh/riAA6EYEwHHGn6sIALoSAbCf8edKAoDuRABsZ/y5mgDgFCIA1jP%2BjCAAOI0IgNeMP6MIAE4lAuAx489IAoDTiQB4z/gzmgDgEiIAPjH%2BRCAAuIwIAONPHAKAS4kAZmb8iUQAcDkRwIyMP9EIAIYQAczE%2BBORAGAYEcAMjD9RCQCGEgFUZvyJTAAwnAigIuNPdAKAEEQAlRh/MhAAhCECqMD4k4UAIBQRQGbGn0wEAOGIADIy/mQjAAhJBJCJ8ScjAUBYIoAMjD9ZCQBCEwFEZvzJTAAQngggIuNPdgKAFEQAkRh/KhAApCECiMD4U4UAIBURwEjGn0oEAOm8igAhwBmMP9UIAFJ6dcMVAfRk/KlIAJCWCOAKxp%2BqBACpffP9D94XwGmMP5UJAEoQAfRm/KlOAFCGCKAX488MBACliACOMv7MQgBQjghgL%2BPPTAQAJYkAtjL%2BzEYAUJYIYC3jz4wEAKWJAF4x/sxKAFCeCOAR48/MBABTEAG8ZfyZnQBgGiKAhfEHAcBkRADGHz4SAExHBMzL%2BMMnAoApiYD5GH/4nABgWiJgHsYf3hMATE0E1Gf84T4BwPREQF3GHx4TANBEQEXGH54TAPBvIqAO4w%2BvCQC4IQLyM/6wjgCAN0RAXsYf1hMAcIcIyMf4wzYCAB4QAXkYf9hOAMATIiA%2B4w/7CAB4QQTEZfxhPwEAK4iAeIw/HCMAYCUREIfxh%2BMEAGwgAsYz/tCHAICNRMA4xh/6EQCwgwi4nvGHvgQA7CQCrmP8oT8BAAeIgPMZfziHAICDRMB5jD%2BcRwBAByKgP%2BMP5xIA0IkI6Mf4w/kEAHQkAo4z/nANAQCdiYD9jD9cRwDACUTAdsYfriUA4CQiYD3jD9cTAHAiEfCa8YcxBACcTAQ8ZvxhHAEAFxAB7xl/GEsAwEVEwCfGH8YTAHAhEWD8IQoBABebOQKMP8QhAGCAGSPA%2BEMsAgAGmSkCjD/EIwBgoBkiwPhDTAIABqscAcYf4hIAEEDFCDD%2BEJsAgCAqRYDxh/gEAARSIQKMP%2BQgACCYzBFg/CEPAQABZYwA4w%2B5CAAIKlMEGH/IRwBAYBkiwPhDTgIAgoscAcYf8hIAkEDECDD%2BkJsAgCQiRYDxh/wEACQSIQKMP9QgACCZkRFg/KEOAQAJjYgA4w%2B1CABI6soIMP5QjwCAxK6IAOMPNQkASO7MCDD%2BUJcAgALOiADjD7UJACiiZwQYf6hPAEAhPSLA%2BMMcBAAUcyQCjD/MQwBAQXsiwPjDXIYFwD9/%2Bvnuv//Dd99e/Eigpi0RYPzhXI%2B27dEWXsEJABS2JgKMP8xJAEBxe98TYPyhNgEAE9g65sYf6hMAMIm1o278YQ4CACbydtz/9tc/Pf3fgbo%2BtNbal19/9duID/7sHf8j3xkJ1f3jz3/8bOzf/jPQT8St%2B/Vfv3wYGgCtxfyrEQDQS8Sd%2B/Vfv3zwEgAATEgAAMCEBAAATGh4APiRwABUFfH1/8XwAAAAricAAGBCX7T28a8DjH4g93gZAICsom7YsvkhTgAivBYCAFeIsnkhAgAAuFb4AIh6hAIAj2TYrjABEOVIBADOEmnrfg%2BAqG8EBAD6uN36MCcAz2Q4SgGA1vJsVqgAiHQ0AgA9Rdu4UAHwTJaiAmBembbqswCI8D6AaIUEAEdF2La3G5/mBAAA6CdVAGQ6WgFgLtk2KmQARDgqAYAeom7auwCI8D6AZ7IVFgD1Rd%2Bme9se8gSgtbjFBABrRd6ysAHwTPTSAmAeWTfpbgBEeRkgcjkBwDNRNuzRpqc8AWgtb3EBUEfmLQofAM8KKvOFByC3ZxsU5bv/Zx4GQJSXAQCAfZ5tefgTgNacAgAQS/bv/ltLEgCt5bmgAMwr01Y9DYAsLwM4BQDgKlk259WGpzkBaM1LAQCMVeHof/EyALKcArQmAgA4T6aNWbPdqU4AWstXWADUl3Gb0gVAa14KAOBalY7%2BF6sCIOLLACIAgCtkG/%2B1m53yBGANEQDAUZW3ZHUAZDsFAIAzRdygLVud/gTASwEAnCHb0f9WmwIg4ilAayIAgL4yjv/WjU5/ArCGCABgrVk2Y3MAZDwFaG2eLygA%2B73aiirf/bdW7ARABACwV9bx32tXAEQ9BWhNBACwXebx37vJpU4AFiIAgLUyj/8RuwMg8ilAayIAgNeyj/%2BRLT50AiACAMhq5vFvrbXDA/7l11/9dvTPONuaoY/%2BhQagjyqbcDQADr8HIPopQGvrvpBOAwDqM/6flHwT4D0iAGBuVca/l27fvWd4KaC19SM/05MAoLJq9/1eJ%2B/dTgAyvBTQ2vovsNMAgPyM/2NdRzvLKcDCcRBAXRXv8WEDoLWaEdBavicJwKyq3td7n7SfcmxfNQJay/eEAZhF5Xv5GS%2Bzn/a6fbYIaK1uNQJUV/n%2BfdZ77ATAG5ULEqCaGe7Z6QKgtTkioLW8TyqArGa5T5/5N%2BxO/6t7WSOgtXmeYABZzHRfPvuv11/yd/czR0Br%2B34mQOYnHUAkM96Dr/jZOgJgpb0/GCj7kxBglJnvu2UCoLUaEdDasZ8QWOFJCXAm99jrfrLupT%2B%2Bt0oEtHb8RwVXeaICHOV%2B%2BsmVP1b/8p/fXykCWuvzOwMqPXkB1nDvfO/q36kz5Bf4VIuA1vr/8qBqT2xgXu6Pr434hXrDfoNfxQhYnPmbBCs%2B8YEa3Pv2GfXbdIf%2BCt/KEdCaXykMcFTl4W9t3Pi3NjgAWqsfAQsxALBO9dFfjBz/1gIEQGvzRMBCDAB8bpbRX4we/9aCBEBr80XALUEAzGa2wb8VYfxbCxQArc0dAbcEAVDNzIN/K8r4txYsAFoTAa%2BIAyAqI/9cpPFvLWAAtCYCAKgl2vi31toXox/APREvFADsEXXTQgZAa3EvGACsFXnLwgZAa7EvHAA8E33DQgdAa/EvIAC8lWG7wj/AW94cCEBkGYZ/Ef4E4FamCwvAXLJtVKoAaC3fBQagvozblO4B3/KSAAAjZRz%2BRboTgFuZLzwAuWXfoNQB0Fr%2BLwAA%2BVTYnvSfwC0vCQBwpgrDv0h/AnCr0hcGgFiqbUypT%2BaW0wAAeqg2/IuSn9QtIQDAHlWHf1HqJYB7qn8BAehvhu0o/wnechoAwDMzDP9imk/0lhAA4NZMw7%2BY7hO%2BJQQA5jbj8C%2Bm/cRvCQGAucw8/IvpL8AtIQBQm%2BH/xIV4QAwA1GD073NRXhACADkZ/udcnA3EAEBsRn89F2onMQAQg9Hfx0XrQAwAXMvoH%2BcCnkAQAPRl8PtzQS8gCAC2Mfjnc4EHEQUAHxn7MVz0oAQCUIWBj%2Bn/AW5vEUD4fF%2BkAAAAAElFTkSuQmCC%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%20maskable%22%7D%5D%7D" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Spline+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+ --bg:#070b0a;--panel:#0f1514;--panel2:#0b100f;--panel3:#131b19;--border:#223230;--bsoft:#18221f;
+ --text:#ece9e1;--muted:#94a09a;--faint:#5f6a64;--accent:#e3a857;--accent2:#f0c98a;
+ --green:#5fd39a;--red:#e87a64;--blue:#74b3d6;--violet:#bd95d8;--track:#1a2422;--track2:#243330;
+ --mono:'JetBrains Mono',monospace;--serif:'Fraunces',serif;--sans:'Spline Sans',sans-serif;
+}
+*{box-sizing:border-box;}
+html{-webkit-font-smoothing:antialiased;}
+body{margin:0;color:var(--text);font-family:var(--sans);padding-bottom:80px;
+ background:
+  radial-gradient(1200px 600px at 70% -10%,rgba(227,168,87,.08),transparent 60%),
+  radial-gradient(900px 500px at 0% 0%,rgba(116,179,214,.05),transparent 55%),
+  url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.92  0 0 0 0 0.86  0 0 0 0 0.73  0 0 0 0.035 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
+  var(--bg);
+ background-attachment:fixed;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{color:var(--accent2);}
+button{font-family:inherit;cursor:pointer;}
+::selection{background:rgba(227,168,87,.25);}
+.hd{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border);background:rgba(8,12,11,.86);backdrop-filter:blur(14px);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.hd .brand{font-family:var(--serif);font-size:30px;font-weight:600;letter-spacing:-.7px;line-height:1;}
+.hd .brand:before{content:"◆";color:var(--accent);font-size:15px;margin-right:11px;vertical-align:3px;}
+.hd .sub{font-family:var(--mono);font-size:10px;letter-spacing:2.8px;color:var(--faint);text-transform:uppercase;margin-left:14px;padding-left:14px;border-left:1px solid var(--bsoft);}
+.live{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10px;letter-spacing:1.8px;color:var(--muted);white-space:nowrap;}
+.dot{width:7px;height:7px;border-radius:99px;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 28px 0;}
+.tabs{display:flex;gap:0;margin-bottom:22px;flex-wrap:wrap;border-bottom:1px solid var(--bsoft);}
+.tab{padding:13px 22px 14px;border:none;border-bottom:2px solid transparent;background:transparent;color:var(--muted);font-family:var(--mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;transition:all .14s ease;position:relative;top:1px;white-space:nowrap;}
+.tab:hover{color:var(--text);}
+.tab.on{border-bottom-color:var(--accent);color:var(--accent2);}
+.row{display:flex;gap:9px;flex-wrap:wrap;}
+input{flex:1;min-width:130px;background:var(--panel);border:1px solid var(--border);border-radius:11px;padding:14px 16px;color:var(--text);font-size:15px;font-family:var(--sans);outline:none;transition:border-color .16s;}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(227,168,87,.1);}
+.go{background:linear-gradient(180deg,var(--accent2),var(--accent));color:#241704;border:none;border-radius:11px;padding:0 26px;font-weight:600;font-size:14px;letter-spacing:.3px;transition:filter .16s,transform .06s;}
+.go:hover:not(:disabled){filter:brightness(1.08);}
+.go:active{transform:translateY(1px);}
+.go:disabled{background:var(--track2);color:var(--faint);cursor:default;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px;}
+.chip{background:rgba(255,255,255,.015);border:1px solid var(--bsoft);color:var(--muted);border-radius:99px;padding:6px 13px;font-size:12px;font-family:var(--mono);transition:all .14s;}
+.chip:hover{border-color:var(--accent);color:var(--accent2);}
+.panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--bsoft);border-radius:14px;padding:20px 22px;box-shadow:0 1px 0 rgba(255,255,255,.02) inset,0 8px 30px -18px rgba(0,0,0,.7);animation:rise .45s cubic-bezier(.2,.7,.3,1) both;}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.label{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.label.a{color:var(--accent);}.label.g{color:var(--green);}.label.r{color:var(--red);}.label.b{color:var(--blue);}
+.muted{color:var(--muted);}.faint{color:var(--faint);}.mono{font-family:var(--mono);}.serif{font-family:var(--serif);}
+.bigname{font-family:var(--serif);font-size:30px;font-weight:600;letter-spacing:-.5px;line-height:1.05;}
+.stat{display:flex;flex-direction:column;gap:4px;}
+.statrow{display:flex;gap:26px;flex-wrap:wrap;}
+.frow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bsoft);font-family:var(--mono);font-size:13px;}
+.frow:last-child{border-bottom:none;}
+.newsrow{padding:13px 0;border-bottom:1px solid var(--bsoft);}
+.newsrow:last-child{border-bottom:none;}
+.newsrow .h{font-size:14.5px;font-weight:500;line-height:1.45;color:var(--text);transition:color .14s;}
+.newsrow a.h:hover{color:var(--accent2);}
+.newsrow .s{font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-top:7px;}
+.bar{background:var(--track);border-radius:99px;height:8px;overflow:hidden;}
+.bar>i{display:block;height:100%;border-radius:99px;transition:width .6s cubic-bezier(.2,.7,.3,1);}
+.metric{display:flex;align-items:center;gap:10px;margin-bottom:7px;}
+.metric .k{font-family:var(--mono);font-size:10px;color:var(--faint);width:80px;text-transform:uppercase;letter-spacing:.5px;}
+.metric .n{font-family:var(--mono);font-size:11px;color:var(--text);width:30px;text-align:right;font-variant-numeric:tabular-nums;}
+.star{background:none;border:none;color:var(--faint);font-size:17px;padding:2px;transition:color .14s,transform .1s;}
+.star:hover{transform:scale(1.15);}
+.star.on{color:var(--accent);}
+.dig{background:rgba(227,168,87,.1);border:1px solid rgba(227,168,87,.32);color:var(--accent);border-radius:8px;padding:5px 11px;font-size:11px;font-family:var(--mono);transition:all .14s;white-space:nowrap;}
+.dig:hover{background:rgba(227,168,87,.2);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:620px){.grid2{grid-template-columns:1fr;}}
+.center{text-align:center;}
+.note{font-family:var(--mono);font-size:9.5px;color:var(--faint);margin-top:12px;line-height:1.5;}
+.foot{margin-top:46px;padding-top:20px;border-top:1px solid var(--bsoft);font-size:11px;color:var(--faint);line-height:1.7;font-family:var(--mono);}
+.settings{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:16px;}
+.settings input{width:100%;margin-top:7px;font-size:13px;padding:11px 13px;font-family:var(--mono);}
+.settings .lbl{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+.settings .save{margin-top:14px;background:linear-gradient(180deg,var(--accent2),var(--accent));color:#241704;border:none;border-radius:10px;padding:10px 20px;font-weight:600;}
+.toggle{background:rgba(255,255,255,.02);border:1px solid var(--border);color:var(--muted);border-radius:99px;padding:6px 14px;font-family:var(--mono);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;transition:all .14s;white-space:nowrap;}
+.toggle:hover{color:var(--text);border-color:var(--accent);}
+.empty{margin-top:60px;text-align:center;color:var(--faint);font-size:14px;line-height:1.8;}
+.spin{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:1px;text-align:center;margin-top:40px;}
+.spin:after{content:"";display:inline-block;width:5px;height:5px;border-radius:99px;background:var(--accent);margin-left:6px;animation:blink 1s infinite;}
+@keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+/* peer + watch cards */
+.peer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;margin-top:4px;}
+.peer-card{background:var(--panel3);border:1px solid var(--bsoft);border-radius:11px;padding:13px 15px;cursor:pointer;text-align:left;transition:all .14s;display:flex;flex-direction:column;gap:5px;font-family:var(--mono);position:relative;overflow:hidden;}
+.peer-card:hover{border-color:var(--accent);background:var(--panel);transform:translateY(-2px);}
+.peer-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);opacity:0;transition:opacity .14s;}
+.peer-card:hover:before{opacity:1;}
+.pc-tk{font-size:13px;color:var(--accent2);font-weight:600;letter-spacing:.4px;}
+.pc-px{font-size:15px;color:var(--text);font-variant-numeric:tabular-nums;letter-spacing:-.3px;}
+.pc-chg{font-size:11px;font-variant-numeric:tabular-nums;letter-spacing:.2px;color:var(--faint);}
+.pc-chg.pos{color:var(--green);}
+.pc-chg.neg{color:var(--red);}
+.pc-skel{display:inline-block;width:50px;height:10px;background:linear-gradient(90deg,var(--bsoft),var(--track),var(--bsoft));background-size:200% 100%;border-radius:3px;animation:shimmer 1.4s infinite;}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.watch-grid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));}
+.watch-card{padding:14px 16px 13px;min-height:108px;}
+.watch-card .star{position:absolute!important;top:8px;right:8px;font-size:13px;padding:2px 4px;}
+.wc-name{font-family:var(--sans);font-size:12px;color:var(--muted);line-height:1.3;margin-top:1px;max-height:32px;overflow:hidden;padding-right:18px;}
+
+/* metric grids — editorial tabular */
+.kgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px 32px;margin-top:6px;}
+.kgroup{break-inside:avoid;border-top:1px solid var(--bsoft);padding-top:14px;margin-top:10px;}
+.kgroup:first-child,.kgroup:nth-child(2),.kgroup:nth-child(3){border-top:none;padding-top:0;margin-top:0;}
+@media(max-width:980px){.kgroup:nth-child(3){border-top:1px solid var(--bsoft);padding-top:14px;margin-top:10px;}}
+@media(max-width:680px){.kgroup:nth-child(2){border-top:1px solid var(--bsoft);padding-top:14px;margin-top:10px;}}
+.kgroup-title{font-family:var(--mono);font-size:9.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:9px;}
+.kgroup-title:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--bsoft),transparent);}
+.krow{display:grid;grid-template-columns:1fr auto;align-items:baseline;padding:6px 0;font-family:var(--mono);gap:14px;line-height:1.1;border-bottom:1px dotted transparent;transition:border-color .12s;}
+.krow:hover{border-bottom-color:var(--bsoft);}
+.krow .kk{color:var(--muted);font-size:11.5px;letter-spacing:.2px;white-space:nowrap;text-transform:lowercase;}
+.krow .kv{color:var(--text);font-variant-numeric:tabular-nums;text-align:right;font-size:15px;letter-spacing:-.3px;white-space:nowrap;font-weight:500;}
+.krow .kv.pos{color:var(--green);}
+.krow .kv.neg{color:var(--red);}
+.krow .kv .kunit{color:var(--faint);font-size:10.5px;margin-left:2px;font-weight:400;}
+
+/* output grid */
+#out{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:18px;}
+#out > .panel,#out > div{grid-column:span 12;}
+.s4{grid-column:span 4!important;}
+.s5{grid-column:span 5!important;}
+.s6{grid-column:span 6!important;}
+.s7{grid-column:span 7!important;}
+.s8{grid-column:span 8!important;}
+.s12{grid-column:span 12!important;}
+@media(max-width:900px){.s4,.s5,.s6,.s7,.s8{grid-column:span 12!important;}}
+
+/* hero company block */
+.hero-co{padding:24px 26px 22px;}
+.hero-co .head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;}
+.hero-co .name{font-family:var(--serif);font-size:42px;font-weight:600;letter-spacing:-.9px;line-height:1.02;}
+.hero-co .ticker{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:2px;margin-top:8px;}
+.hero-co .pxblock{text-align:right;}
+.hero-co .px{font-family:var(--serif);font-size:46px;font-weight:600;letter-spacing:-1.4px;line-height:1;font-variant-numeric:tabular-nums;}
+.hero-co .chgpill{font-family:var(--mono);font-size:13px;padding:5px 11px;border-radius:7px;display:inline-block;margin-top:9px;}
+.hero-co .meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--bsoft);font-family:var(--mono);font-size:11px;}
+.hero-co .meta > div{min-width:0;}
+.hero-co .meta .mk{color:var(--faint);letter-spacing:1.4px;text-transform:uppercase;font-size:9.5px;margin-bottom:4px;white-space:nowrap;}
+.hero-co .meta .mv{color:var(--text);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap;}
+
+/* hero chart + timeframe pills */
+.chartwrap{margin-top:18px;padding-top:16px;border-top:1px solid var(--bsoft);}
+.chart-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:14px;flex-wrap:wrap;}
+.chart-label{font-family:var(--mono);font-size:9.5px;letter-spacing:1.4px;color:var(--faint);text-transform:uppercase;}
+.tfpills{display:flex;gap:4px;font-family:var(--mono);}
+.tfp{background:transparent;border:1px solid var(--bsoft);color:var(--muted);border-radius:6px;padding:5px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .12s;}
+.tfp:hover{color:var(--text);border-color:var(--track2);}
+.tfp.on{background:rgba(227,168,87,.12);border-color:var(--accent);color:var(--accent2);}
+.chart-svg-wrap{min-height:160px;}
+.chart-skel{height:160px;background:linear-gradient(90deg,var(--bsoft),var(--track),var(--bsoft));background-size:200% 100%;border-radius:8px;animation:shimmer 1.4s infinite;}
+
+/* AI cache meta tag */
+.ai-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:1px;color:var(--faint);text-transform:none;margin-left:8px;font-weight:400;}
+.ai-tag.fresh{color:var(--green);}
+.label .toggle{margin-left:auto;font-size:9.5px;padding:4px 10px;}
+.compare-btn{margin-left:10px;padding:3px 9px;font-size:10px;letter-spacing:.5px;text-transform:none;}
+/* charts */
+.chead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+.clab{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.cgrow{font-family:var(--mono);font-size:11px;}
+svg text{font-family:var(--mono);}
+.pchart{cursor:crosshair;}
+.cx-line{position:absolute;top:0;bottom:0;width:1px;background:var(--track2);display:none;pointer-events:none;}
+.cx-dot{position:absolute;width:9px;height:9px;border-radius:99px;transform:translate(-50%,-50%);box-shadow:0 0 0 3px rgba(7,11,10,.6);display:none;pointer-events:none;z-index:3;}
+.cx-tip{position:absolute;top:4px;background:rgba(19,27,25,.97);border:1px solid var(--border);border-radius:8px;padding:5px 10px;font-family:var(--mono);font-size:11px;white-space:nowrap;display:none;pointer-events:none;z-index:4;}
+.cval{font-size:10.5px;font-weight:600;}
+.cax{font-size:10px;}
+/* price hero */
+.hero{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;}
+.hero .px{font-family:var(--serif);font-size:38px;font-weight:600;letter-spacing:-1px;line-height:1;}
+.chgpill{font-family:var(--mono);font-size:13px;padding:5px 11px;border-radius:8px;}
+/* map */
+.clusters{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:16px;}
+.cluster{background:linear-gradient(180deg,var(--panel3),var(--panel2));border:1px solid var(--bsoft);border-radius:14px;padding:0 13px 14px;overflow:hidden;transition:transform .14s;}
+.cluster:hover{transform:translateY(-2px);}
+.cluster .ct{text-align:center;font-weight:600;font-size:14.5px;font-family:var(--serif);padding:13px 0 11px;letter-spacing:.2px;}
+.subg{background:rgba(0,0,0,.22);border:1px solid var(--bsoft);border-radius:10px;padding:10px;margin-bottom:10px;}
+.subg .st{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;text-align:center;margin-bottom:9px;}
+.cochips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;}
+.cochip{background:var(--panel);border:1px solid var(--border);border-radius:9px;padding:7px 11px;min-width:74px;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;transition:transform .12s,border-color .12s,background .12s;}
+.cochip:hover:not([disabled]){transform:translateY(-2px);border-color:var(--accent);background:var(--panel3);}
+.cochip[disabled]{opacity:.5;}
+.cochip .t{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.3px;}
+.cochip .n{font-size:11.5px;color:var(--text);}
+.theme-card:hover{border-color:var(--accent)!important;transform:translateY(-2px);background:var(--panel)!important;}
+.pill{display:inline-block;border:1px solid var(--accent);background:linear-gradient(180deg,rgba(227,168,87,.14),rgba(227,168,87,.05));border-radius:10px;padding:10px 20px;font-family:var(--serif);font-size:15px;box-shadow:0 0 30px rgba(227,168,87,.22);}
+.col{flex:1;min-width:250px;}
+.err{border-color:var(--red);color:var(--red);}
+ul{margin:0;padding-left:18px;}
+li{margin-bottom:7px;line-height:1.5;}
+
+
+/* ---------------- mobile / phone ---------------- */
+html,body{max-width:100%;overflow-x:hidden;}
+@media(max-width:640px){
+  body{padding-bottom:calc(48px + env(safe-area-inset-bottom));}
+  .hd{padding:calc(11px + env(safe-area-inset-top)) 16px 12px;gap:10px;}
+  .hd .brand{font-size:21px;}
+  .hd .brand:before{font-size:11px;margin-right:8px;vertical-align:2px;}
+  .hd .sub{display:none;}
+  .hd > div:last-child{gap:10px!important;}
+  .live{font-size:9px;letter-spacing:1.2px;gap:6px;}
+  #setBtn{padding:7px 11px;font-size:11px;}
+  .wrap{padding:16px max(14px,env(safe-area-inset-right)) 0 max(14px,env(safe-area-inset-left));}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:16px;scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{padding:11px 14px 12px;font-size:10px;letter-spacing:1.3px;flex:0 0 auto;}
+  #out{gap:12px;margin-top:14px;}
+  .panel{padding:18px 15px;border-radius:13px;}
+  .hero-co{padding:18px 15px 16px;}
+  .hero-co .head{flex-direction:column;align-items:flex-start;gap:10px;}
+  .hero-co .pxblock{text-align:left;}
+  .hero-co .name{font-size:29px!important;letter-spacing:-.5px;}
+  .hero-co .px{font-size:34px;letter-spacing:-1px;}
+  .hero-co .ticker{font-size:10.5px;letter-spacing:1.4px;}
+  .hero-co .meta{gap:12px 18px;margin-top:14px;}
+  .hero .px{font-size:30px;}
+  .bigname{font-size:30px!important;}
+  input{font-size:16px;padding:13px 14px;min-width:0;}
+  .settings input{font-size:16px;}
+  .row .go{flex:1 0 100%;padding:14px;}
+  .col{min-width:100%;}
+  .kgrid{grid-template-columns:1fr;}
+  .clusters{grid-template-columns:1fr;}
+  .grid2{grid-template-columns:1fr;}
+  .peer-grid{grid-template-columns:repeat(auto-fit,minmax(120px,1fr));}
+}
+
+/* ===== visual layer ===================================================== */
+.rail-track{position:relative;height:9px;border-radius:99px;margin:36px 0 9px;
+ background:linear-gradient(90deg,rgba(232,122,100,.32),rgba(148,160,154,.18) 45%,rgba(95,211,154,.32));}
+.rail-band{position:absolute;top:-4px;height:17px;border-radius:5px;background:rgba(227,168,87,.13);
+ border-left:1px solid rgba(227,168,87,.4);border-right:1px solid rgba(227,168,87,.4);}
+.rail-mark{position:absolute;top:-9px;width:3px;height:27px;border-radius:2px;background:var(--accent);
+ box-shadow:0 0 14px 2px rgba(227,168,87,.45);}
+.rail-mark:after{content:attr(data-px);position:absolute;left:50%;transform:translateX(-50%);bottom:32px;
+ font-family:var(--mono);font-size:13px;font-weight:600;color:var(--accent2);white-space:nowrap;}
+.rail-ends{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--faint);}
+.rail-ends b{display:block;color:var(--muted);font-weight:500;font-size:12.5px;margin-top:3px;}
+.rail-pos{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;color:var(--muted);
+ margin-top:15px;text-transform:uppercase;}
+.rail-pos b{color:var(--accent2);}
+
+.casc{display:flex;flex-direction:column;gap:3px;}
+.casc-row{display:flex;align-items:center;height:44px;gap:14px;}
+.casc-key{width:112px;flex:none;font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;
+ text-transform:uppercase;color:var(--muted);text-align:right;}
+.casc-bar{flex:1;height:100%;position:relative;border-radius:6px;overflow:hidden;background:var(--track);}
+.casc-fill{position:absolute;top:0;left:0;height:100%;display:flex;align-items:center;padding-left:14px;
+ font-family:var(--mono);font-size:14px;font-weight:600;color:#0b100f;
+ animation:cascIn .6s cubic-bezier(.2,.7,.3,1) both;}
+@keyframes cascIn{from{width:0 !important}}
+.casc-lost{position:absolute;top:0;height:100%;display:flex;align-items:center;justify-content:center;
+ font-family:var(--mono);font-size:10.5px;letter-spacing:.6px;color:var(--faint);
+ background:repeating-linear-gradient(135deg,transparent,transparent 5px,rgba(232,122,100,.09) 5px,rgba(232,122,100,.09) 10px);}
+.casc-val{width:64px;flex:none;text-align:right;font-family:var(--mono);font-size:14px;color:var(--text);}
+
+.krow.has-rail{display:grid;grid-template-columns:1fr 62px;row-gap:6px;align-items:center;padding:9px 0;}
+.krow .krail{grid-column:1 / -1;height:5px;border-radius:99px;background:var(--track);position:relative;}
+.krow .krail i{position:absolute;top:-4px;width:13px;height:13px;border-radius:99px;transform:translateX(-50%);
+ border:2px solid var(--panel);}
+.krow .krail s{position:absolute;top:-2px;width:1px;height:9px;background:var(--track2);text-decoration:none;}
+
+.eq{display:flex;gap:10px;align-items:flex-end;}
+.eq-col{flex:1;text-align:center;min-width:0;}
+.eq-plot{height:112px;position:relative;border-radius:8px;background:rgba(255,255,255,.012);}
+.eq-zero{position:absolute;left:0;right:0;top:50%;height:1px;background:var(--track2);}
+.eq-bar{position:absolute;left:50%;transform:translateX(-50%);width:34%;border-radius:3px;}
+.eq-num{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11.5px;
+ font-weight:600;white-space:nowrap;}
+.eq-cap{font-family:var(--mono);font-size:10px;letter-spacing:1.2px;color:var(--faint);margin-top:10px;
+ text-transform:uppercase;}
+.eq-eps{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:4px;}
+.viz-legend{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:1.3px;
+ color:var(--faint);margin-top:16px;text-transform:uppercase;}
+.viz-legend i{display:inline-block;width:8px;height:8px;border-radius:99px;margin-right:6px;}
+@media (prefers-reduced-motion:reduce){.casc-fill{animation:none;}}
+@media(max-width:640px){.casc-key{width:78px;font-size:9.5px;}.eq-eps{font-size:10.5px;}}
+</style>
+</head>
+<body>
+<div class="hd">
+  <div><span class="brand">Hindsight</span><span class="sub">Self-Hosted Research Terminal</span></div>
+  <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+    <div class="live" id="live"></div>
+    <button class="toggle" id="regionBtn"></button>
+    <button class="toggle" id="setBtn">⚙ Keys</button>
+  </div>
+</div>
+<div class="wrap">
+  <div class="settings" id="settings" style="display:none;">
+    <div class="lbl">Finnhub API key — free, powers live data · <a href="https://finnhub.io/register" target="_blank">get one ↗</a></div>
+    <input id="fhKey" placeholder="Finnhub key" />
+    <div class="lbl" style="margin-top:14px;">Gemini key(s) — free tier. Paste several comma-separated for higher limits · <a href="https://aistudio.google.com/apikey" target="_blank">get one ↗</a></div>
+    <input id="gemKey" placeholder="key1, key2, key3 …" />
+    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;"><button class="save" id="saveKeys" style="margin-top:0;">Save keys</button><button class="toggle" id="clearCache">Clear AI cache</button></div>
+    <div class="note">Keys are stored in this browser only — they are never sent anywhere except directly to Finnhub and Google. No keys ship with this file, so you need your own; both are free.</div>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div id="searchArea"></div>
+  <div class="chips" id="chips"></div>
+  <div id="out"></div>
+  <div class="foot">Live data from Finnhub (free). AI analysis runs on your own Google Gemini free-tier key. Runs entirely in your browser — no Claude usage. Scores, segments & AI text are directional estimates, not precise data or financial advice. Verify at the source.</div>
+</div>
+<script>
+/* ============================================================================
+ * HINDSIGHT — equity research terminal (single-file, runs client-side)
+ * ----------------------------------------------------------------------------
+ * No backend. Everything executes in the browser. Two markets, toggled in the
+ * header (S.region):
+ *
+ *   US ('us')   : price, fundamentals, reported financials, peers, analyst
+ *                 consensus, insider activity, earnings calendar -> Finnhub.
+ *                 News -> Finnhub. Chart -> TradingView.
+ *   India ('in'): live price / 52w / volume and index levels -> Yahoo Finance.
+ *                 Fundamentals, reported P&L, growth/CAGR and debt -> scraped
+ *                 from Screener.in. Chart -> TradingView (BSE feed). News ->
+ *                 Google News RSS. (Analyst/insider/earnings-calendar are not
+ *                 freely available for NSE/BSE and are intentionally omitted.)
+ *   AI (both)   : Google Gemini — company scorecard, sector maps, market pulse.
+ *                 Grounded in live figures; results cached 12h in localStorage.
+ *
+ * Yahoo / Screener / Google News send no CORS headers, so those requests go
+ * through a rotating public CORS-proxy chain (see pfetch) with JSON/HTML
+ * validation and failover.
+ *
+ * Layout of this script:
+ *   1. Config & state        2. Core helpers          3. Finnhub (US data)
+ *   4. Gemini AI + cache      5. TradingView chart     6. US renderers
+ *   7. Sector / Pulse         8. India data layer      9. Compare
+ *  10. Watchlist, render, routing & events
+ * ==========================================================================*/
+const DEFAULT_FH='';
+const DEFAULT_GEM='';
+const GEM_MODELS=['gemini-2.5-flash','gemini-flash-latest','gemini-3.5-flash','gemini-3-flash-preview','gemini-2.5-flash-lite','gemini-flash-lite-latest','gemini-3.1-flash-lite'];
+const AI_TTL=12*3600*1000;
+function gemKeys(){return (S.gemKey||'').split(/[ ,\n\r\t]+/).map(function(k){return k.trim();}).filter(Boolean);}
+function ghash(str){let h=5381;for(let i=0;i<str.length;i++){h=((h<<5)+h+str.charCodeAt(i))|0;}return 'ai'+(h>>>0);}
+function cacheGet(k){try{const v=localStorage.getItem('aicache:'+k);if(!v)return null;const o=JSON.parse(v);if(Date.now()-o.t>AI_TTL){localStorage.removeItem('aicache:'+k);return null;}return o;}catch(e){return null;}}
+function cacheSet(k,d){try{localStorage.setItem('aicache:'+k,JSON.stringify({t:Date.now(),d:d}));}catch(e){}}
+function clearAICache(){Object.keys(localStorage).filter(function(k){return k.indexOf('aicache:')===0;}).forEach(function(k){localStorage.removeItem(k);});}
+const S={fhKey:localStorage.getItem('fhKey')||DEFAULT_FH,gemKey:localStorage.getItem('gemKey')||DEFAULT_GEM,watch:JSON.parse(localStorage.getItem('watch')||'[]'),mode:'company',region:localStorage.getItem('region')||'us',lastQ:{sector:'',pulse:''}};
+const $=(id)=>document.getElementById(id);
+const esc=(s)=>String(s==null?'':s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const fmtB=(n)=>{n=Number(n);if(!n||isNaN(n))return '—';if(n>=1e6)return '$'+(n/1e6).toFixed(2)+'T';if(n>=1e3)return '$'+(n/1e3).toFixed(1)+'B';return '$'+n.toFixed(0)+'M';};
+const PAL=['#e0a458','#5cc98a','#6ba8c9','#b98ad0','#e0735f','#d9c46b','#7fb0a0'];
+
+// ===== Finnhub — US hard data =====
+async function fh(path){
+  if(!S.fhKey)throw new Error('Add a Finnhub key in setup.');
+  const sep=path.includes('?')?'&':'?';
+  const r=await fetch('https://finnhub.io/api/v1'+path+sep+'token='+encodeURIComponent(S.fhKey));
+  if(r.status===401||r.status===403)throw new Error('Finnhub key rejected — check it in setup.');
+  if(r.status===429)throw new Error('Finnhub rate limit — wait a moment and retry.');
+  if(!r.ok)throw new Error('Finnhub error '+r.status);
+  return r.json();
+}
+// ===== Gemini — AI analysis (cached 12h) =====
+async function gem(prompt,force){
+  const keys=gemKeys();if(!keys.length)return null;
+  const ck=ghash(prompt);
+  if(!force){const c=cacheGet(ck);if(c){window._aiMeta={fromCache:true,t:c.t};return c.d;}}
+  let lastErr=null;
+  for(const key of keys){for(const model of GEM_MODELS){
+    try{
+      const url='https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+encodeURIComponent(key);
+      const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}]})});
+      if(r.status===429||r.status===503){lastErr='rate';continue;}
+      if(!r.ok){lastErr='err'+r.status;continue;}
+      const d=await r.json();let t='';try{t=d.candidates[0].content.parts.map(function(p){return p.text||'';}).join('');}catch(e){continue;}
+      let z=t.replace(/```json/gi,'').replace(/```/g,'').trim();const a=z.indexOf('{'),b=z.lastIndexOf('}');if(a!==-1&&b!==-1)z=z.slice(a,b+1);
+      let parsed=null;try{parsed=JSON.parse(z);}catch(e){parsed=null;}
+      if(parsed){cacheSet(ck,parsed);window._aiMeta={fromCache:false,t:Date.now()};return parsed;}
+      lastErr='parse';
+    }catch(e){lastErr=(e&&e.message)||'net';}
+  }}
+  if(lastErr==='rate')throw new Error('All Gemini models are rate-limited right now — add another free key (comma-separated) in setup, or wait ~1 min.');
+  throw new Error('AI request failed ('+lastErr+'). Check your key in setup.');
+}
+function ageStr(t){if(!t)return '';const ms=Date.now()-t;if(ms<60000)return 'just now';const m=Math.floor(ms/60000);if(m<60)return m+'m ago';const h=Math.floor(m/60);if(h<24)return h+'h ago';return Math.floor(h/24)+'d ago';}
+function aiTag(){const m=window._aiMeta;if(!m||!m.t)return '';return '<span class="ai-tag '+(m.fromCache?'':'fresh')+'">'+(m.fromCache?'cached':'fresh')+' · '+ageStr(m.t)+'</span>';}
+
+
+
+/* ===== visual layer ======================================================
+ * fiftyTwoRail  · price position across the 52-week range
+ * marginCascade · gross -> operating -> net as one draining bar
+ * METRIC_BANDS  · context ranges consumed by statGrid
+ * earnSurprise  · EPS surprise as diverging bars
+ * ======================================================================== */
+function pctPos(v,lo,hi){if(hi===lo)return 50;return Math.max(0,Math.min(100,(v-lo)/(hi-lo)*100));}
+function ordinal(n){const s=['th','st','nd','rd'],v=n%100;return n+(s[(v-20)%10]||s[v]||s[0]);}
+
+function fiftyTwoRail(q,M){
+  const lo=+M['52WeekLow'],hi=+M['52WeekHigh'],px=q&&+q.c;
+  if(!lo||!hi||!px||hi<=lo)return '';
+  const p=pctPos(px,lo,hi);
+  let band='';
+  if(q.l&&q.h&&q.h>q.l){const a=pctPos(+q.l,lo,hi),b=pctPos(+q.h,lo,hi);
+    band='<div class="rail-band" style="left:'+a+'%;width:'+Math.max(b-a,.8)+'%"></div>';}
+  return '<div class="panel s12"><div class="label a">◆ 52-week position</div>'
+    +'<div class="rail-track">'+band
+    +'<div class="rail-mark" style="left:'+p+'%" data-px="$'+px.toFixed(2)+'"></div></div>'
+    +'<div class="rail-ends"><span>52-week low<b>$'+lo.toFixed(2)+'</b></span>'
+    +'<span style="text-align:right">52-week high<b>$'+hi.toFixed(2)+'</b></span></div>'
+    +'<div class="rail-pos">Trading in the <b>'+ordinal(Math.round(p))+' percentile</b> of its year'
+    +(band?' · shaded band is today\u2019s range':'')+'</div></div>';
+}
+
+function marginCascade(gross,oper,net){
+  if([gross,oper,net].some(v=>v==null||v===''||isNaN(+v)))return '';
+  const g=+gross,o=+oper,n=+net;
+  if(g<=0)return '';
+  const steps=[{k:'Revenue',v:100,c:'var(--accent2)',lost:null},
+               {k:'Gross profit',v:g,c:'var(--accent)',lost:'cost of goods'},
+               {k:'Operating',v:o,c:'var(--blue)',lost:'opex, R&D, SG&A'},
+               {k:'Net income',v:n,c:'var(--green)',lost:'tax, interest, other'}];
+  const rows=steps.map(function(s,i){
+    const prev=i?steps[i-1].v:null;
+    const w=Math.max(0,Math.min(100,s.v));
+    let lost='';
+    if(prev!=null){const d=prev-s.v;
+      if(d>0)lost='<div class="casc-lost" style="left:'+w+'%;width:'+Math.min(d,100-w)+'%">'
+        +(d>=9?'\u2212'+d.toFixed(1)+' \u00b7 '+s.lost:'')+'</div>';}
+    return '<div class="casc-row"><div class="casc-key">'+s.k+'</div>'
+      +'<div class="casc-bar"><div class="casc-fill" style="width:'+w+'%;background:'+s.c+'">'
+      +(w>=18?s.v.toFixed(1)+'\u00a2':'')+'</div>'+lost+'</div>'
+      +'<div class="casc-val">'+s.v.toFixed(1)+'%</div></div>';
+  }).join('');
+  return '<div class="panel s12"><div class="label a">◆ Where a dollar of revenue goes</div>'
+    +'<div class="casc">'+rows+'</div>'
+    +'<div class="viz-legend"><span>hatched = absorbed by costs at that stage</span></div></div>';
+}
+
+/* band = [floor, weakEdge, strongEdge, ceiling]; higher:false means lower is better.
+ * Widened per sector below — these are large-cap defaults, deliberately loose. */
+const METRIC_BANDS={
+  'P/E':[0,12,30,70,false],'Fwd P/E':[0,10,26,60,false],'P/S':[0,1.5,6,20,false],
+  'P/B':[0,1.5,6,50,false],'EV/EBITDA':[0,7,18,45,false],'EV/FCF':[0,12,30,70,false],
+  'EV/Rev':[0,1.5,6,20,false],'PEG (fwd)':[0,1,2.5,5,false],
+  'Gross margin':[0,25,45,90,true],'Operating margin':[-10,8,22,55,true],
+  'Net margin':[-10,5,18,45,true],'ROE':[-10,8,20,60,true],'ROA':[-5,3,10,35,true],
+  'ROI':[-5,5,15,45,true],
+  'Revenue YoY':[-25,0,10,45,true],'EPS YoY':[-40,0,12,70,true],
+  'Revenue 3Y':[-15,0,8,35,true],'Revenue 5Y':[-15,0,8,35,true],'EPS 5Y':[-25,0,10,45,true],
+  'Current ratio':[0,1,2,4,true],'LT debt / equity':[0,0.5,1.5,3,false],
+  'Interest coverage':[0,3,10,30,true],'Asset turnover':[0,0.4,1,2.5,true],
+  'Beta':[0,0.8,1.4,2.5,false],'1Y return':[-50,0,15,90,true],
+  'Div yield':[0,0.5,2.5,7,true],'Payout ratio':[0,20,70,120,false]
+};
+/* Sector nudges — a P/S of 9 is alarming for a bank, ordinary for software. */
+const BAND_SCALE={software:{'P/S':2.2,'P/B':2,'EV/Rev':2.2,'P/E':1.4},
+                  technology:{'P/S':1.8,'P/B':1.8,'EV/Rev':1.8,'P/E':1.3},
+                  biotechnology:{'P/S':3,'P/E':2,'EV/Rev':3},
+                  banking:{'P/B':0.4,'P/S':0.5,'Gross margin':0.6},
+                  insurance:{'P/B':0.5,'P/S':0.4},
+                  'real estate':{'P/B':0.6,'LT debt / equity':2},
+                  utilities:{'LT debt / equity':2,'Revenue YoY':0.5},
+                  retail:{'Gross margin':0.6,'Net margin':0.5,'P/S':0.4},
+                  energy:{'Revenue YoY':1.6,'P/E':0.7},
+                  automobiles:{'Gross margin':0.5,'Net margin':0.5,'P/S':0.5}};
+let BAND_CTX='';
+function bandFor(label){
+  const b=METRIC_BANDS[label];if(!b)return null;
+  let f=1;const ind=(BAND_CTX||'').toLowerCase();
+  for(const k in BAND_SCALE){if(ind.indexOf(k)>=0&&BAND_SCALE[k][label]){f=BAND_SCALE[k][label];break;}}
+  return f===1?b:[b[0]*f,b[1]*f,b[2]*f,b[3]*f,b[4]];
+}
+function railFor(label,val){
+  const b=bandFor(label);
+  if(!b||val==null||val===''||isNaN(+val))return null;
+  const v=+val,lo=b[0],hi=b[3],higher=b[4];
+  const pos=Math.max(2.5,Math.min(97.5,pctPos(v,lo,hi)));
+  const good=higher?v>=b[2]:v<=b[1];
+  const bad=higher?v<=b[1]:v>=b[2];
+  const col=good?'var(--green)':bad?'var(--red)':'var(--accent)';
+  return {html:'<span class="krail"><s style="left:'+pctPos(b[1],lo,hi)+'%"></s>'
+    +'<s style="left:'+pctPos(b[2],lo,hi)+'%"></s>'
+    +'<i style="left:'+pos+'%;background:'+col+'"></i></span>',col:col};
+}
+
+function earnSurprise(earn){
+  const rows=(earn||[]).filter(e=>e&&e.actual!=null&&e.estimate!=null).slice(0,4).reverse();
+  if(rows.length<2)return '';
+  const sp=rows.map(e=>e.surprisePercent!=null?+e.surprisePercent
+            :(e.estimate?((+e.actual-+e.estimate)/Math.abs(+e.estimate)*100):0));
+  const max=Math.max.apply(null,sp.map(Math.abs).concat([4]));
+  const cols=rows.map(function(e,i){
+    const s=sp[i],beat=s>=0,mag=Math.abs(s)/max*46,col=beat?'var(--green)':'var(--red)';
+    return '<div class="eq-col"><div class="eq-plot"><div class="eq-zero"></div>'
+      +'<div class="eq-bar" style="background:'+col+';'
+      +(beat?'bottom:50%;height:'+mag+'%':'top:50%;height:'+mag+'%')+'"></div>'
+      +'<div class="eq-num" style="color:'+col+';'
+      +(beat?'bottom:calc(50% + '+mag+'% + 6px)':'top:calc(50% + '+mag+'% + 6px)')+'">'
+      +(beat?'+':'')+s.toFixed(1)+'%</div></div>'
+      +'<div class="eq-cap">'+esc(e.period||'')+'</div>'
+      +'<div class="eq-eps">'+Number(e.actual).toFixed(2)
+      +' <span class="faint">vs '+Number(e.estimate).toFixed(2)+'</span></div></div>';
+  }).join('');
+  const beats=sp.filter(v=>v>=0).length;
+  return '<div class="panel s5"><div class="label a">◆ Earnings vs. consensus</div>'
+    +'<div class="eq">'+cols+'</div>'
+    +'<div class="viz-legend"><span>'+beats+' of '+sp.length+' quarters ahead of estimates</span></div></div>';
+}
+
+// ===== TradingView price chart =====
+function loadHeroChart(sym){
+  const el=document.getElementById('hero-chart');if(!el)return;
+  el.innerHTML='';el.style.minHeight='442px';
+  const container=document.createElement('div');
+  container.className='tradingview-widget-container';
+  container.style.width='100%';
+  const widget=document.createElement('div');
+  widget.className='tradingview-widget-container__widget';
+  widget.style.width='100%';
+  const copy=document.createElement('div');
+  copy.className='tradingview-widget-copyright';
+  copy.style.cssText='font-family:var(--mono);font-size:10px;padding-top:4px;';
+  copy.innerHTML='<a href="https://www.tradingview.com/symbols/'+encodeURIComponent(sym)+'/" rel="noopener nofollow" target="_blank" style="color:var(--faint);text-decoration:none;">'+esc(sym)+' chart by TradingView \u2197</a>';
+  const script=document.createElement('script');
+  script.type='text/javascript';
+  script.src='https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+  script.async=true;
+  script.innerHTML=JSON.stringify({
+    autosize:false,width:'100%',height:420,symbol:(S.region==='in'?'BSE:':'')+sym,interval:'D',timezone:'Etc/UTC',theme:'dark',style:'1',
+    locale:'en',hide_side_toolbar:true,allow_symbol_change:true,save_image:false,
+    backgroundColor:'#0f1514',gridColor:'rgba(255,255,255,0.04)',
+    support_host:'https://www.tradingview.com'
+  });
+  container.appendChild(widget);container.appendChild(copy);container.appendChild(script);
+  el.appendChild(container);
+}
+function inWatch(sym){return S.watch.some(w=>w.sym===sym);}
+function toggleWatch(sym,name){const i=S.watch.findIndex(w=>w.sym===sym);if(i>=0)S.watch.splice(i,1);else S.watch.push({sym,name,region:S.region});localStorage.setItem('watch',JSON.stringify(S.watch));render();}
+
+function bar(v,c){v=Math.max(0,Math.min(100,Number(v)||0));return '<div class="bar"><i style="width:'+v+'%;background:'+c+'"></i></div>';}
+function metric(k,v,c){const n=Math.round(Math.max(0,Math.min(100,Number(v)||0)));return '<div class="metric"><span class="k">'+k+'</span><span style="flex:1">'+bar(n,c)+'</span><span class="n">'+n+'</span></div>';}
+function starBtn(sym,name){return '<button class="star '+(inWatch(sym)?'on':'')+'" data-star="'+esc(sym)+'" data-name="'+esc(name)+'">'+(inWatch(sym)?'★':'☆')+'</button>';}
+function compScore(v){v=Math.round(Math.max(0,Math.min(100,+v||0)));const c=v>=66?'var(--green)':v>=40?'var(--accent)':'var(--red)';return '<div style="text-align:center;"><span class="mono" style="font-size:22px;font-weight:600;color:'+c+'">'+v+'</span><div class="mono faint" style="font-size:8px;letter-spacing:1px;">SCORE</div></div>';}
+function valGauge(tag){const t=(tag||'FAIR').toUpperCase();const pos={CHEAP:16,FAIR:50,RICH:84}[t]||50;const c={CHEAP:'var(--green)',FAIR:'var(--accent)',RICH:'var(--red)'}[t]||'var(--accent)';return '<div><div style="position:relative;height:8px;border-radius:99px;background:linear-gradient(90deg,#2a4f3a,#5cc98a33 18%,#e0a45833 50%,#e0735f33 82%,#5a2f2a)"><div style="position:absolute;left:calc('+pos+'% - 5px);top:-3px;width:10px;height:14px;background:'+c+';border-radius:3px;box-shadow:0 0 8px '+c+'"></div></div><div class="mono" style="display:flex;justify-content:space-between;font-size:8.5px;color:var(--faint);margin-top:5px;letter-spacing:1px;"><span>CHEAP</span><span>FAIR</span><span>RICH</span></div></div>';}
+function donut(segs){const tot=segs.reduce((a,x)=>a+(+x.value||0),0)||1;const R=42,CR=2*Math.PI*R;let acc=0,circ='';segs.forEach(s=>{const fr=(+s.value||0)/tot;circ+='<circle cx="60" cy="60" r="'+R+'" fill="none" stroke="'+s.color+'" stroke-width="15" stroke-dasharray="'+(fr*CR)+' '+CR+'" stroke-dashoffset="'+(-acc*CR)+'" transform="rotate(-90 60 60)"></circle>';acc+=fr;});const leg=segs.map(s=>'<div style="display:flex;align-items:center;gap:8px;font-size:12.5px;"><span style="width:9px;height:9px;border-radius:2px;background:'+s.color+'"></span><span>'+esc(s.label)+'</span><span class="mono faint" style="font-size:11px;">'+Math.round((+s.value||0)/tot*100)+'%</span></div>').join('');return '<div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;"><svg viewBox="0 0 120 120" width="118" height="118"><circle cx="60" cy="60" r="'+R+'" fill="none" stroke="var(--track)" stroke-width="15"></circle>'+circ+'</svg><div style="display:flex;flex-direction:column;gap:6px;">'+leg+'</div></div>';}
+
+function r2(v){return v==null||v===''||isNaN(+v)?null:(+v).toFixed(2);}
+function pct(v){return v==null||v===''||isNaN(+v)?null:(+v).toFixed(1)+'%';}
+function statGrid(title,pairs,opts){opts=opts||{};const colorSign=opts.colorSign;pairs=pairs.filter(p=>p[1]!=null&&p[1]!==''&&!(typeof p[1]==='number'&&isNaN(p[1]))&&p[2]!=null);if(!pairs.length)return '';const rows=pairs.map(p=>{const fmt=String(p[2]);const isPct=fmt.endsWith('%');const num=parseFloat(fmt);let cls='';if(colorSign&&isPct&&!isNaN(num))cls=num>=0?' pos':' neg';let v=esc(fmt);if(isPct)v=esc(fmt.slice(0,-1))+'<span class="kunit">%</span>';const rail=(typeof railFor==='function')?railFor(p[0],p[1]):null;
+if(rail&&!cls)cls='';
+return '<div class="krow'+(rail?' has-rail':'')+'"><span class="kk">'+esc(p[0])+'</span><span class="kv'+cls+'">'+v+'</span>'+(rail?rail.html:'')+'</div>';}).join('');return '<div class="kgroup"><div class="kgroup-title">'+esc(title)+'</div>'+rows+'</div>';}
+function fmtNum(n){n=+n;const a=Math.abs(n);if(a>=1e9)return (n/1e9).toFixed(1)+'B';if(a>=1e6)return (n/1e6).toFixed(0)+'M';if(a>=1e3)return (n/1e3).toFixed(0)+'K';return (Math.round(n*100)/100).toString();}
+function sparkBars(series,label,color,fmtFn){const pts=(series||[]).filter(p=>p.v!=null&&!isNaN(+p.v));if(pts.length<2)return '';const vals=pts.map(p=>+p.v);const mx=Math.max.apply(null,vals.map(Math.abs));const first=vals[0],last=vals[vals.length-1];const chg=first?Math.round((last/first-1)*100):0;const cc=chg>=0?'var(--green)':'var(--red)';const W=620,H=176,padT=30,padB=28,padX=10,n=pts.length,innerW=W-padX*2,innerH=H-padT-padB,slot=innerW/n,bw=Math.min(56,slot*0.54),baseY=H-padB;let g='',bars='',vl='',xl='';for(let k=0;k<=2;k++){const gy=padT+innerH*k/2;g+='<line x1="'+padX+'" y1="'+gy+'" x2="'+(W-padX)+'" y2="'+gy+'" stroke="var(--bsoft)" stroke-width="1"/>';}pts.forEach((p,i)=>{const cx=padX+slot*i+slot/2,hh=Math.max(3,Math.abs(+p.v)/(mx||1)*innerH),y=baseY-hh,lst=i===pts.length-1,col=lst?color:'var(--track2)';bars+='<rect x="'+(cx-bw/2)+'" y="'+y+'" width="'+bw+'" height="'+hh+'" rx="3" fill="'+col+'"/>';vl+='<text x="'+cx+'" y="'+(y-8)+'" text-anchor="middle" class="cval" fill="'+(lst?'var(--text)':'var(--muted)')+'">'+(fmtFn||fmtNum)(+p.v)+'</text>';xl+='<text x="'+cx+'" y="'+(baseY+17)+'" text-anchor="middle" class="cax" fill="var(--faint)">'+esc(p.y)+'</text>';});return '<div style="margin-bottom:18px;"><div class="chead"><span class="clab">'+esc(label)+'</span><span class="cgrow" style="color:'+cc+'">'+(chg>=0?'+':'')+chg+'% / period</span></div><svg viewBox="0 0 '+W+' '+H+'" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block;">'+g+'<line x1="'+padX+'" y1="'+baseY+'" x2="'+(W-padX)+'" y2="'+baseY+'" stroke="var(--border)" stroke-width="1.5"/>'+bars+vl+xl+'</svg></div>';}
+function parseTrend(rep){const arr=(rep&&rep.data)||[];const byY={};arr.forEach(f=>{const y=f.year||String(f.endDate||'').slice(0,4);if(!y)return;const ic=(f.report&&f.report.ic)||[];let rev=null,ni=null;ic.forEach(it=>{const lab=String(it.label||'').toLowerCase();const con=String(it.concept||'');if(rev==null&&(lab==='revenue'||lab==='revenues'||lab==='total revenue'||lab==='net sales'||/Revenues$/.test(con)||/RevenueFromContractWithCustomer/.test(con)))rev=+it.value;if(ni==null&&(lab==='net income'||lab==='net income loss'||con==='us-gaap_NetIncomeLoss'||con==='us-gaap_ProfitLoss'))ni=+it.value;});if(!(y in byY))byY[y]={rev,ni};});const years=Object.keys(byY).sort().slice(-6);const rev=[],ni=[];years.forEach(y=>{const lab='FY'+String(y).slice(2);if(byY[y].rev!=null)rev.push({y:lab,v:byY[y].rev});if(byY[y].ni!=null)ni.push({y:lab,v:byY[y].ni});});return {rev:rev,ni:ni};}
+function renderInsider(ins){const arr=(ins&&ins.data)||[];if(!arr.length)return '';let net=0;arr.slice(0,40).forEach(t=>net+=(+t.change||0));let h='<div class="panel s5"><div class="label a">◆ Insider activity</div><div class="mono" style="font-size:12px;margin-bottom:10px;color:'+(net>=0?'var(--green)':'var(--red)')+'">net '+(net>=0?'+':'')+net.toLocaleString()+' shares · recent filings</div>';arr.slice(0,8).forEach(t=>{const buy=(+t.change||0)>=0;h+='<div class="frow"><span class="muted" style="flex:1">'+esc(t.name)+'</span><span style="color:'+(buy?'var(--green)':'var(--red)')+'">'+(buy?'+':'')+(+t.change||0).toLocaleString()+'</span><span class="faint" style="margin-left:14px;font-size:11px;">'+esc(t.filingDate||t.transactionDate||'')+'</span></div>';});h+='</div>';return h;}
+// ---------- COMPANY ----------
+function iso(d){return d.toISOString().slice(0,10);}
+function isoAgo(n){const d=new Date();d.setDate(d.getDate()-n);return iso(d);}
+async function loadCompany(sym){
+  sym=(sym||'').trim().toUpperCase();if(!sym)return;
+  if(!S.fhKey){setOut('<div class="panel">Add a free Finnhub key in setup to pull live data. It takes about a minute.</div>');$('settings').style.display='block';return;}
+  setOut('<div class="spin">Pulling live data for '+esc(sym)+'…</div>');
+  let p;
+  try{p=await fh('/stock/profile2?symbol='+sym);}
+  catch(err){const net=/Failed to fetch|NetworkError|load failed|ERR_/i.test(err.message||'');setOut('<div class="panel err">'+esc(net?'Could not reach Finnhub. If you are viewing this inside the Claude app, download the .html and open it directly in your own browser (double-click). The in-app preview blocks outside data; opened locally it works.':err.message)+'</div>');return;}
+  if(!p||!p.name){setOut('<div class="panel err">No profile for "'+esc(sym)+'". Use the exact ticker (e.g. NVDA, VRT, CEG).</div>');return;}
+  try{
+    const [q,m,news,peers,rec,earn,rep,ins,cal]=await Promise.all([
+      fh('/quote?symbol='+sym).catch(()=>null),
+      fh('/stock/metric?symbol='+sym+'&metric=all').catch(()=>null),
+      fh('/company-news?symbol='+sym+'&from='+isoAgo(30)+'&to='+iso(new Date())).catch(()=>[]),
+      fh('/stock/peers?symbol='+sym).catch(()=>[]),
+      fh('/stock/recommendation?symbol='+sym).catch(()=>[]),
+      fh('/stock/earnings?symbol='+sym).catch(()=>[]),
+      fh('/stock/financials-reported?symbol='+sym+'&freq=annual').catch(()=>null),
+      fh('/stock/insider-transactions?symbol='+sym).catch(()=>null),
+      earnCal().catch(()=>null),
+    ]);
+    renderCompany(sym,q,p,(m&&m.metric)||{},news||[],peers||[],rec||[],earn||[],rep,ins,cal);
+  }catch(e){setOut('<div class="panel err">'+esc(e.message)+'</div>');}
+}
+async function earnCal(){
+  try{const c=JSON.parse(localStorage.getItem('earncal')||'null');if(c&&c.day===iso(new Date()))return {earningsCalendar:c.data};}catch(e){}
+  const r=await fh('/calendar/earnings?from='+iso(new Date())+'&to='+isoAgo(-100));
+  const arr=((r&&r.earningsCalendar)||[]).map(function(e){return {symbol:e.symbol,date:e.date,epsEstimate:e.epsEstimate,hour:e.hour};});
+  try{if(arr.length)localStorage.setItem('earncal',JSON.stringify({day:iso(new Date()),data:arr}));}catch(e){}
+  return {earningsCalendar:arr};
+}
+function renderCompany(sym,q,p,M,news,peers,rec,earn,rep,ins,cal){
+  const name=p.name||sym;let h='';
+  BAND_CTX=(p.finnhubIndustry||'')+' '+(p.gsector||'');
+  S._lastCompanyAI={name,sym,p,q,M};
+  const up=q&&q.d>=0;
+  let nextE=null;
+  if(cal&&cal.earningsCalendar&&cal.earningsCalendar.length){const today=Date.now();const fu=cal.earningsCalendar.filter(e=>e.date&&e.symbol===sym&&new Date(e.date).getTime()>=today-86400000).sort((a,b)=>new Date(a.date)-new Date(b.date));nextE=fu[0]||null;}
+  h+='<div class="panel hero-co"><div class="head"><div><div class="name">'+esc(name)+' '+starBtn(sym,name)+'</div><div class="ticker">'+esc(p.exchange||'NASDAQ')+' · '+esc(p.ticker||sym)+'<button class="toggle compare-btn" data-compare="'+esc(sym)+'">⚖ compare</button></div></div>';
+  if(q&&q.c)h+='<div class="pxblock"><div class="px">$'+Number(q.c).toFixed(2)+'</div><div class="chgpill" style="background:'+(up?'rgba(95,211,154,.14)':'rgba(232,122,100,.14)')+';color:'+(up?'var(--green)':'var(--red)')+'">'+(up?'▲ ':'▼ ')+(up?'+':'')+Number(q.d).toFixed(2)+' ('+(up?'+':'')+Number(q.dp).toFixed(2)+'%)</div></div>';
+  h+='</div>';
+  // chart area
+  h+='<div class="chartwrap"><div class="chart-head"><span class="chart-label">Price chart</span></div><div id="hero-chart" style="min-height:440px;"><div class="chart-skel" style="height:440px;"></div></div></div>';
+  h+='<div class="meta">';
+  h+='<div><div class="mk">Industry</div><div class="mv">'+esc(p.finnhubIndustry||'—')+'</div></div>';
+  h+='<div><div class="mk">Mkt Cap</div><div class="mv" style="color:var(--green)">'+fmtB(p.marketCapitalization)+'</div></div>';
+  if(q&&q.c){h+='<div><div class="mk">Open</div><div class="mv">'+Number(q.o).toFixed(2)+'</div></div><div><div class="mk">High</div><div class="mv">'+Number(q.h).toFixed(2)+'</div></div><div><div class="mk">Low</div><div class="mv">'+Number(q.l).toFixed(2)+'</div></div><div><div class="mk">Prev</div><div class="mv">'+Number(q.pc).toFixed(2)+'</div></div><div><div class="mk">52W Range</div><div class="mv">'+(M['52WeekLow']?Number(M['52WeekLow']).toFixed(1):'—')+' – '+(M['52WeekHigh']?Number(M['52WeekHigh']).toFixed(1):'—')+'</div></div>';}
+  if(nextE){const days=Math.ceil((new Date(nextE.date).getTime()-Date.now())/86400000);h+='<div><div class="mk">Next earnings</div><div class="mv" style="color:var(--accent2)">'+esc(nextE.date)+(days>=0?' <span class="faint">in '+days+'d</span>':'')+(nextE.epsEstimate!=null?' <span class="faint">· est EPS $'+Number(nextE.epsEstimate).toFixed(2)+'</span>':'')+'</div></div>';}
+  else{h+='<div><div class="mk">Next earnings</div><div class="mv" style="color:var(--muted)">not yet scheduled</div></div>';}
+  if(p.weburl)h+='<div><div class="mk">Site</div><div class="mv"><a href="'+esc(p.weburl)+'" target="_blank">'+esc((p.weburl||'').replace(/^https?:\/\//,'').replace(/\/$/,''))+' ↗</a></div></div>';
+  h+='</div></div>';
+  const g1=statGrid('Valuation',[['P/E',M.peTTM,r2(M.peTTM)],['Fwd P/E',M.forwardPE,r2(M.forwardPE)],['P/S',M.psTTM,r2(M.psTTM)],['P/B',M.pb,r2(M.pb)],['EV/EBITDA',M.evEbitdaTTM,r2(M.evEbitdaTTM)],['EV/FCF',M['currentEv/freeCashFlowTTM'],r2(M['currentEv/freeCashFlowTTM'])],['EV/Rev',M.evRevenueTTM,r2(M.evRevenueTTM)],['PEG (fwd)',M.forwardPEG,r2(M.forwardPEG)]]);
+  const g2=statGrid('Profitability',[['Gross margin',M.grossMarginTTM,pct(M.grossMarginTTM)],['Operating margin',M.operatingMarginTTM,pct(M.operatingMarginTTM)],['Net margin',M.netProfitMarginTTM,pct(M.netProfitMarginTTM)],['ROE',M.roeTTM,pct(M.roeTTM)],['ROA',M.roaTTM,pct(M.roaTTM)],['ROI',M.roiTTM,pct(M.roiTTM)]]);
+  const g3=statGrid('Growth',[['Revenue YoY',M.revenueGrowthTTMYoy,pct(M.revenueGrowthTTMYoy)],['EPS YoY',M.epsGrowthTTMYoy,pct(M.epsGrowthTTMYoy)],['Revenue 3Y',M.revenueGrowth3Y,pct(M.revenueGrowth3Y)],['Revenue 5Y',M.revenueGrowth5Y,pct(M.revenueGrowth5Y)],['EPS 5Y',M.epsGrowth5Y,pct(M.epsGrowth5Y)]],{colorSign:true});
+  const g4=statGrid('Financial health',[['Current ratio',M.currentRatioQuarterly,r2(M.currentRatioQuarterly)],['LT debt / equity',M['longTermDebt/equityQuarterly'],r2(M['longTermDebt/equityQuarterly'])],['Interest coverage',M.netInterestCoverageTTM,r2(M.netInterestCoverageTTM)],['Asset turnover',M.assetTurnoverTTM,r2(M.assetTurnoverTTM)]]);
+  const g5=statGrid('Per share & returns',[['EPS TTM',M.epsTTM,r2(M.epsTTM)],['Book / share',M.bookValuePerShareAnnual,r2(M.bookValuePerShareAnnual)],['Cash flow / share',M.cashFlowPerShareTTM,r2(M.cashFlowPerShareTTM)],['Beta',M.beta,r2(M.beta)],['1Y return',M['52WeekPriceReturnDaily'],pct(M['52WeekPriceReturnDaily'])],['Div yield',M.dividendYieldIndicatedAnnual,pct(M.dividendYieldIndicatedAnnual)],['Payout ratio',M.payoutRatioTTM,pct(M.payoutRatioTTM)]],{colorSign:true});
+  h+=bizPanel([['Industry',p.finnhubIndustry?esc(p.finnhubIndustry):''],['HQ',p.country?esc(p.country):''],['IPO',p.ipo?esc(p.ipo):''],['Exchange',p.exchange?esc(p.exchange):''],['Site',p.weburl?('<a href="'+esc(p.weburl)+'" target="_blank">'+esc(p.weburl.split('://').pop().replace(/\/+$/,''))+' ↗</a>'):'']]);
+  h+=fiftyTwoRail(q,M);
+  h+=marginCascade(M.grossMarginTTM,M.operatingMarginTTM,M.netProfitMarginTTM);
+  if(g1||g2||g3||g4||g5){h+='<div class="panel"><div class="label a">◆ Key metrics <span class="faint" style="letter-spacing:.4px;text-transform:none;font-family:var(--sans);font-size:11px;">· dot shows where this sits in a typical range for the industry</span></div><div class="kgrid">'+g1+g2+g3+g4+g5+'</div></div>';}
+  if(rep){const tr=parseTrend(rep);if(tr.rev.length>1||tr.ni.length>1){h+='<div class="panel s7"><div class="label a">◆ Financial trend — reported annual ($)</div>'+sparkBars(tr.rev,'Revenue','var(--accent)')+sparkBars(tr.ni,'Net income','var(--green)')+'</div>';}}
+  h+=earnSurprise(earn);
+  let peerList=null;
+  if(peers&&peers.length){peerList=peers.filter(pp=>pp&&pp!==sym).slice(0,8);if(peerList.length){h+='<div class="panel s12"><div class="label a">◆ Peers <span class="faint" style="white-space:nowrap;">· click any to dig in</span></div><div class="peer-grid">';peerList.forEach(pr=>{h+='<div class="peer-card" data-load="'+esc(pr)+'" id="peer-'+esc(pr)+'"><div class="pc-tk">'+esc(pr)+'</div><div class="pc-px"><span class="pc-skel"></span></div><div class="pc-chg"><span class="pc-skel" style="width:36px;"></span></div></div>';});h+='</div></div>';}}
+  if(news&&news.length){h+='<div class="panel s7"><div class="label a">◆ Latest news</div>';news.slice(0,8).forEach(n=>{const dt=n.datetime?new Date(n.datetime*1000).toISOString().slice(0,10):'';h+='<div class="newsrow"><a class="h" href="'+esc(n.url)+'" target="_blank">'+esc(n.headline)+'</a><div class="s"><a href="'+esc(n.url)+'" target="_blank">'+esc(n.source||'source')+' ↗</a>'+(dt?' · '+dt:'')+'</div></div>';});h+='</div>';}
+  h+=renderInsider(ins);
+  h+='<div class="panel" id="aiPanel"><div class="label a">⛏ AI analysis</div>'+(S.gemKey?'<div class="spin" style="margin:6px 0;text-align:left;">thinking with your Gemini key…</div>':'<div class="muted" style="font-size:13px;line-height:1.6;">Add a free Gemini key in setup to generate scores, valuation, segments and a bull/bear read here.</div>')+'</div>';
+  setOut(h);
+  loadHeroChart(sym);
+  if(peerList&&peerList.length)loadPeerQuotes(peerList);
+  if(S.gemKey)runCompanyAI(name,sym,p,q,M);
+  loadBiz(name);
+}
+async function loadPeerQuotes(list){
+  list.forEach(async(pr)=>{
+    try{
+      const q=await fh('/quote?symbol='+pr);
+      const el=document.getElementById('peer-'+pr);
+      if(!el||!q||!q.c)return;
+      const up=q.d>=0;
+      const px=el.querySelector('.pc-px');
+      const chg=el.querySelector('.pc-chg');
+      if(px)px.textContent='$'+Number(q.c).toFixed(2);
+      if(chg){chg.textContent=(up?'+':'')+Number(q.dp||0).toFixed(2)+'%';chg.className='pc-chg '+(up?'pos':'neg');}
+    }catch(e){const el=document.getElementById('peer-'+pr);if(el){const px=el.querySelector('.pc-px');const chg=el.querySelector('.pc-chg');if(px)px.innerHTML='<span class="faint">—</span>';if(chg)chg.innerHTML='';}}
+  });
+}
+async function runCompanyAI(name,sym,p,q,M,force,ctxOverride){
+  try{
+    let ctx=ctxOverride||('Company '+name+' ('+sym+'), industry '+p.finnhubIndustry+', mkt cap '+fmtB(p.marketCapitalization)+', price '+(q&&q.c)+', P/E '+M.peTTM+', net margin '+M.netProfitMarginTTM+', rev growth '+M.revenueGrowthTTMYoy+'.');
+    const r=await gem('You are an equity analyst. Given the live current data: '+ctx+' The company is currently publicly traded (live market data is present) — never claim it is delisted or acquired. Return ONLY JSON: {"scores":{"moat":0,"growth":0,"value":0,"momentum":0},"composite":0,"valuation":"CHEAP|FAIR|RICH","valNote":"vs history/peers","segments":[{"label":"segment","share":0}],"bull":["3-4 points"],"bear":["3-4 risk points"],"picksShovels":"2 sentences on value-chain position"} Scores 0-100, segment shares ~100 total.',force);
+    if(!r){$('aiPanel').innerHTML='<div class="label a">⛏ AI analysis</div><div class="muted">Could not generate this time — try again.</div>';return;}
+    const s=r.scores||{};let h='<div class="label a">⛏ AI analysis '+(r.valuation?'· '+esc(r.valuation):'')+aiTag()+'<button class="toggle" data-refresh="company-ai">↻</button></div>';
+    h+='<div style="display:flex;gap:22px;flex-wrap:wrap;align-items:center;margin-bottom:14px;">'+compScore(r.composite)+'<div style="flex:1;min-width:200px;">'+metric('moat',s.moat,'var(--accent)')+metric('growth',s.growth,'var(--green)')+metric('value',s.value,'var(--blue)')+metric('momentum',s.momentum,'#b98ad0')+'</div><div style="flex:1;min-width:160px;"><div class="mono faint" style="font-size:9.5px;letter-spacing:1px;margin-bottom:6px;">VALUATION</div>'+valGauge(r.valuation)+(r.valNote?'<div class="muted" style="font-size:11.5px;margin-top:8px;">'+esc(r.valNote)+'</div>':'')+'</div></div>';
+    h+='<div class="grid2"><div><div class="label g">▲ Bull</div><ul style="margin:0;padding-left:16px;font-size:13.5px;line-height:1.5;">'+(r.bull||[]).map(b=>'<li>'+esc(b)+'</li>').join('')+'</ul></div><div><div class="label r">▼ Bear</div><ul style="margin:0;padding-left:16px;font-size:13.5px;line-height:1.5;">'+(r.bear||[]).map(b=>'<li>'+esc(b)+'</li>').join('')+'</ul></div></div>';
+    if(r.picksShovels)h+='<div style="margin-top:14px;font-size:14px;line-height:1.6;border-top:1px solid var(--bsoft);padding-top:12px;">⛏ '+esc(r.picksShovels)+'</div>';
+    if(r.segments&&r.segments.length)h+='<div style="margin-top:16px;border-top:1px solid var(--bsoft);padding-top:14px;"><div class="label a">◆ Revenue by segment (est.)</div>'+donut(r.segments.map((g,i)=>({label:g.label,value:g.share,color:PAL[i%PAL.length]})))+'</div>';
+    $('aiPanel').innerHTML=h;
+  }catch(e){$('aiPanel').innerHTML='<div class="label a">⛏ AI analysis</div><div class="err">'+esc(e.message)+'</div>';}
+}
+
+// ---------- SECTOR ----------
+async function loadSector(q,force){
+  q=(q||'').trim();if(!q)return;
+  S.lastQ.sector=q;if(!S.gemKey){setOut('<div class="panel">Sector maps need a Gemini key (AI). Add one in setup — Company mode works on Finnhub alone.</div>');return;}
+  setOut('<div class="spin">Mapping the "'+esc(q)+'" ecosystem…</div>');
+  try{
+    const r=await gem((S.region==='in'?'INDIAN MARKET ONLY: every company MUST be listed on NSE/BSE, use rupees and Indian market context (crore/lakh), and any ETFs must be Indian. ':'')+'You are a sell-side analyst writing a DEEP picks-and-shovels dossier on the sector/theme "'+q+'". Be specific and detailed, not generic. Cite real companies, real numbers, real dynamics. Return ONLY JSON: {"sector":"name","summary":"3-4 sentence detailed thesis: what is happening, why now, who wins, key dynamic","marketSize":"$ size with year","cagr":0,"cagrNote":"period","etfs":[{"ticker":"","name":""}],"subThemes":[{"name":"","detail":"2-sentence specific explanation of this sub-theme"}],"map":{"core":"the convergence point","clusters":[{"name":"cluster","companies":[{"name":"","ticker":""}]}]},"screen":[{"name":"","ticker":"","layer":"value-chain layer","composite":0,"oneLine":"specific thesis sentence on why this is a shovel"}],"valueChain":[{"layer":"layer name","description":"3-4 sentence explanation of this layer economics, who controls it, where margin sits, key dynamic","companies":[{"name":"","ticker":""}]}],"tailwinds":["specific full-sentence bullets with numbers/names"],"risks":["specific full-sentence bullets with numbers/names"]} Requirements: 5-6 clusters with 6-8 real-ticker companies each (empty ticker for private); 4-5 sub-themes with substance; 8 ranked screen names with composite 0-100 and detailed oneLine; 4 ETFs; 5 value-chain layers each with 4-6 companies and a real description; 4-5 tailwinds, 4-5 risks. NO generic statements.',force);
+    if(!r){setOut('<div class="panel err">Could not build the sector view — try again or check Gemini quota.</div>');return;}
+    renderSector(q,r);
+  }catch(e){const net=/Failed to fetch|NetworkError|load failed/i.test(e.message||'');setOut('<div class="panel err">'+esc(net?'Could not reach the AI service. If inside the Claude app, download and open the file locally.':e.message)+'</div>');}
+}
+function renderSector(q,r){
+  let h='<div style="grid-column:span 12;display:flex;justify-content:flex-end;"><button class="toggle" data-refresh="sector">↻ refresh live</button></div>';
+  h+='<div class="panel s12 hero-co"><div class="head"><div><div class="name" style="font-size:36px;">'+esc(r.sector||q)+'</div><div class="ticker">ecosystem · picks & shovels'+aiTag()+'</div></div></div>'+(r.summary?'<div class="muted" style="margin-top:18px;padding-top:16px;border-top:1px solid var(--bsoft);line-height:1.6;font-size:14px;">'+esc(r.summary)+'</div>':'')+'</div>';
+  if(r.map&&r.map.clusters&&r.map.clusters.length){h+='<div class="panel s12"><div class="label a">◆ Ecosystem map</div>';if(r.map.core)h+='<div class="center" style="margin:2px 0 18px;"><span class="pill">everything converges on → '+esc(r.map.core)+'</span></div>';h+='<div class="clusters">';r.map.clusters.forEach(function(cl,ci){var ccol=PAL[ci%PAL.length];const cos=cl.companies||(cl.subgroups?[].concat.apply([],cl.subgroups.map(s=>s.companies||[])):[]);h+='<div class="cluster" style="border-top:3px solid '+ccol+';padding:0 12px 14px;"><div class="ct" style="color:'+ccol+'">'+esc(cl.name)+'</div><div class="cochips">';cos.forEach(co=>{const t=esc(co.ticker||'');h+='<button class="cochip" '+(t?'data-load="'+t+'"':'disabled')+'><span class="t">'+(t||'private')+'</span><span class="n">'+esc(co.name)+'</span></button>';});h+='</div></div>';});h+='</div></div>';}
+  if(r.valueChain&&r.valueChain.length){h+='<div class="panel s12"><div class="label a">⛏ Value chain — where the margin sits</div>';r.valueChain.forEach((L,i)=>{h+='<div style="padding:16px 0;border-bottom:1px solid var(--bsoft);"><div style="display:flex;align-items:center;gap:12px;margin-bottom:9px;"><span class="mono" style="font-size:11px;color:var(--bg);background:var(--accent);border-radius:5px;padding:3px 8px;font-weight:600;letter-spacing:.5px;">L'+(i+1)+'</span><span class="serif" style="font-size:18px;font-weight:600;letter-spacing:-.3px;">'+esc(L.layer)+'</span></div>'+(L.description?'<div style="font-size:13.5px;margin:0 0 12px;line-height:1.6;color:var(--text);">'+esc(L.description)+'</div>':'')+'<div style="display:flex;gap:7px;flex-wrap:wrap;">'+(L.companies||[]).map(c=>{const t=esc(c.ticker||'');return '<button class="chip" '+(t?'data-load="'+t+'" style="color:var(--accent);border-color:var(--border);cursor:pointer;"':'disabled')+'>'+(t?t+' · ':'')+esc(c.name)+'</button>';}).join('')+'</div></div>';});h+='</div>';}
+  if(r.subThemes&&r.subThemes.length){h+='<div class="panel s7"><div class="label a">◆ Sub-themes</div><div style="display:flex;flex-direction:column;gap:12px;">'+r.subThemes.map(st=>'<div style="padding:13px 14px;background:var(--panel3);border:1px solid var(--bsoft);border-radius:10px;"><div class="serif" style="font-weight:600;font-size:14.5px;margin-bottom:5px;letter-spacing:-.2px;">'+esc(st.name)+'</div><div class="muted" style="font-size:13px;line-height:1.55;">'+esc(st.detail)+'</div></div>').join('')+'</div></div>';}
+  if(r.marketSize||r.etfs){h+='<div class="panel s5"><div class="label a">◆ Market size</div><div style="display:flex;flex-direction:column;gap:14px;">';if(r.marketSize)h+='<div><div class="mono faint" style="font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:5px;">Size</div><div class="serif" style="font-size:22px;font-weight:600;letter-spacing:-.4px;">'+esc(r.marketSize)+'</div></div>';if(r.cagr)h+='<div><div class="mono faint" style="font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:5px;">CAGR '+esc(r.cagrNote||'')+'</div><div class="serif" style="font-size:22px;font-weight:600;color:var(--green);letter-spacing:-.4px;">'+esc(r.cagr)+'%</div></div>';h+='</div>';if(r.etfs&&r.etfs.length){h+='<div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--bsoft);"><div class="mono faint" style="font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:9px;">ETFs to track</div><div style="display:flex;flex-direction:column;gap:8px;">'+r.etfs.map(e=>'<div style="display:flex;gap:10px;align-items:baseline;"><span class="mono" style="color:var(--accent);font-size:12px;letter-spacing:.5px;min-width:48px;">'+esc(e.ticker)+'</span><span class="muted" style="font-size:12.5px;">'+esc(e.name)+'</span></div>').join('')+'</div></div>';}h+='</div>';}
+  if(r.screen&&r.screen.length){h+='<div class="panel s12"><div class="label a">◆ Ranked screen — top picks & shovels</div>';r.screen.sort((a,b)=>(+b.composite||0)-(+a.composite||0)).forEach((s,i)=>{h+='<div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--bsoft);align-items:flex-start;"><div class="serif faint" style="font-size:22px;min-width:24px;line-height:1;padding-top:2px;">'+(i+1)+'</div>'+compScore(s.composite)+'<div style="flex:1;min-width:0;"><div style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;"><span class="mono" style="color:var(--accent);font-size:12px;letter-spacing:.5px;">'+esc(s.ticker||'')+'</span><span style="font-weight:600;font-size:14.5px;">'+esc(s.name)+'</span>'+(s.layer?'<span class="mono" style="font-size:9.5px;color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:2px 7px;letter-spacing:.5px;">'+esc(s.layer)+'</span>':'')+'</div><div class="muted" style="font-size:13px;margin-top:5px;line-height:1.55;">'+esc(s.oneLine||'')+'</div></div>'+(s.ticker?'<button class="dig" data-load="'+esc(s.ticker)+'">dig in →</button>':'')+'</div>';});h+='</div>';}
+  if(r.tailwinds||r.risks){h+='<div class="panel s6"><div class="label g">▲ Tailwinds</div><ul style="margin:0;padding-left:18px;font-size:13.5px;line-height:1.6;">'+(r.tailwinds||[]).map(t=>'<li style="margin-bottom:9px;">'+esc(t)+'</li>').join('')+'</ul></div>';h+='<div class="panel s6"><div class="label r">▼ Risks</div><ul style="margin:0;padding-left:18px;font-size:13.5px;line-height:1.6;">'+(r.risks||[]).map(t=>'<li style="margin-bottom:9px;">'+esc(t)+'</li>').join('')+'</ul></div>';}
+  setOut(h);
+}
+
+// ---------- PULSE ----------
+async function loadPulse(q,force){
+  S.lastQ.pulse=q||'';setOut('<div class="spin">Reading the tape…</div>');
+  const today=new Date().toISOString().slice(0,10);
+  let news=[],ground='Today is '+today+'.';
+  if(S.region==='in'){
+    let nse=null,bse=null;
+    try{const x=await Promise.all([yMeta('^NSEI'),yMeta('^BSESN')]);nse=x[0];bse=x[1];}catch(e){}
+    try{news=await gNews((q?(q+' '):'')+'Nifty 50 Sensex India stock market');}catch(e){}
+    const idx=function(m,nm){if(!m||m.regularMarketPrice==null)return '';const p=m.regularMarketPrice,pc=m.chartPreviousClose,hi=m.fiftyTwoWeekHigh;const dp=pc?((p/pc-1)*100):null,fhi=hi?((p/hi-1)*100):null;return nm+' '+Math.round(p).toLocaleString('en-IN')+(dp!=null?(' ('+(dp>=0?'+':'')+dp.toFixed(2)+'% vs prev close)'):'')+(hi!=null?(', its 52-week high is '+Math.round(hi).toLocaleString('en-IN')+' so it is currently '+(fhi>=-0.5?'AT/NEAR its 52-week high':Math.abs(fhi).toFixed(1)+'% BELOW its 52-week high and NOT at record highs')):'')+'. ';};
+    ground='LIVE INDIA MARKET DATA as of '+today+' (authoritative — trust this over any memory): '+idx(nse,'NIFTY 50:')+idx(bse,'SENSEX:');
+  } else {
+    let sp=null,nq=null;try{const x=await Promise.all([yMeta('^GSPC'),yMeta('^IXIC')]);sp=x[0];nq=x[1];}catch(e){}
+    try{news=await fh('/news?category=general');}catch(e){}
+    const idx=function(m,nm){if(!m||m.regularMarketPrice==null)return '';const p=m.regularMarketPrice,pc=m.chartPreviousClose,hi=m.fiftyTwoWeekHigh;const dp=pc?((p/pc-1)*100):null,fhi=hi?((p/hi-1)*100):null;return nm+' '+Math.round(p).toLocaleString('en-US')+(dp!=null?(' ('+(dp>=0?'+':'')+dp.toFixed(2)+'% vs prev close)'):'')+(hi!=null?(', its 52-week high is '+Math.round(hi).toLocaleString('en-US')+' so it is currently '+(fhi>=-0.5?'AT/NEAR its 52-week high':Math.abs(fhi).toFixed(1)+'% BELOW its 52-week high and NOT at record highs')):'')+'. ';};
+    ground='LIVE US MARKET DATA as of '+today+' (authoritative — trust this over any memory): '+idx(sp,'S&P 500:')+idx(nq,'NASDAQ COMPOSITE:');
+  }
+  const heads=(news||[]).slice(0,10).map(function(n){const dt=n.datetime?new Date(n.datetime*1000).toISOString().slice(0,10):'';return '- '+(dt?('['+dt+'] '):'')+(n.headline||'');}).join('\n');
+  const guard=' '+ground+' RECENT HEADLINES:\n'+heads+'\nCRITICAL RULES: Today is '+today+'. Base the entire read ONLY on the live data and headlines above. Do NOT pull events or dates from memory or training; do NOT cite a specific past catalyst (a particular dividend, election, or budget) unless it appears in the headlines above. Never say the market is at record or new highs unless the live data above explicitly states it is at/near its 52-week high. Cite the actual live index levels.';
+  let h='<div style="grid-column:span 12;display:flex;justify-content:flex-end;"><button class="toggle" data-refresh="pulse">↻ refresh live</button></div>';
+  if(S.gemKey){
+    try{
+      const r=await gem((S.region==='in'?'INDIAN MARKET ONLY (NSE/BSE, Nifty/Sensex, rupees). ':'')+'You are a buy-side macro analyst writing the end-of-day market read'+(q?(' focused on '+q):'')+'.'+guard+' Be specific — cite the live numbers, sectors, named companies. Return ONLY JSON: {"tone":"3-4 sentences on market mood, what is driving it, key conditions and which way risk is leaning","hot":[{"name":"","ticker":"","why":"2-3 sentences on why this is moving now, what to watch, the setup"}],"flows":[{"title":"","detail":"2-3 specific sentences on the flow with numbers/sectors/names","direction":"INFLOW|OUTFLOW|ROTATION"}],"themes":[{"theme":"","detail":"2-3 sentences explaining the theme and current state of play","example":"ticker"}]} Exactly 4 hot names, 4 flows, 4 themes. NO generic statements.',force);
+      if(r){
+        if(r.tone)h+='<div class="panel s12" style="border-color:rgba(92,201,138,.22);background:linear-gradient(180deg,rgba(92,201,138,.04),var(--panel2));"><div class="label g">◆ Market tone'+aiTag()+'</div><div class="serif" style="font-size:17px;line-height:1.5;letter-spacing:-.2px;">'+esc(r.tone)+'</div></div>';
+        if(r.hot&&r.hot.length){h+='<div class="panel s7"><div class="label a">🔥 Hot right now</div>';r.hot.forEach(x=>{h+='<div style="display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--bsoft);align-items:flex-start;"><div style="flex:1;min-width:0;"><div style="display:flex;gap:9px;align-items:baseline;flex-wrap:wrap;"><span class="mono" style="color:var(--accent);font-size:11.5px;letter-spacing:.5px;">'+esc(x.ticker||'')+'</span><span style="font-weight:600;font-size:14px;">'+esc(x.name)+'</span></div><div class="muted" style="font-size:13px;margin-top:5px;line-height:1.55;">'+esc(x.why)+'</div></div>'+(x.ticker?'<button class="dig" data-load="'+esc(x.ticker)+'">dig in →</button>':'')+'</div>';});h+='</div>';}
+        if(r.flows&&r.flows.length){h+='<div class="panel s5"><div class="label b">💧 Flows</div>';r.flows.forEach(fl=>{const out=esc(fl.direction)==='OUTFLOW';const col=out?'var(--red)':'var(--green)';const bg=out?'rgba(224,115,95,.15)':'rgba(92,201,138,.15)';h+='<div style="padding:13px 0;border-bottom:1px solid var(--bsoft);"><div style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;"><span style="font-weight:600;font-size:13.5px;">'+esc(fl.title)+'</span>'+(fl.direction?'<span class="mono" style="font-size:9.5px;letter-spacing:1px;padding:2px 6px;border-radius:4px;background:'+bg+';color:'+col+';">'+esc(fl.direction)+'</span>':'')+'</div><div class="muted" style="font-size:12.5px;margin-top:5px;line-height:1.55;">'+esc(fl.detail)+'</div></div>';});h+='</div>';}
+        if(r.themes&&r.themes.length){h+='<div class="panel s12"><div class="label a">🌱 Emerging themes <span class="faint" style="white-space:nowrap;">· tap to map</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">';r.themes.forEach(t=>{h+='<button data-sector="'+esc(t.theme)+'" class="theme-card" style="text-align:left;padding:15px 17px;background:var(--panel3);border:1px solid var(--bsoft);border-radius:11px;cursor:pointer;font-family:inherit;color:inherit;transition:all .14s;"><div class="serif" style="font-weight:600;font-size:15.5px;letter-spacing:-.2px;margin-bottom:7px;">'+esc(t.theme)+'</div><div class="muted" style="font-size:12.5px;line-height:1.55;">'+esc(t.detail)+'</div>'+(t.example?'<div class="mono" style="font-size:9.5px;color:var(--accent);margin-top:10px;letter-spacing:1.3px;text-transform:uppercase;">e.g. '+esc(t.example)+'</div>':'')+'</button>';});h+='</div></div>';}
+      }
+    }catch(e){h+='<div class="panel s12 err">'+esc(e.message)+'</div>';}
+  } else { h+='<div class="panel s12 muted" style="font-size:13px;line-height:1.6;">Add a free Gemini key in setup for the AI market read (tone, hot names, flows, themes). Headlines below stream live.</div>'; }
+  if(news&&news.length){h+='<div class="panel s12"><div class="label a">◆ Market headlines</div><div style="column-count:2;column-gap:32px;">';news.slice(0,12).forEach(n=>{const dt=n.datetime?new Date(n.datetime*1000).toISOString().slice(0,10):'';h+='<div class="newsrow" style="break-inside:avoid;"><a class="h" href="'+esc(n.url)+'" target="_blank">'+esc(n.headline)+'</a><div class="s"><a href="'+esc(n.url)+'" target="_blank">'+esc(n.source||'source')+' ↗</a>'+(dt?' · '+dt:'')+'</div></div>';});h+='</div></div>';}
+  setOut(h);
+}
+
+// ---------- COMPARE ----------
+async function sideData(sym){
+  sym=sym.trim().toUpperCase();
+  const [p,q,m,rec]=await Promise.all([fh('/stock/profile2?symbol='+sym).catch(()=>null),fh('/quote?symbol='+sym).catch(()=>null),fh('/stock/metric?symbol='+sym+'&metric=all').catch(()=>null),fh('/stock/recommendation?symbol='+sym).catch(()=>[])]);
+  return {sym,p,q,M:(m&&m.metric)||{},rec:rec||[]};
+}
+function cmpCol(d){
+  if(!d||!d.p||!d.p.name)return '<div class="panel col err" style="flex:1;min-width:280px;">No data for '+esc(d?d.sym:'')+'.</div>';
+  const M=d.M,p=d.p,q=d.q;
+  let h='<div class="panel col" style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:0;">';
+  h+='<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px;">';
+  h+='<div style="min-width:0;flex:1;"><div style="font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:-.5px;line-height:1.05;">'+esc(p.name)+'</div><div class="mono" style="font-size:11px;color:var(--accent);letter-spacing:1.6px;margin-top:5px;">'+esc(p.exchange||'')+' · '+esc(p.ticker||d.sym)+'</div></div>';
+  if(q&&q.c){const up=q.d>=0;h+='<div style="text-align:right;flex-shrink:0;"><div style="font-family:var(--serif);font-size:28px;font-weight:600;letter-spacing:-.7px;line-height:1;font-variant-numeric:tabular-nums;">$'+Number(q.c).toFixed(2)+'</div><div class="mono" style="font-size:11.5px;margin-top:6px;color:'+(up?'var(--green)':'var(--red)')+';">'+(up?'▲ ':'▼ ')+(up?'+':'')+Number(q.dp).toFixed(2)+'%</div></div>';}
+  h+='</div>';
+  h+='<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--bsoft);border-bottom:1px solid var(--bsoft);margin-top:14px;"><div><div class="mono faint" style="font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;">Mkt cap</div><div class="mono" style="color:var(--green);font-size:14.5px;margin-top:4px;">'+fmtB(p.marketCapitalization)+'</div></div>';
+  if(d.ai)h+=compScore(d.ai.composite);
+  h+='</div>';
+  if(d.ai&&d.ai.valuation){h+='<div style="margin-top:14px;"><div class="mono faint" style="font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:7px;">Valuation</div>'+valGauge(d.ai.valuation)+'</div>';}
+  const rows=[['p/e',M.peTTM,r2(M.peTTM),false],['p/s',M.psTTM,r2(M.psTTM),false],['ev/ebitda',M.evEbitdaTTM,r2(M.evEbitdaTTM),false],['gross margin',M.grossMarginTTM,pct(M.grossMarginTTM),false],['net margin',M.netProfitMarginTTM,pct(M.netProfitMarginTTM),false],['rev growth',M.revenueGrowthTTMYoy,pct(M.revenueGrowthTTMYoy),true],['eps growth',M.epsGrowthTTMYoy,pct(M.epsGrowthTTMYoy),true]].filter(r=>r[1]!=null&&r[2]!=null);
+  if(rows.length){h+='<div style="margin-top:14px;">';rows.forEach(r=>{const fmt=String(r[2]);const isPct=fmt.endsWith('%');const num=parseFloat(fmt);let cls='';if(r[3]&&isPct&&!isNaN(num))cls=num>=0?' pos':' neg';let v=esc(fmt);if(isPct)v=esc(fmt.slice(0,-1))+'<span class="kunit">%</span>';h+='<div class="krow"><span class="kk">'+esc(r[0])+'</span><span class="kv'+cls+'">'+v+'</span></div>';});h+='</div>';}
+  h+='<div style="display:flex;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid var(--bsoft);"><button class="dig" data-load="'+esc(p.ticker||d.sym)+'">open dossier →</button>'+starBtn(p.ticker||d.sym,p.name)+'</div>';
+  h+='</div>';
+  return h;
+}
+function cmpCtx(d,fb){if(!d||!d.p||!d.p.name)return (fb||'?')+': no live data available (may be an invalid ticker)';const M=d.M||{},p=d.p,q=d.q||{};const n=function(x,suf){return x==null?'n/a':Number(x).toFixed(1)+(suf||'');};return (p.name||fb)+' ('+(p.ticker||fb)+'): price $'+(q.c!=null?Number(q.c).toFixed(2):'n/a')+'; mkt cap '+fmtB(p.marketCapitalization)+'; P/E '+n(M.peTTM)+'; P/S '+n(M.psTTM)+'; EV/EBITDA '+n(M.evEbitdaTTM)+'; gross margin '+n(M.grossMarginTTM,'%')+'; net margin '+n(M.netProfitMarginTTM,'%')+'; rev growth YoY '+n(M.revenueGrowthTTMYoy,'%')+'; industry '+(p.finnhubIndustry||'n/a');}
+async function loadCompare(a,b){
+  a=(a||'').trim();b=(b||'').trim();if(!a||!b)return;
+  setOut('<div class="spin">Comparing '+esc(a.toUpperCase())+' vs '+esc(b.toUpperCase())+'…</div>');
+  try{
+    const [da,db]=await Promise.all([sideData(a),sideData(b)]);
+    let verdict=null;
+    if(S.gemKey){try{var cp='You are an equity analyst comparing two US stocks using ONLY the live current data below. Any company shown with a live price and market cap IS publicly traded as of today — never state a company is delisted, acquired, or no longer trades; rely solely on these figures.\nA) '+cmpCtx(da,a)+'\nB) '+cmpCtx(db,b)+'\nReturn ONLY JSON: {"verdict":"2-3 sentences grounded in the numbers on which is the stronger investment and for what kind of investor","winner":"the stronger ticker or the word split","a":{"composite":0,"valuation":"CHEAP|FAIR|RICH"},"b":{"composite":0,"valuation":"CHEAP|FAIR|RICH"}} composites 0-100 reflecting overall quality and value from the data.';verdict=await gem(cp);}catch(e){}}
+    if(verdict){da.ai=verdict.a;db.ai=verdict.b;}
+    let h='';
+    if(verdict&&verdict.verdict)h+='<div class="panel" style="border-color:rgba(224,164,88,.3)"><div class="label a">⚖ Verdict'+(verdict.winner?' · edge: '+esc(verdict.winner):'')+'</div><div class="serif" style="font-size:15px;line-height:1.6;">'+esc(verdict.verdict)+'</div></div>';
+    h+='<div class="row" style="margin-top:14px;align-items:stretch;">'+cmpCol(da)+cmpCol(db)+'</div>';
+    setOut(h);
+  }catch(e){const net=/Failed to fetch|NetworkError|load failed/i.test(e.message||'');setOut('<div class="panel err">'+esc(net?'Could not reach data. If inside the Claude app, download and open the file locally.':e.message)+'</div>');}
+}
+
+// ---------- WATCHLIST ----------
+function renderWatch(){
+  if(!S.watch.length){setOut('<div class="empty">No saved ideas yet.<br>Hit ☆ on any company to collect it here — saved permanently in this browser.</div>');return;}
+  let h='<div class="panel s12"><div class="label a">★ Watchlist <span class="faint" style="white-space:nowrap;">· '+S.watch.length+' saved · click any to open</span></div><div class="peer-grid watch-grid">';
+  S.watch.forEach(w=>{h+='<div class="peer-card watch-card" data-load="'+esc(w.sym)+'" data-region="'+esc(w.region||'us')+'" id="peer-'+esc(w.sym)+'"><button class="star on" data-star="'+esc(w.sym)+'" data-name="'+esc(w.name||'')+'">★</button><div class="pc-tk">'+esc(w.sym)+'</div><div class="wc-name">'+esc(w.name||'')+'</div><div class="pc-px"><span class="pc-skel"></span></div><div class="pc-chg"><span class="pc-skel" style="width:36px;"></span></div></div>';});
+  h+='</div></div>';setOut(h);
+  loadPeerQuotes(S.watch.map(w=>w.sym));
+}
+
+// ====================== INDIA (NSE/BSE) DATA LAYER ======================
+// US runs on Finnhub. India runs on Yahoo (price/chart/news) + Screener.in
+// (fundamentals + reported financials), TradingView (chart), Gemini (AI).
+function okJSON(t){try{JSON.parse(t);return true;}catch(e){return false;}}
+async function pfetch(rawUrl,ok){
+  ok=ok||function(t){return t&&t.length>40&&t.indexOf('Moved Permanently')<0&&t.indexOf('/v1/proxy')<0;};
+  const enc=encodeURIComponent(rawUrl);
+  const urls=['/api/public/proxy?url='+enc,'https://api.codetabs.com/v1/proxy?quest='+enc,'https://api.allorigins.win/raw?url='+enc,'https://corsproxy.io/?url='+enc,'https://api.allorigins.win/get?url='+enc];
+  for(const u of urls){try{const r=await fetch(u);if(!r.ok)continue;let t=await r.text();if(u.indexOf('/get?')>=0){try{t=(JSON.parse(t).contents)||'';}catch(e){}}if(ok(t))return t;}catch(e){}}
+  return null;
+}
+function inum(s){if(s==null)return null;const m=String(s).replace(/,/g,'').match(/-?\d+(\.\d+)?/);return m?parseFloat(m[0]):null;}
+function lastNum(a){if(!a)return null;for(let i=a.length-1;i>=0;i--){if(a[i]!=null&&!isNaN(a[i]))return a[i];}return null;}
+function cleanName(n){return (n||'').replace(/\s+(Ltd|Limited|Ltd\.)\.?$/i,'').trim();}
+function decodeEnt(s){return (s||'').replace(/&#39;/g,"'").replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&#(\d+);/g,function(m,n){return String.fromCharCode(+n);});}
+async function gNews(query){
+  const t=await pfetch('https://news.google.com/rss/search?q='+encodeURIComponent(query)+'&hl=en-IN&gl=IN&ceid=IN:en',function(x){return x&&x.indexOf('<item>')>=0;});
+  if(!t)return [];
+  const out=[],items=t.split('<item>').slice(1);
+  for(let i=0;i<items.length&&out.length<10;i++){
+    const it=items[i];const tm=it.match(/<title>([\s\S]*?)<\/title>/);if(!tm)continue;
+    const lm=it.match(/<link>([\s\S]*?)<\/link>/),sm=it.match(/<source[^>]*>([\s\S]*?)<\/source>/),pm=it.match(/<pubDate>([\s\S]*?)<\/pubDate>/);
+    let title=decodeEnt(tm[1].replace(/<[^>]+>/g,'').trim());const src=sm?decodeEnt(sm[1].trim()):'';
+    if(src&&title.length>src.length+3&&title.slice(-(src.length+3))===(' - '+src))title=title.slice(0,-(src.length+3));
+    let ts=null;if(pm){const dd=new Date(pm[1].trim());if(!isNaN(dd))ts=Math.floor(dd.getTime()/1000);}
+    out.push({headline:title,url:lm?lm[1].trim():'#',source:src||'Google News',datetime:ts});
+  }
+  return out;
+}
+function fmtCrShort(v){if(v==null||isNaN(v))return '';const a=Math.abs(v);if(a>=100000)return (v/100000).toFixed(1)+'L';if(a>=1000)return (v/1000).toFixed(1)+'k';return ''+Math.round(v);}
+function pctStr(x){return (x==null||isNaN(x))?null:((x>=0?'+':'')+x.toFixed(1)+'%');}
+function inSeries(years,vals){const out=[];years=years||[];vals=vals||[];for(let i=0;i<years.length;i++){const v=vals[i];if(v==null||isNaN(v))continue;const m=String(years[i]).match(/(\d{4})/);out.push({y:m?('FY'+m[1].slice(2)):String(years[i]),v:v});}return out.slice(-8);}
+async function yMeta(sym){const t=await pfetch('https://query1.finance.yahoo.com/v8/finance/chart/'+encodeURIComponent(sym)+'?range=1d&interval=1d',okJSON);if(!t)return null;let d;try{d=JSON.parse(t);}catch(e){return null;}return (d&&d.chart&&d.chart.result&&d.chart.result[0]&&d.chart.result[0].meta)||null;}
+async function scrFetch(sym){const paths=['/consolidated/','/'];for(let i=0;i<paths.length;i++){const t=await pfetch('https://www.screener.in/company/'+encodeURIComponent(sym)+paths[i],function(x){return x&&x.indexOf('top-ratios')>=0;});if(t)return t;}return null;}
+function scrParse(html){
+  const doc=new DOMParser().parseFromString(html,'text/html');
+  const o={name:'',ratios:{},pl:{years:[],sales:[],profit:[],opm:[],eps:[]}};
+  const h1=doc.querySelector('h1');if(h1)o.name=h1.textContent.replace(/\s+/g,' ').trim();
+  doc.querySelectorAll('#top-ratios li').forEach(function(li){const n=li.querySelector('.name'),v=li.querySelector('.value');if(n&&v)o.ratios[n.textContent.replace(/\s+/g,' ').trim()]=v.textContent.replace(/\s+/g,' ').trim();});
+  const sec=doc.querySelector('#profit-loss');
+  if(sec){
+    const ths=[].slice.call(sec.querySelectorAll('thead th')).map(function(t){return t.textContent.trim();});
+    o.pl.years=ths.slice(1);
+    sec.querySelectorAll('tbody tr').forEach(function(tr){
+      const tds=[].slice.call(tr.querySelectorAll('td'));if(!tds.length)return;
+      const label=tds[0].textContent.replace(/\s+/g,' ').replace(/\+$/,'').trim();
+      const nums=tds.slice(1).map(function(td){return inum(td.textContent);});
+      if(/^Sales|^Revenue/i.test(label))o.pl.sales=nums;
+      else if(/^Net Profit/i.test(label))o.pl.profit=nums;
+      else if(/^OPM/i.test(label))o.pl.opm=nums;
+      else if(/^EPS/i.test(label))o.pl.eps=nums;
+    });
+  }
+  o.growth={};
+  [].slice.call(doc.querySelectorAll('table.ranges-table')).forEach(function(tb){
+    const th=tb.querySelector('th'),title=th?th.textContent:'',map={};
+    [].slice.call(tb.querySelectorAll('tr')).forEach(function(tr){const td=tr.querySelectorAll('td');if(td.length>=2)map[td[0].textContent.replace(/[:\s]+$/,'').trim()]=td[1].textContent.trim();});
+    const key=/Sales/i.test(title)?'sales':/Profit/i.test(title)?'profit':/Price/i.test(title)?'price':/Equity/i.test(title)?'roe':null;
+    if(key)o.growth[key]=map;
+  });
+  const cp=doc.querySelector('.company-profile');
+  if(cp){const ps=[].slice.call(cp.querySelectorAll('p')).map(function(p){return p.textContent.replace(/\s+/g,' ').trim();}).filter(function(t){return t.length>30;});if(ps.length)o.about=ps.slice(0,2).join(' ');}
+  const bs=doc.querySelector('#balance-sheet');
+  if(bs){[].slice.call(bs.querySelectorAll('tbody tr')).forEach(function(tr){const tds=[].slice.call(tr.querySelectorAll('td'));if(!tds.length)return;const label=tds[0].textContent.replace(/\s+/g,' ').replace(/\+$/,'').trim();const nums=tds.slice(1).map(function(td){return inum(td.textContent);});if(/^Borrowings/i.test(label))o.borrow=nums;else if(/^Reserves/i.test(label))o.reserves=nums;});}
+  return o;
+}
+async function loadCompanyIN(raw){
+  const sym=(raw||'').trim().toUpperCase().replace(/\.(NS|BO|BSE)$/,'');
+  if(!sym)return;
+  setOut('<div class="spin">Pulling '+esc(sym)+' from NSE / Screener.in…</div>');
+  try{
+    const [meta,html]=await Promise.all([yMeta(sym+'.NS'),scrFetch(sym)]);
+    if(!meta&&!html){setOut('<div class="panel err">Could not load '+esc(sym)+'. Use the NSE symbol (e.g. RELIANCE, TCS, INFY, HDFCBANK). If inside the Claude app, open the file in your own browser — these sources need direct network access.</div>');return;}
+    const scr=html?scrParse(html):null;
+    const nm=(scr&&scr.name)||(meta&&(meta.longName||meta.shortName))||sym;
+    let news=[];try{news=await gNews(cleanName(nm)+' share price');}catch(e){}
+    renderCompanyIN(sym,meta,scr,news||[]);
+  }catch(e){setOut('<div class="panel err">'+esc(e.message||'India load failed')+'</div>');}
+}
+function renderCompanyIN(sym,meta,scr,news){
+  const r=(scr&&scr.ratios)||{};
+  const name=(scr&&scr.name)||(meta&&(meta.longName||meta.shortName))||sym;
+  const c=meta?meta.regularMarketPrice:inum(r['Current Price']);
+  const pc=meta?meta.chartPreviousClose:null;
+  const d=(c!=null&&pc!=null)?(c-pc):null,dp=(d!=null&&pc)?(d/pc*100):null,up=(d==null)||d>=0;
+  const px=c!=null?('₹'+Number(c).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})):'—';
+  let h='<div class="panel hero-co"><div class="head"><div><div class="name">'+esc(name)+' '+starBtn(sym,name)+'</div><div class="ticker">NSE · '+esc(sym)+'<button class="toggle compare-btn" data-compare="'+esc(sym)+'">⚖ compare</button></div></div>';
+  if(c!=null)h+='<div class="pxblock"><div class="px">'+px+'</div>'+(dp!=null?'<div class="chgpill" style="background:'+(up?'rgba(95,211,154,.14)':'rgba(232,122,100,.14)')+';color:'+(up?'var(--green)':'var(--red)')+'">'+(up?'▲ ':'▼ ')+(up?'+':'')+Number(d).toFixed(2)+' ('+(up?'+':'')+Number(dp).toFixed(2)+'%)</div>':'')+'</div>';
+  h+='</div>';
+  h+='<div class="chartwrap"><div class="chart-head"><span class="chart-label">Price chart</span></div><div id="hero-chart" style="min-height:440px;"><div class="chart-skel" style="height:440px;"></div></div></div>';
+  h+='<div class="meta">';
+  if(r['Market Cap'])h+='<div><div class="mk">Mkt Cap</div><div class="mv" style="color:var(--green)">'+esc(r['Market Cap'])+'</div></div>';
+  if(meta&&meta.regularMarketDayHigh!=null)h+='<div><div class="mk">Day High</div><div class="mv">₹'+Number(meta.regularMarketDayHigh).toFixed(2)+'</div></div><div><div class="mk">Day Low</div><div class="mv">₹'+Number(meta.regularMarketDayLow).toFixed(2)+'</div></div>';
+  if(meta&&meta.fiftyTwoWeekHigh!=null)h+='<div><div class="mk">52W Range</div><div class="mv">₹'+Number(meta.fiftyTwoWeekLow).toFixed(0)+' – ₹'+Number(meta.fiftyTwoWeekHigh).toFixed(0)+'</div></div>';
+  if(r['Book Value'])h+='<div><div class="mk">Book Value</div><div class="mv">'+esc(r['Book Value'])+'</div></div>';
+  if(r['Face Value'])h+='<div><div class="mk">Face Value</div><div class="mv">'+esc(r['Face Value'])+'</div></div>';
+  if(meta&&meta.regularMarketVolume!=null)h+='<div><div class="mk">Volume</div><div class="mv">'+fmtNum(meta.regularMarketVolume)+'</div></div>';
+  h+='<div><div class="mk">Source</div><div class="mv"><a href="https://www.screener.in/company/'+esc(sym)+'/" target="_blank">Screener ↗</a></div></div>';
+  h+='</div></div>';
+  const bv=inum(r['Book Value']);
+  const sa=(scr?scr.pl.sales:[])||[],pa=(scr?scr.pl.profit:[])||[],opmA=(scr?scr.pl.opm:[])||[];
+  const sN=sa.filter(function(v){return v!=null&&!isNaN(v);}),pN=pa.filter(function(v){return v!=null&&!isNaN(v);});
+  let netM=null;for(let i=sa.length-1;i>=0;i--){if(sa[i]&&pa[i]){netM=pa[i]/sa[i]*100;break;}}
+  let opmL=null;for(let i=opmA.length-1;i>=0;i--){if(opmA[i]!=null&&!isNaN(opmA[i])){opmL=opmA[i];break;}}
+  const sY=sN.length>=2?(sN[sN.length-1]/sN[sN.length-2]-1)*100:null;
+  const pY=pN.length>=2?(pN[pN.length-1]/pN[pN.length-2]-1)*100:null;
+  const gr=(scr&&scr.growth)||{},gS=gr.sales||{},gP=gr.profit||{},gPr=gr.price||{};
+  const borrow=lastNum(scr&&scr.borrow),reserves=lastNum(scr&&scr.reserves),de=(borrow!=null&&reserves)?borrow/reserves:null;
+  const g1=statGrid('Valuation',[['P/E',inum(r['Stock P/E']),r['Stock P/E']],['P/B',(c&&bv?c/bv:null),(c&&bv?r2(c/bv):null)],['Dividend Yield',inum(r['Dividend Yield']),r['Dividend Yield']],['Book Value',bv,r['Book Value']],['Face Value',inum(r['Face Value']),r['Face Value']]]);
+  const g2=statGrid('Returns & quality',[['ROCE',inum(r['ROCE']),r['ROCE']],['ROE',inum(r['ROE']),r['ROE']],['Net margin',netM,pctStr(netM)],['OPM (latest)',opmL,pctStr(opmL)],['Debt',borrow,borrow!=null?(fmtCrShort(borrow)+' Cr'):null],['Debt / Equity',de,de!=null?r2(de):null]]);
+  const g3=statGrid('Sales growth',[['Latest YoY',sY,pctStr(sY)],['3Y CAGR',inum(gS['3 Years']),gS['3 Years']],['5Y CAGR',inum(gS['5 Years']),gS['5 Years']],['10Y CAGR',inum(gS['10 Years']),gS['10 Years']]],{colorSign:true});
+  const g4=statGrid('Profit growth',[['Latest YoY',pY,pctStr(pY)],['3Y CAGR',inum(gP['3 Years']),gP['3 Years']],['5Y CAGR',inum(gP['5 Years']),gP['5 Years']],['10Y CAGR',inum(gP['10 Years']),gP['10 Years']]],{colorSign:true});
+  const g5=statGrid('Stock price CAGR',[['1Y',inum(gPr['1 Year']),gPr['1 Year']],['3Y',inum(gPr['3 Years']),gPr['3 Years']],['5Y',inum(gPr['5 Years']),gPr['5 Years']],['10Y',inum(gPr['10 Years']),gPr['10 Years']]],{colorSign:true});
+  h+=bizPanel([['Listed','NSE · '+esc(sym)]]);
+  if(g1||g2||g3||g4||g5)h+='<div class="panel"><div class="label a">◆ Key metrics <span class="faint" style="white-space:nowrap;">· via Screener.in</span></div><div class="kgrid">'+g1+g2+g3+g4+g5+'</div></div>';
+  if(scr&&(sN.length>1||pN.length>1)){h+='<div class="panel s7"><div class="label a">◆ Financial trend — reported annual (₹ Cr)</div>'+sparkBars(inSeries(scr.pl.years,scr.pl.sales),'Sales · ₹ Cr','var(--accent)',fmtCrShort)+sparkBars(inSeries(scr.pl.years,scr.pl.profit),'Net profit · ₹ Cr','var(--green)',fmtCrShort)+'</div>';}
+  if(news&&news.length){h+='<div class="panel s5"><div class="label a">◆ Latest news</div>';news.slice(0,8).forEach(function(n){const dt=n.datetime?new Date(n.datetime*1000).toISOString().slice(0,10):'';h+='<div class="newsrow"><a class="h" href="'+esc(n.url)+'" target="_blank">'+esc(n.headline)+'</a><div class="s"><a href="'+esc(n.url)+'" target="_blank">'+esc(n.source||'source')+' ↗</a>'+(dt?' · '+dt:'')+'</div></div>';});h+='</div>';}
+  h+='<div class="panel" id="aiPanel"><div class="label a">⛏ AI analysis</div>'+(S.gemKey?'<div class="spin" style="margin:6px 0;text-align:left;">thinking with your Gemini key…</div>':'<div class="muted" style="font-size:13px;line-height:1.6;">Add a free Gemini key in setup for an AI scored read.</div>')+'</div>';
+  setOut(h);
+  loadHeroChart(sym);
+  loadBiz(cleanName(name),scr&&scr.about);
+  if(S.gemKey){
+    const aiCtx='Indian company '+name+' (NSE: '+sym+'), currently publicly listed on India NSE. Live price ₹'+c+'. From Screener.in — P/E '+(r['Stock P/E']||'n/a')+', ROCE '+(r['ROCE']||'n/a')+', ROE '+(r['ROE']||'n/a')+', market cap '+(r['Market Cap']||'n/a')+', dividend yield '+(r['Dividend Yield']||'n/a')+', book value '+(r['Book Value']||'n/a')+'. Latest annual sales ~₹'+(sN[sN.length-1]||'n/a')+' Cr, net profit ~₹'+(pN[pN.length-1]||'n/a')+' Cr. Analyze for an Indian investor; segments, peers and picks-shovels must be Indian companies; figures in ₹.';
+    S._lastCompanyAI={name:name,sym:sym,p:null,q:null,M:null,ctx:aiCtx};
+    runCompanyAI(name,sym,null,null,null,false,aiCtx);
+  }
+}
+async function sideDataIN(sym){sym=(sym||'').trim().toUpperCase().replace(/\.(NS|BO|BSE)$/,'');const [meta,html]=await Promise.all([yMeta(sym+'.NS'),scrFetch(sym)]);const scr=html?scrParse(html):null;return {sym:sym,meta:meta,scr:scr,name:(scr&&scr.name)||(meta&&(meta.longName||meta.shortName))||sym};}
+function cmpColIN(d){
+  if(!d||(!d.meta&&!d.scr))return '<div class="panel col err" style="flex:1;min-width:280px;">No data for '+esc(d?d.sym:'')+'.</div>';
+  const r=(d.scr&&d.scr.ratios)||{},meta=d.meta||{};
+  const c=meta.regularMarketPrice!=null?meta.regularMarketPrice:inum(r['Current Price']);
+  const pc=meta.chartPreviousClose,dp=(c!=null&&pc)?(c-pc)/pc*100:null,up=(dp==null)||dp>=0;
+  const sa=(d.scr?d.scr.pl.sales:[])||[],pa=(d.scr?d.scr.pl.profit:[])||[];
+  let netM=null;for(let i=sa.length-1;i>=0;i--){if(sa[i]&&pa[i]){netM=pa[i]/sa[i]*100;break;}}
+  const sN=sa.filter(function(v){return v!=null&&!isNaN(v);});const sY=sN.length>=2?(sN[sN.length-1]/sN[sN.length-2]-1)*100:null;
+  let h='<div class="panel col" style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:0;">';
+  h+='<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px;">';
+  h+='<div style="min-width:0;flex:1;"><div style="font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:-.5px;line-height:1.05;">'+esc(d.name)+'</div><div class="mono" style="font-size:11px;color:var(--accent);letter-spacing:1.6px;margin-top:5px;">NSE · '+esc(d.sym)+'</div></div>';
+  if(c!=null)h+='<div style="text-align:right;flex-shrink:0;"><div style="font-family:var(--serif);font-size:28px;font-weight:600;letter-spacing:-.7px;line-height:1;">₹'+Number(c).toLocaleString('en-IN',{maximumFractionDigits:2})+'</div>'+(dp!=null?'<div class="mono" style="font-size:11.5px;margin-top:6px;color:'+(up?'var(--green)':'var(--red)')+';">'+(up?'▲ ':'▼ ')+(up?'+':'')+Number(dp).toFixed(2)+'%</div>':'')+'</div>';
+  h+='</div>';
+  h+='<div style="padding:12px 0;border-top:1px solid var(--bsoft);border-bottom:1px solid var(--bsoft);margin-top:14px;"><div class="mono faint" style="font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;">Mkt cap</div><div class="mono" style="color:var(--green);font-size:14.5px;margin-top:4px;">'+esc(r['Market Cap']||'—')+'</div></div>';
+  if(d.ai)h+='<div style="margin-top:14px;display:flex;gap:18px;align-items:center;">'+compScore(d.ai.composite)+(d.ai.valuation?'<div style="flex:1;">'+valGauge(d.ai.valuation)+'</div>':'')+'</div>';
+  const rows=[['p/e',r['Stock P/E']],['roce',r['ROCE']],['roe',r['ROE']],['net margin',netM!=null?netM.toFixed(1)+'%':null],['sales yoy',sY!=null?((sY>=0?'+':'')+sY.toFixed(1)+'%'):null],['div yield',r['Dividend Yield']]].filter(function(x){return x[1]!=null&&x[1]!=='';});
+  if(rows.length){h+='<div style="margin-top:14px;">';rows.forEach(function(rw){const fmt=String(rw[1]).trim();const isPct=/%$/.test(fmt);let v=esc(fmt);if(isPct)v=esc(fmt.slice(0,-1))+'<span class="kunit">%</span>';h+='<div class="krow"><span class="kk">'+esc(rw[0])+'</span><span class="kv">'+v+'</span></div>';});h+='</div>';}
+  h+='<div style="display:flex;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid var(--bsoft);"><button class="dig" data-load="'+esc(d.sym)+'" data-region="in">open dossier →</button>'+starBtn(d.sym,d.name)+'</div>';
+  h+='</div>';return h;
+}
+function cmpCtxIN(d){if(!d||(!d.meta&&!d.scr))return (d?d.sym:'?')+': no live data';const r=(d.scr&&d.scr.ratios)||{},meta=d.meta||{};const c=meta.regularMarketPrice!=null?meta.regularMarketPrice:inum(r['Current Price']);return d.name+' (NSE:'+d.sym+'): price ₹'+(c!=null?c:'n/a')+'; mkt cap '+(r['Market Cap']||'n/a')+'; P/E '+(r['Stock P/E']||'n/a')+'; ROCE '+(r['ROCE']||'n/a')+'; ROE '+(r['ROE']||'n/a')+'; dividend yield '+(r['Dividend Yield']||'n/a')+'.';}
+async function loadCompareIN(a,b){
+  a=(a||'').trim();b=(b||'').trim();if(!a||!b)return;
+  setOut('<div class="spin">Comparing '+esc(a.toUpperCase())+' vs '+esc(b.toUpperCase())+' (NSE)…</div>');
+  try{
+    const [da,db]=await Promise.all([sideDataIN(a),sideDataIN(b)]);
+    let verdict=null;
+    if(S.gemKey){try{var cp='You are an equity analyst comparing two INDIAN (NSE-listed) stocks using ONLY the live data below. Both are currently publicly traded — never claim either is delisted or acquired. Use rupees.\nA) '+cmpCtxIN(da)+'\nB) '+cmpCtxIN(db)+'\nReturn ONLY JSON: {"verdict":"2-3 sentences grounded in the numbers on which is the stronger investment and for what kind of Indian investor","winner":"the stronger ticker or the word split","a":{"composite":0,"valuation":"CHEAP|FAIR|RICH"},"b":{"composite":0,"valuation":"CHEAP|FAIR|RICH"}} composites 0-100.';verdict=await gem(cp);}catch(e){}}
+    if(verdict){da.ai=verdict.a;db.ai=verdict.b;}
+    let h='';
+    if(verdict&&verdict.verdict)h+='<div class="panel" style="border-color:rgba(224,164,88,.3)"><div class="label a">⚖ Verdict'+(verdict.winner?' · edge: '+esc(verdict.winner):'')+'</div><div class="serif" style="font-size:15px;line-height:1.6;">'+esc(verdict.verdict)+'</div></div>';
+    h+='<div class="row" style="margin-top:14px;align-items:stretch;">'+cmpColIN(da)+cmpColIN(db)+'</div>';
+    setOut(h);
+  }catch(e){setOut('<div class="panel err">'+esc(e.message||'Compare failed')+'</div>');}
+}
+// ==================== END INDIA DATA LAYER ====================
+
+// ---------- shell ----------
+function setOut(h){$('out').innerHTML=h;}
+// ===== Business profile (Wikipedia — factual, non-AI) =====
+async function wiki(name){
+  if(!name)return null;
+  const clean=String(name).replace(/\s+(Inc|Corp|Corporation|Co|Company|Ltd|Limited|PLC|Group|Holdings?|SA|AG|NV|SE)\.?$/i,'').trim()||String(name);
+  async function summary(title){
+    try{const r=await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(title.replace(/ /g,'_')));if(!r.ok)return null;const d=await r.json();if(!d||!d.extract||d.type==='disambiguation')return null;return {title:d.title,desc:d.description,extract:d.extract,url:(d.content_urls&&d.content_urls.desktop&&d.content_urls.desktop.page)||('https://en.wikipedia.org/wiki/'+encodeURIComponent((d.title||title).replace(/ /g,'_')))};}catch(e){return null;}
+  }
+  try{const sr=await fetch('https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(clean+' company')+'&srlimit=1&format=json&origin=*');if(sr.ok){const sj=await sr.json();const hit=sj&&sj.query&&sj.query.search&&sj.query.search[0];if(hit){const r=await summary(hit.title);if(r)return r;}}}catch(e){}
+  return await summary(clean);
+}
+function bizPanel(facts){
+  let f='';
+  (facts||[]).forEach(function(x){if(x[1])f+='<span style="display:inline-flex;gap:5px;align-items:baseline;margin:0 16px 6px 0;font-family:var(--mono);font-size:11.5px;"><span class="faint" style="font-size:9.5px;letter-spacing:1px;text-transform:uppercase;">'+esc(x[0])+'</span><span style="color:var(--text);">'+x[1]+'</span></span>';});
+  return '<div class="panel" id="bizPanel"><div class="label a">\u25c6 Business \u2014 what they do <span class="faint" style="white-space:nowrap;">\u00b7 factual, not AI</span></div>'+(f?'<div style="margin:2px 0 10px;line-height:1.9;">'+f+'</div>':'')+'<div id="bizProse"><div class="spin" style="text-align:left;margin:4px 0;">loading description\u2026</div></div></div>';
+}
+async function loadBiz(name,extra){
+  const el=document.getElementById('bizProse');if(!el)return;
+  let w=null;try{w=await wiki(name);}catch(e){}
+  if(!w&&!extra){const pn=document.getElementById('bizPanel');if(pn)pn.remove();return;}
+  let h='';
+  if(w){
+    if(w.desc)h+='<div style="font-family:var(--serif);font-size:15px;color:var(--text);margin:2px 0 8px;">'+esc(w.desc)+'</div>';
+    h+='<div style="font-size:13.5px;line-height:1.65;color:var(--muted);">'+esc(w.extract)+'</div>';
+    h+='<div class="faint" style="font-size:11px;margin-top:8px;"><a href="'+esc(w.url)+'" target="_blank">Full profile on Wikipedia \u2197</a></div>';
+  }
+  if(extra)h+='<div style="font-size:13px;line-height:1.6;color:var(--muted);margin-top:'+(w?'12px':'2px')+';'+(w?'border-top:1px solid var(--bsoft);padding-top:10px;':'')+'"><span class="faint" style="font-size:9.5px;letter-spacing:1px;text-transform:uppercase;">Profile \u00b7 Screener</span><br>'+esc(extra)+'</div>';
+  el.innerHTML=h;
+}
+// ===== Routing, render & events =====
+function dispatch(v){if(S.mode==='company')(S.region==='in'?loadCompanyIN:loadCompany)(v);else if(S.mode==='sector')loadSector(v);else if(S.mode==='pulse')loadPulse(v);}
+function render(){
+  const _rb=$('regionBtn');if(_rb)_rb.textContent=S.region==='in'?'🇮🇳 India':'🇺🇸 US';
+  const ok=!!S.fhKey;$('live').innerHTML='<span class="dot" style="background:'+(ok?'var(--green)':'var(--red)')+';box-shadow:0 0 8px '+(ok?'var(--green)':'var(--red)')+'"></span>'+(ok?'LIVE · FINNHUB':'NO KEY — OPEN SETUP');
+  const tabs=[['company','Company'],['sector','Sector'],['pulse','Pulse'],['compare','Compare'],['watch','Watchlist']];
+  $('tabs').innerHTML=tabs.map(t=>'<button class="tab '+(S.mode===t[0]?'on':'')+'" data-tab="'+t[0]+'">'+t[1]+(t[0]==='watch'&&S.watch.length?' ('+S.watch.length+')':'')+'</button>').join('');
+  if(S.mode==='watch'){$('searchArea').innerHTML='';$('chips').innerHTML='';renderWatch();return;}
+  if(S.mode==='compare'){$('searchArea').innerHTML='<div class="row"><input id="q" placeholder="Ticker A (e.g. '+(S.region==='in'?'RELIANCE':'VRT')+')"/><span style="align-self:center;color:var(--faint);font-family:var(--mono);font-size:12px;">vs</span><input id="qb" placeholder="Ticker B (e.g. '+(S.region==='in'?'TCS':'ETN')+')"/><button class="go" id="goBtn">Compare</button></div>';$('chips').innerHTML='';setOut('<div class="empty">Enter two tickers for a side-by-side: price, valuation, margins, analyst consensus, and an AI verdict.</div>');return;}
+  const isP=S.mode==='pulse';
+  const ph=S.mode==='company'?(S.region==='in'?'Enter an NSE ticker (e.g. RELIANCE, TCS, INFY)…':'Enter a ticker (e.g. NVDA, VRT, CEG)…'):S.mode==='sector'?'Enter a sector or theme…':'Optional focus (or blank for whole market)';
+  $('searchArea').innerHTML='<div class="row"><input id="q" placeholder="'+ph+'"/><button class="go" id="goBtn">'+(S.mode==='company'?'Research':S.mode==='sector'?'Map':'Scan')+'</button></div>';
+  const ex=S.mode==='company'?(S.region==='in'?['RELIANCE','TCS','HDFCBANK','INFY','TATAMOTORS']:['NVDA','VRT','CEG','ETN','ASML']):S.mode==='sector'?(S.region==='in'?['India defence','EV & battery supply chain','Renewables & solar','Railways capex','Digital payments']:['AI data centers','Grid electrification','Nuclear / SMRs','GLP-1 supply chain','Defense drones']):(S.region==='in'?['Whole market','IT','Banks','Auto','PSU']:['Whole market','Tech','Energy','Healthcare','Small caps']);
+  $('chips').innerHTML=ex.map(e=>'<button class="chip" data-ex="'+esc(e)+'">'+esc(e)+'</button>').join('');
+  setOut('<div class="empty">'+(S.mode==='company'?'Type a ticker for live price, valuation, margins, consensus, earnings, peers, news — and an AI scored read.':S.mode==='sector'?'Type a sector for a clickable ecosystem map, ranked screen, value chain and market sizing.':'Hit Scan for the market tone, hot names, flows, themes and live headlines.')+'</div>');
+}
+document.addEventListener('click',(e)=>{
+  const t=e.target.closest('[data-tab],[data-ex],[data-load],[data-sector],[data-refresh],[data-star],[data-tf],[data-compare],#goBtn,#setBtn,#regionBtn,#saveKeys,#clearCache');
+  if(!t)return;
+  if(t.dataset.tab){S.mode=t.dataset.tab;render();}
+  else if(t.id==='setBtn'){const s=$('settings');s.style.display=s.style.display==='none'?'block':'none';}
+  else if(t.id==='regionBtn'){S.region=S.region==='in'?'us':'in';localStorage.setItem('region',S.region);S.mode='company';render();}
+  else if(t.id==='saveKeys'){S.fhKey=$('fhKey').value.trim();S.gemKey=$('gemKey').value.trim();localStorage.setItem('fhKey',S.fhKey);localStorage.setItem('gemKey',S.gemKey);$('settings').style.display='none';render();}
+  else if(t.id==='clearCache'){clearAICache();const o=t.textContent;t.textContent='Cleared ✓';setTimeout(function(){t.textContent=o;},1200);}
+  else if(t.dataset.refresh){if(t.dataset.refresh==='sector')loadSector(S.lastQ.sector,true);else if(t.dataset.refresh==='pulse')loadPulse(S.lastQ.pulse,true);else if(t.dataset.refresh==='company-ai'){if(S._lastCompanyAI){$('aiPanel').innerHTML='<div class="label a">⛏ AI analysis</div><div class="spin">refreshing…</div>';runCompanyAI(S._lastCompanyAI.name,S._lastCompanyAI.sym,S._lastCompanyAI.p,S._lastCompanyAI.q,S._lastCompanyAI.M,true,S._lastCompanyAI.ctx);}}}
+  else if(t.dataset.tf){loadHeroChart(t.dataset.sym,t.dataset.tf);}
+  else if(t.dataset.compare){S.mode='compare';render();setTimeout(function(){const qq=$('q');if(qq)qq.value=t.dataset.compare;const qb=$('qb');if(qb)qb.focus();},20);}
+  else if(t.dataset.ex){dispatch(t.dataset.ex==='Whole market'?'':t.dataset.ex);}
+  else if(t.id==='goBtn'){if(S.mode==='compare')(S.region==='in'?loadCompareIN:loadCompare)($('q').value,$('qb').value);else dispatch($('q').value);}
+  else if(t.dataset.load){S.mode='company';if(t.dataset.region&&t.dataset.region!==S.region){S.region=t.dataset.region;localStorage.setItem('region',S.region);}render();$('q').value=t.dataset.load;(S.region==='in'?loadCompanyIN:loadCompany)(t.dataset.load);}
+  else if(t.dataset.sector){S.mode='sector';render();$('q').value=t.dataset.sector;loadSector(t.dataset.sector);}
+  else if(t.dataset.star){toggleWatch(t.dataset.star,t.dataset.name);}
+});
+document.addEventListener('keydown',(e)=>{if(e.key==='Enter'){const CMP=S.region==='in'?loadCompareIN:loadCompare;if(e.target.id==='q'){if(S.mode==='compare')CMP($('q').value,$('qb').value);else dispatch(e.target.value);}else if(e.target.id==='qb')CMP($('q').value,$('qb').value);}});
+$('fhKey').value=S.fhKey;$('gemKey').value=S.gemKey;
+render();
+</script>
+
+</body>
+</html>
