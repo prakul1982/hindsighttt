@@ -1071,6 +1071,116 @@ document.addEventListener('click',(e)=>{
 document.addEventListener('keydown',(e)=>{if(e.key==='Enter'){const CMP=S.region==='in'?loadCompareIN:loadCompare;if(e.target.id==='q'){if(S.mode==='compare')CMP($('q').value,$('qb').value);else dispatch(e.target.value);}else if(e.target.id==='qb')CMP($('q').value,$('qb').value);}});
 $('fhKey').value=S.fhKey;$('gemKey').value=S.gemKey;
 render();
+
+/* ===== Onboarding walkthrough (coach marks) =====================
+ * Spotlights real UI while the user pastes keys, verifies the Finnhub
+ * key against the live API, then runs the first research query. */
+const TOUR_FLAG='hindsight_tour_done';
+const Tour=(function(){
+  let i=0,dim,hole,card,open=false,verified=null;
+  const steps=[
+    {title:'Welcome to Hindsight',
+     body:'A research terminal that runs entirely in your browser. No keys ship with it — you bring your own free ones. This takes about a minute.',
+     next:'Start'},
+    {el:'#setBtn',title:'Your keys live here',
+     body:'The Keys panel stores everything in this browser only. It is now open on the right.',
+     before(){$('settings').style.display='block';},next:'Next'},
+    {el:'#fhKey',title:'1 · Finnhub key',
+     body:'Free, and it powers every live price and fundamental. Create one at finnhub.io/register, then paste it into the highlighted field.',
+     focus:true,
+     valid(){return $('fhKey').value.trim().length>3;},
+     hint:'Paste a Finnhub key to continue.',next:'Next'},
+    {el:'#gemKey',title:'2 · Gemini key (optional)',
+     body:'Only needed for the AI scorecards, sector maps and market pulse. Get one free at aistudio.google.com/apikey — or skip and add it later.',
+     focus:true,next:'Next',skip:'Skip this'},
+    {el:'#saveKeys',title:'3 · Save and verify',
+     body:'Saving stores the keys locally and then calls Finnhub once with a test quote, so you know the key really works before you rely on it.',
+     next:'Save & verify',
+     async run(setStatus){
+       S.fhKey=$('fhKey').value.trim();S.gemKey=$('gemKey').value.trim();
+       localStorage.setItem('fhKey',S.fhKey);localStorage.setItem('gemKey',S.gemKey);
+       setStatus('busy','Calling Finnhub with a test quote…');
+       try{
+         const r=await fetch('https://finnhub.io/api/v1/quote?symbol=AAPL&token='+encodeURIComponent(S.fhKey));
+         if(r.status===401||r.status===403){setStatus('bad','Finnhub rejected that key. Check it and try again.');return false;}
+         if(r.status===429){setStatus('bad','Rate limited — wait a few seconds and retry.');return false;}
+         const d=await r.json();
+         if(!d||typeof d.c!=='number'||d.c===0){setStatus('bad','No quote came back. Double-check the key.');return false;}
+         verified=d.c;setStatus('ok','Verified — AAPL is trading at $'+d.c.toFixed(2)+'.');
+         $('settings').style.display='none';render();return true;
+       }catch(e){setStatus('bad','Network error reaching Finnhub.');return false;}
+     }},
+    {el:'#q',title:'4 · Run your first search',
+     body:'Search a ticker for price, valuation, margins, consensus, earnings, peers and news. We have filled in a starter — hit Research to watch it load.',
+     before(){if(S.mode!=='company'){S.mode='company';render();}const q=$('q');if(q&&!q.value)q.value=(S.region==='in'?'RELIANCE':'NVDA');},
+     next:'Research it',
+     async run(setStatus){const q=$('q');setStatus('busy','Fetching '+q.value.trim()+'…');dispatch(q.value);return true;}},
+    {el:'#tabs',title:'You are set up',
+     body:'Company, Sector, Pulse, Compare and Watchlist all live in this sidebar. Reopen this walkthrough any time from ◎ Walkthrough at the bottom left.',
+     next:'Finish'}
+  ];
+  function build(){
+    dim=document.createElement('div');dim.className='tourDim';
+    hole=document.createElement('div');hole.className='tourHole';
+    card=document.createElement('div');card.className='tourCard';
+    document.body.append(dim,hole,card);
+    card.addEventListener('click',async(e)=>{
+      const b=e.target.closest('button');if(!b)return;
+      if(b.dataset.act==='end')return end();
+      if(b.dataset.act==='back')return go(i-1);
+      if(b.dataset.act==='skip')return go(i+1);
+      const st=steps[i];
+      if(st.valid&&!st.valid()){status('bad',st.hint||'Fill this in first.');return;}
+      if(st.run){b.disabled=true;const ok=await st.run(status);b.disabled=false;if(!ok)return;
+        setTimeout(()=>go(i+1),700);return;}
+      go(i+1);
+    });
+  }
+  function status(kind,msg){const el=card.querySelector('.st');if(el){el.className='st '+kind;el.textContent=msg;}}
+  function place(){
+    const st=steps[i],t=st.el?document.querySelector(st.el):null;
+    if(!t){hole.style.display='none';
+      card.style.top=Math.max(16,(innerHeight/2-140))+'px';
+      card.style.left=Math.max(16,(innerWidth/2-170))+'px';return;}
+    const r=t.getBoundingClientRect();
+    hole.style.display='block';
+    hole.style.top=(r.top-6)+'px';hole.style.left=(r.left-6)+'px';
+    hole.style.width=(r.width+12)+'px';hole.style.height=(r.height+12)+'px';
+    const cw=Math.min(340,innerWidth-32),ch=card.offsetHeight||220;
+    let left=r.right+18,top=r.top;
+    if(left+cw>innerWidth-16)left=Math.max(16,r.left-cw-18);
+    if(left<16)left=Math.max(16,(innerWidth-cw)/2);
+    if(top+ch>innerHeight-16)top=Math.max(16,innerHeight-ch-16);
+    card.style.left=left+'px';card.style.top=top+'px';
+  }
+  function go(n){
+    if(n>=steps.length)return end();
+    i=Math.max(0,n);const st=steps[i];
+    if(st.before)st.before();
+    card.innerHTML='<div class="step">Step '+(i+1)+' of '+steps.length+'</div>'
+      +'<h4>'+st.title+'</h4><p>'+st.body+'</p>'
+      +'<div class="st busy"></div>'
+      +'<div class="tourNav"><span class="dots">'+steps.map((_,k)=>'<i class="'+(k<=i?'on':'')+'"></i>').join('')+'</span>'
+      +(i>0?'<button class="tourGhost" data-act="back">Back</button>':'<button class="tourGhost" data-act="end">Exit</button>')
+      +(st.skip?'<button class="tourGhost" data-act="skip">'+st.skip+'</button>':'')
+      +'<button class="tourBtn">'+(st.next||'Next')+'</button></div>';
+    const t=st.el?document.querySelector(st.el):null;
+    if(t&&t.scrollIntoView)t.scrollIntoView({block:'center',behavior:'smooth'});
+    requestAnimationFrame(()=>{place();if(st.focus&&t&&t.focus)t.focus();});
+  }
+  function end(){open=false;dim.classList.remove('on');hole.style.display='none';card.style.display='none';
+    localStorage.setItem(TOUR_FLAG,'1');}
+  function start(){
+    if(!dim)build();
+    open=true;i=0;card.style.display='block';dim.classList.add('on');go(0);
+  }
+  addEventListener('resize',()=>{if(open)place();});
+  addEventListener('scroll',()=>{if(open)place();},true);
+  document.addEventListener('input',(e)=>{if(open&&(e.target.id==='fhKey'||e.target.id==='gemKey'))status('busy','');});
+  return {start:start};
+})();
+document.addEventListener('click',(e)=>{if(e.target.closest('#tourBtn'))Tour.start();});
+if(!localStorage.getItem(TOUR_FLAG)&&!S.fhKey)setTimeout(()=>Tour.start(),450);
 </script>
 
 </body>
