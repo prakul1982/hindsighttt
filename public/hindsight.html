@@ -245,32 +245,32 @@ html,body{max-width:100%;overflow-x:hidden;}
 }
 
 /* ===== visual layer ===================================================== */
-.rail-track{position:relative;height:9px;border-radius:99px;margin:36px 0 9px;
- background:linear-gradient(90deg,rgba(232,122,100,.32),rgba(148,160,154,.18) 45%,rgba(95,211,154,.32));}
-.rail-band{position:absolute;top:-4px;height:17px;border-radius:5px;background:rgba(45,138,158,.13);
- border-left:1px solid rgba(45,138,158,.4);border-right:1px solid rgba(45,138,158,.4);}
-.rail-mark{position:absolute;top:-9px;width:3px;height:27px;border-radius:2px;background:var(--accent);
- box-shadow:0 0 14px 2px rgba(45,138,158,.45);}
-.rail-mark:after{content:attr(data-px);position:absolute;left:50%;transform:translateX(-50%);bottom:32px;
- font-family:var(--mono);font-size:13px;font-weight:600;color:var(--accent2);white-space:nowrap;}
-.rail-ends{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--faint);}
-.rail-ends b{display:block;color:var(--muted);font-weight:500;font-size:12.5px;margin-top:3px;}
-.rail-pos{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;color:var(--muted);
- margin-top:15px;text-transform:uppercase;}
-.rail-pos b{color:var(--accent2);}
-
-.casc{display:flex;flex-direction:column;gap:3px;}
-.casc-row{display:flex;align-items:center;height:44px;gap:14px;}
-.casc-key{width:112px;flex:none;font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;
- text-transform:uppercase;color:var(--muted);text-align:right;}
-.casc-bar{flex:1;height:100%;position:relative;border-radius:6px;overflow:hidden;background:var(--track);}
-.casc-fill{position:absolute;top:0;left:0;height:100%;display:flex;align-items:center;padding-left:14px;
- font-family:var(--mono);font-size:14px;font-weight:600;color:#0b100f;
- animation:cascIn .6s cubic-bezier(.2,.7,.3,1) both;}
-@keyframes cascIn{from{width:0 !important}}
-.casc-lost{position:absolute;top:0;height:100%;display:flex;align-items:center;justify-content:center;
- font-family:var(--mono);font-size:10.5px;letter-spacing:.6px;color:var(--faint);
- background:repeating-linear-gradient(135deg,transparent,transparent 5px,rgba(232,122,100,.09) 5px,rgba(232,122,100,.09) 10px);}
+ .rail-track{position:relative;height:9px;border-radius:99px;margin:36px 0 9px;
+  background:linear-gradient(90deg,rgba(239,123,104,.32),rgba(184,174,165,.18) 45%,rgba(142,201,162,.32));}
+ .rail-band{position:absolute;top:-4px;height:17px;border-radius:5px;background:rgba(232,93,58,.13);
+  border-left:1px solid rgba(232,93,58,.4);border-right:1px solid rgba(232,93,58,.4);}
+ .rail-mark{position:absolute;top:-9px;width:3px;height:27px;border-radius:2px;background:var(--accent);
+  box-shadow:0 0 14px 2px rgba(232,93,58,.45);}
+ .rail-mark:after{content:attr(data-px);position:absolute;left:50%;transform:translateX(-50%);bottom:32px;
+  font-family:var(--mono);font-size:13px;font-weight:600;color:var(--accent2);white-space:nowrap;}
+ .rail-ends{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--faint);}
+ .rail-ends b{display:block;color:var(--muted);font-weight:500;font-size:12.5px;margin-top:3px;}
+ .rail-pos{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;color:var(--muted);
+  margin-top:15px;text-transform:uppercase;}
+ .rail-pos b{color:var(--accent2);}
+ 
+ .casc{display:flex;flex-direction:column;gap:3px;}
+ .casc-row{display:flex;align-items:center;height:44px;gap:14px;}
+ .casc-key{width:112px;flex:none;font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;
+  text-transform:uppercase;color:var(--muted);text-align:right;}
+ .casc-bar{flex:1;height:100%;position:relative;border-radius:6px;overflow:hidden;background:var(--track);}
+ .casc-fill{position:absolute;top:0;left:0;height:100%;display:flex;align-items:center;padding-left:14px;
+  font-family:var(--mono);font-size:14px;font-weight:600;color:#241510;
+  animation:cascIn .6s cubic-bezier(.2,.7,.3,1) both;}
+ @keyframes cascIn{from{width:0 !important}}
+ .casc-lost{position:absolute;top:0;height:100%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.6px;color:var(--faint);
+  background:repeating-linear-gradient(135deg,transparent,transparent 5px,rgba(239,123,104,.09) 5px,rgba(239,123,104,.09) 10px);}
 .casc-val{width:64px;flex:none;text-align:right;font-family:var(--mono);font-size:14px;color:var(--text);}
 
 .krow.has-rail{display:grid;grid-template-columns:1fr 62px;row-gap:6px;align-items:center;padding:9px 0;}
@@ -671,7 +671,7 @@ function renderCompany(sym,q,p,M,news,peers,rec,earn,rep,ins,cal){
   let nextE=null;
   if(cal&&cal.earningsCalendar&&cal.earningsCalendar.length){const today=Date.now();const fu=cal.earningsCalendar.filter(e=>e.date&&e.symbol===sym&&new Date(e.date).getTime()>=today-86400000).sort((a,b)=>new Date(a.date)-new Date(b.date));nextE=fu[0]||null;}
   h+='<div class="panel hero-co"><div class="head"><div><div class="name">'+esc(name)+' '+starBtn(sym,name)+'</div><div class="ticker">'+esc(p.exchange||'NASDAQ')+' · '+esc(p.ticker||sym)+'<button class="toggle compare-btn" data-compare="'+esc(sym)+'">⚖ compare</button></div></div>';
-  if(q&&q.c)h+='<div class="pxblock"><div class="px">$'+Number(q.c).toFixed(2)+'</div><div class="chgpill" style="background:'+(up?'rgba(95,211,154,.14)':'rgba(232,122,100,.14)')+';color:'+(up?'var(--green)':'var(--red)')+'">'+(up?'▲ ':'▼ ')+(up?'+':'')+Number(q.d).toFixed(2)+' ('+(up?'+':'')+Number(q.dp).toFixed(2)+'%)</div></div>';
+  if(q&&q.c)h+='<div class="pxblock"><div class="px">$'+Number(q.c).toFixed(2)+'</div><div class="chgpill" style="background:'+(up?'rgba(142,201,162,.14)':'rgba(239,123,104,.14)')+';color:'+(up?'var(--green)':'var(--red)')+'">'+(up?'▲ ':'▼ ')+(up?'+':'')+Number(q.d).toFixed(2)+' ('+(up?'+':'')+Number(q.dp).toFixed(2)+'%)</div></div>';
   h+='</div>';
   // chart area
   h+='<div class="chartwrap"><div class="chart-head"><span class="chart-label">Price chart</span></div><div id="hero-chart" style="min-height:440px;"><div class="chart-skel" style="height:440px;"></div></div></div>';
@@ -725,7 +725,7 @@ async function runCompanyAI(name,sym,p,q,M,force,ctxOverride){
     const r=await gem('You are an equity analyst. Given the live current data: '+ctx+' The company is currently publicly traded (live market data is present) — never claim it is delisted or acquired. Return ONLY JSON: {"scores":{"moat":0,"growth":0,"value":0,"momentum":0},"composite":0,"valuation":"CHEAP|FAIR|RICH","valNote":"vs history/peers","segments":[{"label":"segment","share":0}],"bull":["3-4 points"],"bear":["3-4 risk points"],"picksShovels":"2 sentences on value-chain position"} Scores 0-100, segment shares ~100 total.',force);
     if(!r){$('aiPanel').innerHTML='<div class="label a">⛏ AI analysis</div><div class="muted">Could not generate this time — try again.</div>';return;}
     const s=r.scores||{};let h='<div class="label a">⛏ AI analysis '+(r.valuation?'· '+esc(r.valuation):'')+aiTag()+'<button class="toggle" data-refresh="company-ai">↻</button></div>';
-    h+='<div style="display:flex;gap:22px;flex-wrap:wrap;align-items:center;margin-bottom:14px;">'+compScore(r.composite)+'<div style="flex:1;min-width:200px;">'+metric('moat',s.moat,'var(--accent)')+metric('growth',s.growth,'var(--green)')+metric('value',s.value,'var(--blue)')+metric('momentum',s.momentum,'#b98ad0')+'</div><div style="flex:1;min-width:160px;"><div class="mono faint" style="font-size:9.5px;letter-spacing:1px;margin-bottom:6px;">VALUATION</div>'+valGauge(r.valuation)+(r.valNote?'<div class="muted" style="font-size:11.5px;margin-top:8px;">'+esc(r.valNote)+'</div>':'')+'</div></div>';
+    h+='<div style="display:flex;gap:22px;flex-wrap:wrap;align-items:center;margin-bottom:14px;">'+compScore(r.composite)+'<div style="flex:1;min-width:200px;">'+metric('moat',s.moat,'var(--accent)')+metric('growth',s.growth,'var(--green)')+metric('value',s.value,'var(--blue)')+metric('momentum',s.momentum,'var(--violet)')+'</div><div style="flex:1;min-width:160px;"><div class="mono faint" style="font-size:9.5px;letter-spacing:1px;margin-bottom:6px;">VALUATION</div>'+valGauge(r.valuation)+(r.valNote?'<div class="muted" style="font-size:11.5px;margin-top:8px;">'+esc(r.valNote)+'</div>':'')+'</div></div>';
     h+='<div class="grid2"><div><div class="label g">▲ Bull</div><ul style="margin:0;padding-left:16px;font-size:13.5px;line-height:1.5;">'+(r.bull||[]).map(b=>'<li>'+esc(b)+'</li>').join('')+'</ul></div><div><div class="label r">▼ Bear</div><ul style="margin:0;padding-left:16px;font-size:13.5px;line-height:1.5;">'+(r.bear||[]).map(b=>'<li>'+esc(b)+'</li>').join('')+'</ul></div></div>';
     if(r.picksShovels)h+='<div style="margin-top:14px;font-size:14px;line-height:1.6;border-top:1px solid var(--bsoft);padding-top:12px;">⛏ '+esc(r.picksShovels)+'</div>';
     if(r.segments&&r.segments.length)h+='<div style="margin-top:16px;border-top:1px solid var(--bsoft);padding-top:14px;"><div class="label a">◆ Revenue by segment (est.)</div>'+donut(r.segments.map((g,i)=>({label:g.label,value:g.share,color:PAL[i%PAL.length]})))+'</div>';
@@ -780,9 +780,10 @@ async function loadPulse(q,force){
     try{
       const r=await gem((S.region==='in'?'INDIAN MARKET ONLY (NSE/BSE, Nifty/Sensex, rupees). ':'')+'You are a buy-side macro analyst writing the end-of-day market read'+(q?(' focused on '+q):'')+'.'+guard+' Be specific — cite the live numbers, sectors, named companies. Return ONLY JSON: {"tone":"3-4 sentences on market mood, what is driving it, key conditions and which way risk is leaning","hot":[{"name":"","ticker":"","why":"2-3 sentences on why this is moving now, what to watch, the setup"}],"flows":[{"title":"","detail":"2-3 specific sentences on the flow with numbers/sectors/names","direction":"INFLOW|OUTFLOW|ROTATION"}],"themes":[{"theme":"","detail":"2-3 sentences explaining the theme and current state of play","example":"ticker"}]} Exactly 4 hot names, 4 flows, 4 themes. NO generic statements.',force);
       if(r){
-        if(r.tone)h+='<div class="panel s12" style="border-color:rgba(92,201,138,.22);background:linear-gradient(180deg,rgba(92,201,138,.04),var(--panel2));"><div class="label g">◆ Market tone'+aiTag()+'</div><div class="serif" style="font-size:17px;line-height:1.5;letter-spacing:-.2px;">'+esc(r.tone)+'</div></div>';
-        if(r.hot&&r.hot.length){h+='<div class="panel s7"><div class="label a">🔥 Hot right now</div>';r.hot.forEach(x=>{h+='<div style="display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--bsoft);align-items:flex-start;"><div style="flex:1;min-width:0;"><div style="display:flex;gap:9px;align-items:baseline;flex-wrap:wrap;"><span class="mono" style="color:var(--accent);font-size:11.5px;letter-spacing:.5px;">'+esc(x.ticker||'')+'</span><span style="font-weight:600;font-size:14px;">'+esc(x.name)+'</span></div><div class="muted" style="font-size:13px;margin-top:5px;line-height:1.55;">'+esc(x.why)+'</div></div>'+(x.ticker?'<button class="dig" data-load="'+esc(x.ticker)+'">dig in →</button>':'')+'</div>';});h+='</div>';}
-        if(r.flows&&r.flows.length){h+='<div class="panel s5"><div class="label b">💧 Flows</div>';r.flows.forEach(fl=>{const out=esc(fl.direction)==='OUTFLOW';const col=out?'var(--red)':'var(--green)';const bg=out?'rgba(224,115,95,.15)':'rgba(92,201,138,.15)';h+='<div style="padding:13px 0;border-bottom:1px solid var(--bsoft);"><div style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;"><span style="font-weight:600;font-size:13.5px;">'+esc(fl.title)+'</span>'+(fl.direction?'<span class="mono" style="font-size:9.5px;letter-spacing:1px;padding:2px 6px;border-radius:4px;background:'+bg+';color:'+col+';">'+esc(fl.direction)+'</span>':'')+'</div><div class="muted" style="font-size:12.5px;margin-top:5px;line-height:1.55;">'+esc(fl.detail)+'</div></div>';});h+='</div>';}
+         if(r.tone)h+='<div class="panel s12" style="border-color:rgba(142,201,162,.22);background:linear-gradient(180deg,rgba(142,201,162,.04),var(--panel2));"><div class="label g">◆ Market tone'+aiTag()+'</div><div class="serif" style="font-size:17px;line-height:1.5;letter-spacing:-.2px;">'+esc(r.tone)+'</div></div>';
+         if(r.hot&&r.hot.length){h+='<div class="panel s7"><div class="label a">🔥 Hot right now</div>';r.hot.forEach(x=>{h+='<div style="display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--bsoft);align-items:flex-start;"><div style="flex:1;min-width:0;"><div style="display:flex;gap:9px;align-items:baseline;flex-wrap:wrap;"><span class="mono" style="color:var(--accent);font-size:11.5px;letter-spacing:.5px;">'+esc(x.ticker||'')+'</span><span style="font-weight:600;font-size:14px;">'+esc(x.name)+'</span></div><div class="muted" style="font-size:13px;margin-top:5px;line-height:1.55;">'+esc(x.why)+'</div></div>'+(x.ticker?'<button class="dig" data-load="'+esc(x.ticker)+'">dig in →</button>':'')+'</div>';});h+='</div>';}
+         if(r.flows&&r.flows.length){h+='<div class="panel s5"><div class="label b">💧 Flows</div>';r.flows.forEach(fl=>{const out=esc(fl.direction)==='OUTFLOW';const col=out?'var(--red)':'var(--green)';const bg=out?'rgba(239,123,104,.15)':'rgba(142,201,162,.15)';h+='<div style="padding:13px 0;border-bottom:1px solid var(--bsoft);"><div style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;"><span style="font-weight:600;font-size:13.5px;">'+esc(fl.title)+'</span>'+(fl.direction?'<span class="mono" style="font-size:9.5px;letter-spacing:1px;padding:2px 6px;border-radius:4px;background:'+bg+';color:'+col+';">'+esc(fl.direction)+'</span>':'')+'</div><div class="muted" style="font-size:12.5px;margin-top:5px;line-height:1.55;">'+esc(fl.detail)+'</div></div>';});h+='</div>';}
+
         if(r.themes&&r.themes.length){h+='<div class="panel s12"><div class="label a">🌱 Emerging themes <span class="faint" style="white-space:nowrap;">· tap to map</span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">';r.themes.forEach(t=>{h+='<button data-sector="'+esc(t.theme)+'" class="theme-card" style="text-align:left;padding:15px 17px;background:var(--panel3);border:1px solid var(--bsoft);border-radius:11px;cursor:pointer;font-family:inherit;color:inherit;transition:all .14s;"><div class="serif" style="font-weight:600;font-size:15.5px;letter-spacing:-.2px;margin-bottom:7px;">'+esc(t.theme)+'</div><div class="muted" style="font-size:12.5px;line-height:1.55;">'+esc(t.detail)+'</div>'+(t.example?'<div class="mono" style="font-size:9.5px;color:var(--accent);margin-top:10px;letter-spacing:1.3px;text-transform:uppercase;">e.g. '+esc(t.example)+'</div>':'')+'</button>';});h+='</div></div>';}
       }
     }catch(e){h+='<div class="panel s12 err">'+esc(e.message)+'</div>';}
@@ -825,7 +826,7 @@ async function loadCompare(a,b){
     if(S.gemKey){try{var cp='You are an equity analyst comparing two US stocks using ONLY the live current data below. Any company shown with a live price and market cap IS publicly traded as of today — never state a company is delisted, acquired, or no longer trades; rely solely on these figures.\nA) '+cmpCtx(da,a)+'\nB) '+cmpCtx(db,b)+'\nReturn ONLY JSON: {"verdict":"2-3 sentences grounded in the numbers on which is the stronger investment and for what kind of investor","winner":"the stronger ticker or the word split","a":{"composite":0,"valuation":"CHEAP|FAIR|RICH"},"b":{"composite":0,"valuation":"CHEAP|FAIR|RICH"}} composites 0-100 reflecting overall quality and value from the data.';verdict=await gem(cp);}catch(e){}}
     if(verdict){da.ai=verdict.a;db.ai=verdict.b;}
     let h='';
-    if(verdict&&verdict.verdict)h+='<div class="panel" style="border-color:rgba(224,164,88,.3)"><div class="label a">⚖ Verdict'+(verdict.winner?' · edge: '+esc(verdict.winner):'')+'</div><div class="serif" style="font-size:15px;line-height:1.6;">'+esc(verdict.verdict)+'</div></div>';
+     if(verdict&&verdict.verdict)h+='<div class="panel" style="border-color:rgba(232,93,58,.3)"><div class="label a">⚖ Verdict'+(verdict.winner?' · edge: '+esc(verdict.winner):'')+'</div><div class="serif" style="font-size:15px;line-height:1.6;">'+esc(verdict.verdict)+'</div></div>';
     h+='<div class="row" style="margin-top:14px;align-items:stretch;">'+cmpCol(da)+cmpCol(db)+'</div>';
     setOut(h);
   }catch(e){const net=/Failed to fetch|NetworkError|load failed/i.test(e.message||'');setOut('<div class="panel err">'+esc(net?'Could not reach data. If inside the Claude app, download and open the file locally.':e.message)+'</div>');}
@@ -998,7 +999,7 @@ async function loadCompareIN(a,b){
     if(S.gemKey){try{var cp='You are an equity analyst comparing two INDIAN (NSE-listed) stocks using ONLY the live data below. Both are currently publicly traded — never claim either is delisted or acquired. Use rupees.\nA) '+cmpCtxIN(da)+'\nB) '+cmpCtxIN(db)+'\nReturn ONLY JSON: {"verdict":"2-3 sentences grounded in the numbers on which is the stronger investment and for what kind of Indian investor","winner":"the stronger ticker or the word split","a":{"composite":0,"valuation":"CHEAP|FAIR|RICH"},"b":{"composite":0,"valuation":"CHEAP|FAIR|RICH"}} composites 0-100.';verdict=await gem(cp);}catch(e){}}
     if(verdict){da.ai=verdict.a;db.ai=verdict.b;}
     let h='';
-    if(verdict&&verdict.verdict)h+='<div class="panel" style="border-color:rgba(224,164,88,.3)"><div class="label a">⚖ Verdict'+(verdict.winner?' · edge: '+esc(verdict.winner):'')+'</div><div class="serif" style="font-size:15px;line-height:1.6;">'+esc(verdict.verdict)+'</div></div>';
+    if(verdict&&verdict.verdict)h+='<div class="panel" style="border-color:rgba(232,93,58,.3)"><div class="label a">⚖ Verdict'+(verdict.winner?' · edge: '+esc(verdict.winner):'')+'</div><div class="serif" style="font-size:15px;line-height:1.6;">'+esc(verdict.verdict)+'</div></div>';
     h+='<div class="row" style="margin-top:14px;align-items:stretch;">'+cmpColIN(da)+cmpColIN(db)+'</div>';
     setOut(h);
   }catch(e){setOut('<div class="panel err">'+esc(e.message||'Compare failed')+'</div>');}
