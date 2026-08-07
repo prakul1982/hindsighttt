@@ -605,7 +605,7 @@ function loadHeroChart(sym){
   script.innerHTML=JSON.stringify({
     autosize:false,width:'100%',height:420,symbol:(S.region==='in'?'BSE:':'')+sym,interval:'D',timezone:'Etc/UTC',theme:'dark',style:'1',
     locale:'en',hide_side_toolbar:true,allow_symbol_change:true,save_image:false,
-    backgroundColor:'#0f1514',gridColor:'rgba(255,255,255,0.04)',
+    backgroundColor:'#242424',gridColor:'rgba(255,255,255,0.06)',
     support_host:'https://www.tradingview.com'
   });
   container.appendChild(widget);container.appendChild(copy);container.appendChild(script);
