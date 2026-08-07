@@ -294,18 +294,81 @@ html,body{max-width:100%;overflow-x:hidden;}
 .viz-legend i{display:inline-block;width:8px;height:8px;border-radius:99px;margin-right:6px;}
 @media (prefers-reduced-motion:reduce){.casc-fill{animation:none;}}
 @media(max-width:640px){.casc-key{width:78px;font-size:9.5px;}.eq-eps{font-size:10.5px;}}
+
+/* ===== Dashboard shell (sidebar + content) ===== */
+.shell{display:grid;grid-template-columns:246px minmax(0,1fr);min-height:100vh;}
+.side{position:sticky;top:0;align-self:start;height:100vh;display:flex;flex-direction:column;gap:18px;
+  padding:22px 16px;border-right:1px solid var(--border);
+  background:linear-gradient(180deg,var(--panel),var(--panel2));z-index:30;}
+.side .brandbox{display:flex;flex-direction:column;gap:6px;padding:0 6px 16px;border-bottom:1px solid var(--bsoft);}
+.side .brand{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:-.4px;line-height:1;}
+.side .brand:before{content:"◆";color:var(--accent2);font-size:12px;margin-right:9px;vertical-align:2px;}
+.side .sub{font-family:var(--mono);font-size:9px;letter-spacing:2.2px;color:var(--faint);text-transform:uppercase;}
+.side .tabs{display:flex;flex-direction:column;gap:2px;margin:0;border-bottom:none;flex-wrap:nowrap;}
+.side .tab{width:100%;text-align:left;padding:11px 14px;border:none;border-left:2px solid transparent;
+  border-radius:0 9px 9px 0;top:0;font-size:10.5px;}
+.side .tab:hover{background:rgba(255,255,255,.03);}
+.side .tab.on{border-left-color:var(--accent2);border-bottom-color:transparent;background:rgba(45,138,158,.14);color:var(--accent2);}
+.sidefoot{margin-top:auto;display:flex;flex-direction:column;gap:9px;align-items:flex-start;
+  padding-top:16px;border-top:1px solid var(--bsoft);}
+.sidefoot .toggle{width:100%;text-align:left;}
+.side .live{font-size:9px;letter-spacing:1.4px;line-height:1.5;}
+.shell .wrap{padding:26px 30px 0;max-width:1180px;}
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr;}
+  .side{position:static;height:auto;flex-direction:row;align-items:center;flex-wrap:wrap;gap:12px;padding:14px 16px;border-right:none;border-bottom:1px solid var(--border);}
+  .side .brandbox{border-bottom:none;padding:0;}
+  .side .tabs{flex-direction:row;flex-wrap:wrap;}
+  .side .tab{width:auto;border-left:none;border-bottom:2px solid transparent;border-radius:9px;}
+  .side .tab.on{border-left-color:transparent;border-bottom-color:var(--accent2);}
+  .sidefoot{margin-top:0;flex-direction:row;flex-wrap:wrap;border-top:none;padding-top:0;}
+  .sidefoot .toggle{width:auto;}
+  .shell .wrap{padding:18px 16px 0;}
+}
+/* ===== Onboarding coach marks ===== */
+.tourDim{position:fixed;inset:0;z-index:900;pointer-events:none;background:rgba(4,12,22,.62);
+  opacity:0;transition:opacity .2s ease;}
+.tourDim.on{opacity:1;}
+.tourHole{position:fixed;z-index:901;pointer-events:none;border-radius:12px;
+  border:1px solid var(--accent2);box-shadow:0 0 0 3px rgba(92,189,185,.22),0 0 26px rgba(92,189,185,.32);
+  transition:top .22s ease,left .22s ease,width .22s ease,height .22s ease;}
+.tourCard{position:fixed;z-index:902;width:min(340px,calc(100vw - 32px));
+  background:linear-gradient(180deg,var(--panel3),var(--panel));border:1px solid var(--accent);
+  border-radius:14px;padding:18px 18px 16px;box-shadow:0 24px 60px -20px rgba(0,0,0,.8);
+  transition:top .22s ease,left .22s ease;}
+.tourCard .step{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);}
+.tourCard h4{font-family:var(--serif);font-size:18px;font-weight:700;margin:8px 0 8px;line-height:1.25;}
+.tourCard p{margin:0;font-size:13.5px;line-height:1.6;color:var(--muted);}
+.tourCard .st{margin-top:11px;font-family:var(--mono);font-size:11.5px;line-height:1.5;}
+.tourCard .st.ok{color:var(--green);}.tourCard .st.bad{color:var(--red);}.tourCard .st.busy{color:var(--muted);}
+.tourNav{display:flex;align-items:center;gap:8px;margin-top:16px;}
+.tourNav .dots{display:flex;gap:5px;margin-right:auto;}
+.tourNav .dots i{width:6px;height:6px;border-radius:99px;background:var(--track2);display:block;}
+.tourNav .dots i.on{background:var(--accent2);}
+.tourBtn{background:linear-gradient(180deg,var(--accent2),var(--accent));color:#04202c;border:none;
+  border-radius:9px;padding:9px 16px;font-weight:600;font-size:13px;font-family:var(--sans);}
+.tourBtn:disabled{background:var(--track2);color:var(--faint);cursor:default;}
+.tourGhost{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:9px;
+  padding:9px 13px;font-size:12px;font-family:var(--mono);}
+.tourGhost:hover{color:var(--text);border-color:var(--accent);}
 </style>
 </head>
 <body>
-<div class="hd">
-  <div><span class="brand">Hindsight</span><span class="sub">Self-Hosted Research Terminal</span></div>
-  <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+<div class="shell">
+<aside class="side">
+  <div class="brandbox">
+    <span class="brand">Hindsight</span>
+    <span class="sub">Self-Hosted Research Terminal</span>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+  <div class="sidefoot">
     <div class="live" id="live"></div>
     <button class="toggle" id="regionBtn"></button>
     <button class="toggle" id="setBtn">⚙ Keys</button>
+    <button class="toggle" id="tourBtn">◎ Walkthrough</button>
   </div>
-</div>
-<div class="wrap">
+</aside>
+<main class="wrap">
   <div class="settings" id="settings" style="display:none;">
     <div class="lbl">Finnhub API key — free, powers live data · <a href="https://finnhub.io/register" target="_blank">get one ↗</a></div>
     <input id="fhKey" placeholder="Finnhub key" />
@@ -314,11 +377,11 @@ html,body{max-width:100%;overflow-x:hidden;}
     <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;"><button class="save" id="saveKeys" style="margin-top:0;">Save keys</button><button class="toggle" id="clearCache">Clear AI cache</button></div>
     <div class="note">Keys are stored in this browser only — they are never sent anywhere except directly to Finnhub and Google. No keys ship with this file, so you need your own; both are free.</div>
   </div>
-  <div class="tabs" id="tabs"></div>
   <div id="searchArea"></div>
   <div class="chips" id="chips"></div>
   <div id="out"></div>
   <div class="foot">Live data from Finnhub (free). AI analysis runs on your own Google Gemini free-tier key. Runs entirely in your browser — no Claude usage. Scores, segments & AI text are directional estimates, not precise data or financial advice. Verify at the source.</div>
+</main>
 </div>
 <script>
 /* ============================================================================
