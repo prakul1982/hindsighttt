@@ -1,0 +1,19 @@
+{
+  "name": "hindsight-promo",
+  "version": "1.0.0",
+  "resolution": {
+    "width": 1920,
+    "height": 1080
+  },
+  "fps": 30,
+  "duration": 6,
+  "format": "mp4",
+  "compositions": [
+    {
+      "id": "main",
+      "file": "compositions/index.html",
+      "duration": 6,
+      "fps": 30
+    }
+  ]
+}
